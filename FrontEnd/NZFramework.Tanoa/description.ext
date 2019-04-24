@@ -1,0 +1,65 @@
+// Mission Details
+onLoadName = "New Zealand 0.0.1";
+author = "John Doe, Nicholas Jo'Foski, Ben Harris";
+onLoadMission = "NZ > Aussie";
+//loadScreen = "textures\missionPicture.paa";
+
+joinUnassigned = 1;
+respawn = BASE;
+respawndelay = 1;
+disabledAI = true;
+disableChannels[] = {
+	{0, true, true}, //--- Global Chat
+	{1, true, true}, //--- Side Chat
+	{2, true, true}, //--- Command Chat
+	{3, true, true}, //--- Group Chat
+	{4, true, true}, //--- Vehicle Chat
+	{5, true, true}, //--- Direct Chat
+	{6, true, true} //--- System Chat
+};
+enableDebugConsole[] = {"76561198072625284","76561198099644981","76561198062192032"};  // Nicholas Jo'Foski -> Ben Harris -> John Doe
+
+respawnDialog = 0;
+//onPauseScript[] = { "" }; // When people press esc
+
+class Header
+{
+	gameType = RPG;
+	minPlayers = 1;
+	maxPlayers = 123;
+};
+
+wreckLimit = 3;
+wreckRemovalMinTime = 30;
+wreckRemovalMaxTime = 120;
+corpseLimit = 30;
+corpseRemovalMinTime = 600;
+corpseRemovalMaxTime = 800;
+
+class RscTitles {};
+
+//#include "cfgInteractions.hpp"
+
+class CfgRemoteExec
+{        
+   // List of script functions allowed to be sent from client via remoteExec
+   class Functions
+   {
+           // State of remoteExec: 0-turned off, 1-turned on, taking whitelist into account, 2-turned on, however, ignoring whitelists (default because of backward compatibility)
+           mode = 2;
+           // Ability to send jip messages: 0-disabled, 1-enabled (default)
+           jip = 1;
+           /*your functions here*/
+           class BIS_fnc_MP_packet
+           {
+                  allowedTargets=0; // can target anyone (default)
+                  jip = 0; // sending jip messages is disabled for this function (overrides settings in the Functions class)
+           };
+   };        
+   // List of script commands allowed to be sent from client via remoteExec
+   class Commands
+   {
+          /*your commands here*/
+          
+	};
+};

@@ -8,3 +8,15 @@ class CfgPatches
 		requiredAddons[] = {"A3_Data_F"};
 	};
 };
+
+class CfgFunctions
+{
+	class Server
+	{
+		class Init
+		{
+			file = "\Harris_Server";
+			class initFunctions { postInit=1; };
+		};
+	};
+};
