@@ -5,4 +5,5 @@
 
 Harris_serverInit = {
 	["NZFramework", "SQL_CUSTOM", "NZFramework.ini"] call MySQL_fnc_ExtDBinit;
+	missionNamespace setVariable ["spawnInPlane", [], true];
 };
