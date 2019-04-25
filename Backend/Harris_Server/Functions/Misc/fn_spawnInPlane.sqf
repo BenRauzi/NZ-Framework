@@ -24,7 +24,7 @@ NZF_spawnInPlane = {
         _x addHeadgear "H_HeadSet_" + selectRandom ["black","orange","red","white","yellow"] + "_F";
         _x setFace selectRandom ["WhiteHead_18","WhiteHead_04","TanoanHead_A3_08","Barklem","AsianHead_A3_04"];
     } forEach [pilot,coPilot];
-    [true] spawn NZF_moveInPlane;
+    [true] call NZF_moveInPlane;
     // Need to work on this part
     waitUntil {isTouchingGround _plane || !(alive _plane) || isNull _plane};
     spawnInPlane = missionNamespace getVariable ["spawnInPlane", []];
