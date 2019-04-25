@@ -19,4 +19,15 @@ class CfgFunctions
 			class initFunctions { postInit=1; };
 		};
 	};
+	class MySQL
+	{
+		class ExtDB
+		{
+			file = "Harris_Server\Server\MYSQL";
+			class ExtDBasync {};
+            class ExtDBinit {};
+			class ExtDBstrip {};
+			class ExtDBquery {};
+		};
+	};
 };

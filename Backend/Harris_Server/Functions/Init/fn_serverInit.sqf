@@ -4,5 +4,5 @@
 */
 
 Harris_serverInit = {
-	// code
+	["NZFramework", "SQL_CUSTOM", "NZFramework.ini"] call MySQL_fnc_ExtDBinit;
 };
