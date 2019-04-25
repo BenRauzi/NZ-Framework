@@ -12,7 +12,13 @@ NZF_moveInPlane = {
     something = false;
     {
         if (count fullCrew _x <= 3) exitWith {
+            player switchCamera "Internal";
+            cutText ["", "BLACK FADED"];
+            0 fadeSound 0;
             player moveInCargo _x;
+            sleep 5;
+            30 fadeSound 1;
+            titleCut ["", "BLACK IN", 20];
         };
         something = true;
     } forEach (missionNamespace getVariable ["spawnInPlane", []]);
