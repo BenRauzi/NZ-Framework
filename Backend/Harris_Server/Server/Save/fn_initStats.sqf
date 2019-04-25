@@ -14,6 +14,8 @@ Harris_initStats = {
 	if !(_doesExist) then {
 		_insertstr = format["insertPlayerInfo:%1:%2:%3:%4", getPlayerUID _player, name _player, round(random(99999)), 5000];
 		_insert = [0, _insertstr] call MySQL_fnc_ExtDBquery;
+
+		[_player] call Harris_initStats;
 	} else {
 		diag_log (getPlayerUID _player);
 		_infoStr = format["playerInfo:%1", getPlayerUID _player];
@@ -23,5 +25,7 @@ Harris_initStats = {
 
 		_cash = _info select 1;
 		_bankAccount = _info select 2;
+
+		_player	setVariable ["loadedIn", true, true];
 	};
 };
