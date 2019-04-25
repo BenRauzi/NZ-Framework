@@ -3,7 +3,7 @@
 	Description: Master Keyhandler
 */
 
-Harris_keyHandler = {
+NZF_keyHandler = {
 	_ctrl = _this select 0;
 	_shift = _this select 2;
 	_ctrlKey = _this select 3;
