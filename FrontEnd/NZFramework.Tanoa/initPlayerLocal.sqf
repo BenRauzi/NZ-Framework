@@ -1,1 +1,1 @@
-[] call Harris_clientInit;
+[] spawn Harris_clientInit;

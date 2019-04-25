@@ -63,3 +63,8 @@ class CfgRemoteExec
           
 	};
 };
+
+#include "dialog\common.hpp"
+#include "dialog\interactionMenu.hpp"
+#include "cfgInteractions.hpp"
+

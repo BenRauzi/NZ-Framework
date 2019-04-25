@@ -17,7 +17,6 @@ Harris_initStats = {
 
 		[_player] call Harris_initStats;
 	} else {
-		diag_log (getPlayerUID _player);
 		_infoStr = format["playerInfo:%1", getPlayerUID _player];
 		_info = [_infoStr, 2] call MySQL_fnc_ExtDBasync;
 

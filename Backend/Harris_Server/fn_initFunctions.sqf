@@ -9,8 +9,15 @@ Init_Functions = ["Functions", "Init", "Harris", Init_Function_List, "Client"];/
 Save_Function_List = ["initStats"];
 Save_Functions = ["Server", "Save", "Harris", Save_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
+Misc_Function_List = ["keyHandler"];
+Misc_Functions = ["Functions", "Misc", "Harris", Misc_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-Functions_List = [Init_Functions, Save_Functions];
+
+Interaction_Function_List = ["colourRadialInner" , "colourRadialOuter", "interactionExecute", "openInteraction"];
+Interaction_Functions = ["Functions", "Interaction", "Harris", Interaction_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
+
+
+Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions];
 
 {
 	_dir = format["\Harris_Server\%1\%2", _x select 0, _x select 1];

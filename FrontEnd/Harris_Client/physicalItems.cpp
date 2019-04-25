@@ -477,7 +477,7 @@ class CfgWeapons
 		count = 10;
 		class ItemInfo
 		{
-			allowedSlots[] `= {701,801,901};
+			allowedSlots[] = {701,801,901};
 			mass = 4;
 			scope = 0;
 			type = 620;

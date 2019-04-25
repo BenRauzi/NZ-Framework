@@ -7,7 +7,6 @@ class CfgPatches
 		requiredVersion = 0.1;
 		requiredAddons[] = {"A3_Data_F"};
 	};
-	#include "requiredAddonsFix.cpp"
 };
 
 #include "physicalItems.cpp"
@@ -938,19 +937,6 @@ class cfgSounds
 		name = "punch4";
 		sound[] = {"Harris_Client\sounds\punch4.ogg", 1, 1};
 		titles[] = {};
-	};
-};
-
-class cfgFunctions
-{
-	class LIMMITT_Functions
-	{
-		tag = "LIMMITT";
-		class LIMMITT_Network
-		{
-			file = "Harris_Client\Misc";
-			class openBook {preInit = 1;};
-		};
 	};
 };
 
