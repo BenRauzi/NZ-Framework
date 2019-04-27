@@ -1,43 +1,25 @@
 /*
     Author: Nicholas Jo'Foski
-    Filename: fn_openCharacterCreation.sqf
+    Filename: fn_loadCreateCharacter.sqf
     Description: Moves the newly joined player into a plane!
 */
 
-NZF_openCharacterCreation = {
-    0 fadeSound 0;
+NZF_loadCreateCharacter = { 
  	// Spawn Building 
-    cObj = "Land_Offices_01_V1_F" createVehicleLocal [0,0,0];
-    cObj enableSimulation false; 
-    cObj allowDamage false; 
-    cObj setPos [0,0,1000]; 
+    _obj = "Land_Offices_01_V1_F" createVehicleLocal [0,0,0]; 
+    _obj enableSimulation false; 
+    _obj allowDamage false; 
+    _obj setPos [0,0,1000]; 
     // Spawn AI 
-    cNPC = "C_man_1" createVehicleLocal [0,0,0]; 
-    cNPC attachTo [cObj,[11.5,7.5,-7.07]];
-    detach cNPC;
-    cNPC enableSimulation false; 
-    cNPC allowDamage false; 
-    cNPC setDir 180; 
-    removeUniform cNPC; 
-    removeHeadgear cNPC; 
-    [cNPC, "STAND_U1", "NONE"] call BIS_fnc_ambientAnim; 
+    _man = "C_man_1" createVehicleLocal [0,0,0]; 
+    _man setPosATL [12.2403,6.89057,1062.6]; 
+    _man enableSimulation false; 
+    _man allowDamage false; 
+    _man setDir 180; 
+    removeUniform _man; 
+    removeHeadgear _man; 
+    [_man, "STAND_U1", "NONE"] call BIS_fnc_ambientAnim; 
  
-    // Fade out screen
-    cutText ["","Black Out", 2];
-    sleep 5;
-
-    // Setup Camera
-    cCam = "CAMERA" camCreate [0,0,0];
-    showCinemaBorder false;
-    cCam cameraEffect ["INTERNAL", "BACK"];    
-    cCam attachTo [cObj,[11,5.5,-6.15]];   
-    cCam camSetFocus [0,0];  
-    cCam camCommit 0;
-
-    // Fade in screen
-    cutText ["","Black In", 5];
-    5 fadeSound 0.3;
-
     // Create Dialog
     createDialog "createCharacter";
     (findDisplay 1000) displaySetEventHandler ["KeyDown","if((_this select 1) isEqualTo 1) then {true}"];
@@ -66,7 +48,7 @@ NZF_openCharacterCreation = {
     { // Load Uniforms
     	_index = lbAdd [1006, getText (configFile >> "CfgWeapons" >> _x >> "DisplayName")];
     	lbSetData [1006, _index, _x]; // Needs to be changed to ID number to save to profileNameSpace to prevent people changing uniforms out of the server
-	} forEach ["U_C_man_casual_1_F","U_C_man_casual_2_F","U_C_man_casual_3_F"]; // Should be moved to a global array in server config
+	} forEach ["U_C_Man_casual_1_F","U_C_Man_casual_2_F","U_C_Man_casual_3_F"]; // Should be moved to a global array in server config
 	lbSetCurSel [1006, 0];
 
     { // Load Vests
@@ -92,4 +74,54 @@ NZF_openCharacterCreation = {
     	lbSetData [1014, _index, _x]; // Needs to be changed to ID number to save to profileNameSpace to prevent people changing headgear out of the server
 	} forEach ["H_Cap_grn_BI","H_Cap_blk","H_Cap_blu","H_Cap_grn"]; // Should be moved to a global array in server config
 	lbSetCurSel [1014, 0];
+
+    player setPosATL (getPosATL _obj);
+    sleep 30; 
+    deleteVehicle _obj; 
+    deleteVehicle _man; 
 };
+
+
+
+
+
+
+
+
+[] spawn { 
+ 	_cam  = "CAMERA" camCreate [12.1819,4.5,1001.65]; 
+ 	showCinemaBorder true;    
+ 	_cam cameraEffect ["INTERNAL", "BACK"];                            
+ 	_cam setPos [11.6264,5.00863,1002.49];
+ 	_cam camSetDir [0.0683034,0.997663,0.00152811];
+ 	_cam camSetFocus [0,0];  
+ 	_cam camCommit 0; 
+ 	sleep 2; 
+ 	_cam cameraEffect ["Terminate","back"]; 
+	camDestroy _cam; 
+};
+
+NZF_loadCreateCharacter = { 
+ // Spawn Building 
+    _obj = "Land_Offices_01_V1_F" createVehicleLocal [0,0,0]; 
+    _obj enableSimulation false; 
+    _obj allowDamage false; 
+    _obj setPos [0,0,1000]; 
+    // Spawn AI 
+    _man = "C_man_1" createVehicleLocal [0,0,0]; 
+    _man setPosATL [12.2403,6.89057,1062.6]; 
+    _man enableSimulation false; 
+    _man allowDamage false; 
+    _man setDir 180; 
+    removeUniform _man; 
+    removeHeadgear _man; 
+    [_man, "STAND_U1", "NONE"] call BIS_fnc_ambientAnim; 
+ 
+    player setPosATL (getPosATL _obj); 
+ 
+    sleep 30; 
+    deleteVehicle _obj; 
+    deleteVehicle _man; 
+};
+[] spawn NZF_loadCreateCharacter;
+player allowDamage false;
