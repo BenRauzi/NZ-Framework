@@ -30,23 +30,15 @@ NZF_spawnInPlane = {
     spawnInPlane = missionNamespace getVariable ["spawnInPlane", []];
     spawnInPlane deleteAt (spawnInPlane find _plane);
     missionNamespace setVariable ["spawnInPlane", spawnInPlane, true];
-    sleep 5;
-    10 fadeSound 0;
-    10 fadeMusic 0;
-    sleep 5;
-    cutText ["","Black Out", 2];
-    sleep 3;
+    {
+        if (isPlayer _x) then {
+            [] remoteExec ["NZF_planeLanded", _x, false];
+        };
+    } forEach (crew _plane);
+    sleep 15;
     {
         deleteVehicle _x;
     } forEach [_plane,pilot,coPilot];
-    player setPos (getMarkerPos "newCharacterSpawn");
-    player setDir (markerDir "newCharacterSpawn");
-    player switchCamera "Internal";
-    titleText ["<t font='EtelkaMonospaceProBold' size='1.5'>1 Hour Later</t>", "PLAIN", 0.3,true,true];
-    sleep 6;
-    5 fadeSound 1;
-    cutText ["","Black In", 2];
-    player allowDamage true;
 };
 
 /*
