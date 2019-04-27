@@ -325,7 +325,7 @@ class NZF_identityListGUI
       y = 0.75388 * safezoneH + safezoneY;
       w = 0.05525 * safezoneW;
       h = 0.035 * safezoneH;
-        action = "[] call NZF_identitySelect;";
+        action = "[] call NZF_identitySelect; closeDialog 0;";
     };
     class RscListbox_1500: RscListbox
     {

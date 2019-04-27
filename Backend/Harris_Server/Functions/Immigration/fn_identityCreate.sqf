@@ -16,5 +16,5 @@ NZF_identityCreate = {
 	saveProfileNamespace;
 
 	closeDialog 0;
-	createDialog "NZF_identityListGUI";
+	[] spawn NZF_openCharacterCreation;
 };
