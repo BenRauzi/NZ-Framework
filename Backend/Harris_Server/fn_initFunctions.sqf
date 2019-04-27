@@ -9,7 +9,7 @@ Init_Functions = ["Functions", "Init", "Harris", Init_Function_List, "Client"];/
 Save_Function_List = ["initStats"];
 Save_Functions = ["Server", "Save", "Harris", Save_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-Misc_Function_List = ["keyHandler","spawnInPlane","moveInPlane"];
+Misc_Function_List = ["keyHandler"];
 Misc_Functions = ["Functions", "Misc", "NZF", Misc_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 Interaction_Function_List = ["colourRadialInner" , "colourRadialOuter", "interactionExecute", "openInteraction"];
@@ -18,7 +18,10 @@ Interaction_Functions = ["Functions", "Interaction", "Harris", Interaction_Funct
 Notifications_Function_List = ["Notifications"];
 Notifications_Functions = ["Functions", "Notifications", "NZF", Notifications_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Notifications_Functions];
+Immigration_Function_List = ["spawnInPlane","moveInPlane","loadCreateCharacter"];
+Immigration_Functions = ["Functions", "Immigration", "NZF", Immigration_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
+
+Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions];
 
 {
 	_dir = format["\Harris_Server\%1\%2", _x select 0, _x select 1];
