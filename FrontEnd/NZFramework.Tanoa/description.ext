@@ -288,7 +288,7 @@ class NZF_createIdentityGUI
     class Cancel_B: Harris_invis_button
     {
       idc = 1600;
-      action = "closeDialog 0; [] call Harris_listIdentities";
+      action = "closeDialog 0; createDialog 'NZF_identityListGUI'";
 
       x = 0.355625 * safezoneW + safezoneX;
       y = 0.753 * safezoneH + safezoneY;
@@ -302,7 +302,7 @@ class NZF_identityListGUI
 {
   idd = 5041;
   movingEnabled = false;
-  onLoad = "[] call NZF_listIdentites";
+  onLoad = "[] spawn NZF_listIdentites";
 
   class controls
   {
@@ -324,7 +324,7 @@ class NZF_identityListGUI
       y = 0.75388 * safezoneH + safezoneY;
       w = 0.05525 * safezoneW;
       h = 0.035 * safezoneH;
-        action = "[] call Harris_identitySelect;";
+        action = "[] call NZF_identitySelect;";
     };
     class RscListbox_1500: RscListbox
     {
@@ -342,7 +342,7 @@ class NZF_identityListGUI
       colorActive[] = {0.62,0.62,0.62,1};
       colorSelect[] = {0.62,0.62,0.62,1};
       colorText[] = {-1,-1,-1,1};
-        onLbSelChanged = "[] call Harris_immigrationLbChanged";
+        onLbSelChanged = "[] call NZF_onIdentityLbChanged";
     };
     class First_Name_T: RscText
     {
@@ -432,7 +432,7 @@ class NZF_identityListGUI
       y = 0.654 * safezoneH + safezoneY;
       w = 0.08525 * safezoneW;
       h = 0.035 * safezoneH;
-      action = "closeDialog 0; [] call Harris_openIdentityCreation";
+      action = "closeDialog 0; [] call NZF_openIdentityCreation";
     };
     class RscPicture_1202: RscPicture
     {
