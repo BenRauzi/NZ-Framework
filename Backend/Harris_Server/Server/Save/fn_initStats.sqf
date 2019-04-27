@@ -12,7 +12,7 @@ Harris_initStats = {
 	_doesExist = (_check select 0) select 0;
 
 	if !(_doesExist) then {
-		_insertstr = format["insertPlayerInfo:%1:%2:%3:%4", getPlayerUID _player, name _player, round(random(99999)), [[5000, 1], [5002, 2]]];
+		_insertstr = format["insertPlayerInfo:%1:%2:%3:%4", getPlayerUID _player, name _player, round(random(99999)), 0, 5000];
 		_insert = [0, _insertstr] call MySQL_fnc_ExtDBquery;
 
 		[_player] call Harris_initStats;

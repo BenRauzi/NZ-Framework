@@ -16,9 +16,10 @@ Harris_loadStats = {
 
 	_bankAccount = _info select 1;
 
+
 	{
 		if (_x select 1 == _identity) exitWith {
 			player setVariable ["cash", _x select 0, true];
 		};
-	} forEach (_info select 2);
+	} forEach (_info select 2); //cash example of multi-identity
 };
