@@ -1,1 +1,3 @@
-[] spawn Harris_clientInit;
+if (isMultiplayer) then {
+	[] spawn Harris_clientInit;
+};
