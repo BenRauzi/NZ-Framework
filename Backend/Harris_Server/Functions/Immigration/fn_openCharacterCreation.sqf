@@ -1,7 +1,6 @@
 /*
     Author: Nicholas Jo'Foski
-    Filename: fn_openCharacterCreation.sqf
-    Description: Moves the newly joined player into a plane!
+    Description: Opens the character creation dialog
 */
 
 NZF_openCharacterCreation = {

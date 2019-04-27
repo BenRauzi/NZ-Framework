@@ -1,7 +1,6 @@
 /*
     Author: Nicholas Jo'Foski
-    Filename: fn_moveInPlane.sqf
-    Description: Moves the newly joined player into a plane!
+    Description: Moves the new character (identities) into a plane
 */
 
 NZF_moveInPlane = {
