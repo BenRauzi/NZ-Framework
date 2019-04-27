@@ -18,6 +18,7 @@ NZF_createCharacter = {
     _target addBackpack _backpack;
     _target addGoggles _glasses;
     _target addHeadgear _headgear;
+    _target allowDamage false;
 
     // Save Crap to DB (Ben)
     /* blah blah blah...*/
