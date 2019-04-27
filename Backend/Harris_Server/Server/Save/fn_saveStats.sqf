@@ -9,20 +9,26 @@ Harris_saveStats = {
 	_bank = _player getVariable ["bank", 0];
 	_items = getUnitLoadout _player;
 
-	_identity = (player getVariable "currentIdentity") select 1;
-	_info = player getVariable ["playerInfo", _info];
+	_identity = (_player getVariable "currentIdentity") select 1;
+	_info = _player getVariable "playerInfo";
 
+	_playerItems = (_info select 3);
 	{
 		if (_x select 1 == _identity) exitWith {
-			(_info select 3) deleteAt _forEachIndex;
-			(_info select 3) pushBack [_items, _identity];
+			_playerItems deleteAt _forEachIndex;
 		};
-	} forEach (_info select 3); //loadout example of multi-identity
+	} forEach _playerItems; //loadout example of multi-identity
+	_playerItems pushBack [_items, _identity];
 
 	_info set [1, _cash];
 	_info set [2, _bank];
 
-	test = _info;
+	_info = [_cash, _bank, _info select 3];
 
-	player setVariable ["playerInfo", _info];
-};
+	_player setVariable ["playerInfo", _info, true];
+
+	_insertstr = format["updatePlayerInfo:%1:%2:%3:%4", _cash, _bank, _playerItems, getPlayerUID _player];
+	_insert = [0, _insertstr] call MySQL_fnc_ExtDBquery;
+}; 
+
+//[allPlayers select 0] call Harris_saveStats;
