@@ -10,7 +10,7 @@ if (!isMultiplayer || isServer) then {
 	Save_Function_List = ["initStats", "loadStats", "saveStats"];
 	Save_Functions = ["Server", "Save", "Harris", Save_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Misc_Function_List = ["keyHandler"];
+	Misc_Function_List = ["keyHandler","hideLocally","setFaceGlobal"];
 	Misc_Functions = ["Functions", "Misc", "NZF", Misc_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Interaction_Function_List = ["colourRadialInner", "colourRadialOuter", "interactionExecute", "openInteraction"];

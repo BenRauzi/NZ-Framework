@@ -12,6 +12,13 @@ NZF_moveInPlane = {
     {
         if (count fullCrew _x <= 3) exitWith {
             player switchCamera "Internal";
+            player hideObjectGlobal true;
+            {
+                if (isPlayer _x) then {
+                    [player] remoteExec ["NZF_hideLocally", _x];
+                };
+            } forEach crew _x;
+            player setDir (getDir _x);
             player moveInCargo _x;
         };
         something = true;
