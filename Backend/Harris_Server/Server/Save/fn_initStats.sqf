@@ -12,7 +12,7 @@ Harris_initStats = {
 	_doesExist = (_check select 0) select 0;
 
 	if !(_doesExist) then {
-		_insertstr = format["insertPlayerInfo:%1:%2:%3:%4", getPlayerUID _player, name _player, round(random(99999)), 5000];
+		_insertstr = format["insertPlayerInfo:%1:%2:%3:%4", getPlayerUID _player, name _player, round(random(99999)), [[5000, 1], [5002, 2]]];
 		_insert = [0, _insertstr] call MySQL_fnc_ExtDBquery;
 
 		[_player] call Harris_initStats;
@@ -20,11 +20,6 @@ Harris_initStats = {
 		_infoStr = format["playerInfo:%1", getPlayerUID _player];
 		_info = [_infoStr, 2] call MySQL_fnc_ExtDBasync;
 
-		_info = _info select 0;
-
-		_cash = _info select 1;
-		_bankAccount = _info select 2;
-
-		_player	setVariable ["loadedIn", true, true];
+		[_info] remoteExec ["Harris_loadStats", _player];
 	};
 };
