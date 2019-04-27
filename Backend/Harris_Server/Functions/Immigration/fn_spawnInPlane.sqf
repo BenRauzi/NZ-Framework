@@ -34,6 +34,7 @@ NZF_spawnInPlane = {
     sleep 10;
     cutText ["","Black Out", 2];
     5 fadeSound 0;
+    3 fadeMusic 0;
     sleep 3;
     {
         deleteVehicle _x;

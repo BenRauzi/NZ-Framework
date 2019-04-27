@@ -46,7 +46,6 @@ NZF_createCharacter = {
     titleText ["<t font='EtelkaMonospaceProBold' size='1.5'>NEW ZEALAND | RP</t>", "PLAIN", 0.5,true,true]; 
     sleep 10; 
     cutText ["","Black in", 20];
-    _eh = setMusicEventHandler ["MusicStop", "0 fadeSound 1;"];
     sleep 10;
     disableUserInput false;
 };
