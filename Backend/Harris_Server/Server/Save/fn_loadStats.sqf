@@ -14,12 +14,29 @@ Harris_loadStats = {
 
 	_info = _info select 0;
 
-	_bankAccount = _info select 1;
+	player setVariable ["playerInfo", _info];
 
+	_bankAccount = _info select 0;
+
+	player setVariable ["cash", _info select 1];
+
+	player setVariable ["bank", _info select 2];
 
 	{
 		if (_x select 1 == _identity) exitWith {
-			player setVariable ["cash", _x select 0, true];
+			player setUnitLoadout ( _x select 0);
 		};
-	} forEach (_info select 2); //cash example of multi-identity
+	} forEach (_info select 3); //loadout example of multi-identity
+
+	{
+		if (_x select 1 == _identity) exitWith {
+			player setVariable ["copLevel", ( _x select 0)];
+		};
+	} forEach (_info select 4); //copLevel example of multi-identity
+
+	{
+		if (_x select 1 == _identity) exitWith {
+			player setVariable ["medicLevel", ( _x select 0)];
+		};
+	} forEach (_info select 5); //medicLevel example of multi-identity
 };
