@@ -10,7 +10,7 @@ NZF_createCharacter = {
     _target = player;
 
     // Load Character
-    _target setFace _face;
+    [_target,_face] remoteExec ["NZF_setFaceGlobal",0,true];
     _target forceAddUniform _uniform;
     _target addVest _vest;
     removeBackpack _target;
@@ -43,7 +43,7 @@ NZF_createCharacter = {
     titleText ["<t font='EtelkaMonospaceProBold' size='1.5'>ARMA 3</t>", "PLAIN", 0.5,true,true]; 
     sleep 10;
     titleText ["<t font='EtelkaMonospaceProBold' size='1.5'>NEW ZEALAND | RP</t>", "PLAIN", 0.5,true,true]; 
-    sleep 10; 
+    sleep 10;
     cutText ["","Black in", 20];
     sleep 10;
     disableUserInput false;

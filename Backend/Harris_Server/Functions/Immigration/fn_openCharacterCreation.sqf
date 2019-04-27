@@ -8,15 +8,15 @@ NZF_openCharacterCreation = {
  	// Spawn Building 
     cObj = "Land_Offices_01_V1_F" createVehicleLocal [0,0,0];
     cObj enableSimulation false; 
-    cObj allowDamage false; 
+    cObj allowDamage false;
     cObj setPos [0,0,1000]; 
     // Spawn AI 
     cNPC = "C_man_1" createVehicleLocal [0,0,0]; 
     cNPC attachTo [cObj,[11.5,7.5,-7.07]];
     detach cNPC;
     cNPC enableSimulation false; 
-    cNPC allowDamage false; 
-    cNPC setDir 180; 
+    cNPC allowDamage false;
+    cNPC setDir 180;
     removeUniform cNPC; 
     removeHeadgear cNPC; 
     [cNPC, "STAND_U1", "NONE"] call BIS_fnc_ambientAnim; 
