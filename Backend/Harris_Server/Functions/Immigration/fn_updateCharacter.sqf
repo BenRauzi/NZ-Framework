@@ -6,7 +6,7 @@
 
 NZF_updateCharacter = { 
     params ["_type","_option"];
-    _target = player;
+    _target = cNPC;
     switch (_type) do { 
         case "face" : {
             _target setFace _option;

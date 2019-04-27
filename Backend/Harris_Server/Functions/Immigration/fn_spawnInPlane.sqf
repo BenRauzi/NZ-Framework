@@ -9,6 +9,8 @@ NZF_spawnInPlane = {
     spawnInPlane = missionNamespace getVariable ["spawnInPlane", []];
     spawnInPlane pushBack _plane;
     _plane allowDamage false;
+    clearBackpackCargoGlobal _plane; // Remove Parachutes
+    clearItemCargoGlobal _plane; // Remove Items
     missionNamespace setVariable ["spawnInPlane", spawnInPlane, true];
     createVehicleCrew _plane;
     _plane landAt 0;
@@ -25,12 +27,23 @@ NZF_spawnInPlane = {
         _x setFace selectRandom ["WhiteHead_18","WhiteHead_04","TanoanHead_A3_08","Barklem","AsianHead_A3_04"];
     } forEach [pilot,coPilot];
     [true] call NZF_moveInPlane;
-    // Need to work on this part
     waitUntil {isTouchingGround _plane || !(alive _plane) || isNull _plane};
     spawnInPlane = missionNamespace getVariable ["spawnInPlane", []];
     spawnInPlane deleteAt (spawnInPlane find _plane);
     missionNamespace setVariable ["spawnInPlane", spawnInPlane, true];
+    sleep 10;
+    cutText ["","Black Out", 2];
+    5 fadeSound 0;
+    sleep 3;
     {
         deleteVehicle _x;
     } forEach [_plane,pilot,coPilot];
+    player setPos (getMarkerPos "newCharacterSpawn");
+    player setDir (markerDir "newCharacterSpawn");
+    player switchCamera "Internal";
+    player allowDamage true;
+    titleText ["<t font='EtelkaMonospaceProBold' size='1.5'>1 Hour Later</t>", "PLAIN", 0.3,true,true];
+    sleep 6;
+    5 fadeSound 1;
+    cutText ["","Black In", 2];
 };
