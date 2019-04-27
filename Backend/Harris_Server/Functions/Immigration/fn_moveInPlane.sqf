@@ -11,7 +11,6 @@ NZF_moveInPlane = {
     something = false;
     {
         if (count fullCrew _x <= 3) exitWith {
-            player switchCamera "Internal";
             player hideObjectGlobal true;
             {
                 if (isPlayer _x) then {
@@ -20,6 +19,7 @@ NZF_moveInPlane = {
             } forEach crew _x;
             player setDir (getDir _x);
             player moveInCargo _x;
+            player switchCamera "Internal";
         };
         something = true;
     } forEach (missionNamespace getVariable ["spawnInPlane", []]);

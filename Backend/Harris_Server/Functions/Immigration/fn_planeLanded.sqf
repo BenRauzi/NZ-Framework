@@ -10,6 +10,7 @@ NZF_planeLanded = {
     sleep 5;
     cutText ["","Black Out", 2];
     sleep 3;
+    player action ["Eject", vehicle player];
     player setPos (getMarkerPos "newCharacterSpawn");
     player setDir (markerDir "newCharacterSpawn");
     player switchCamera "Internal";
