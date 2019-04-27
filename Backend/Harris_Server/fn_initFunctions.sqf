@@ -6,7 +6,7 @@
 Init_Function_List = ["serverInit", "clientInit"];
 Init_Functions = ["Functions", "Init", "Harris", Init_Function_List, "Client"];//Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-Save_Function_List = ["initStats"];
+Save_Function_List = ["initStats", "loadStats"];
 Save_Functions = ["Server", "Save", "Harris", Save_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 Misc_Function_List = ["keyHandler"];
@@ -18,7 +18,7 @@ Interaction_Functions = ["Functions", "Interaction", "Harris", Interaction_Funct
 Notifications_Function_List = ["Notifications"];
 Notifications_Functions = ["Functions", "Notifications", "NZF", Notifications_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-Immigration_Function_List = ["spawnInPlane","moveInPlane","loadCreateCharacter"];
+Immigration_Function_List = ["spawnInPlane","moveInPlane","loadCreateCharacter", "createIdentity", "identityCreate", "openIdentityCreation", "listIdentites", "onIdentityLbChanged", "identitySelect"];
 Immigration_Functions = ["Functions", "Immigration", "NZF", Immigration_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions];

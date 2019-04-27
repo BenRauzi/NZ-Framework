@@ -4,11 +4,19 @@
 */
 
 Harris_clientInit = {
+
+	NZF_startBank = 5000;
+	NZF_startCar = "C_Hatchback_01_sport_F";
+	NZF_maxIdentities = 3;
+
 	cutText ["Fetching Player Information","BLACK OUT"]; 
 	[player] remoteExecCall	["Harris_initStats", 2];
-	waitUntil{!isNil {player getVariable "loadedIn"}};
+	waitUntil{!isNull (findDisplay 46)};
+	createDialog "NZF_identityListGUI";
+
+	waitUntil{!isNil {player getVariable "dataReceived"}};
+	player setVariable ["dataReceived", nil];
 	cutText ["Player Information Received... Please Wait","BLACK",1]; 
-	cutText ["","BLACK IN",1]; 
 
 	outerImage = [1210,2210,3210,4210,5210,6210,7210,8210];
 	outerIcon1 = [1211,2211,3211,4211,5211,6211,7211,8211];
@@ -32,6 +40,4 @@ Harris_clientInit = {
 	message3_active = false;
 	message4_active = false;
 	message5_active = false;
-
-	(findDisplay 46) displayAddEventHandler ["KeyDown","_this call NZF_keyHandler"];
 };
