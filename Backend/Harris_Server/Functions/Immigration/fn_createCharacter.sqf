@@ -14,7 +14,7 @@ NZF_createCharacter = {
     sleep 5;
     disableUserInput true;
     [false] call NZF_moveInPlane;
-    playMusic "LeadTrack02_F_Bootcamp"; 
+    player say2D "introMusic"; //playMusic "LeadTrack02_F_Bootcamp"; 
     sleep 0.5; 
     titleText ["<t font='EtelkaMonospaceProBold' size='1.5'>Potato Bro Studios<br/>Presents</t>", "PLAIN", 0.5,true,true];
     sleep 10; 

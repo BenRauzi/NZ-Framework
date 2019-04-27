@@ -1,10 +1,10 @@
 /*
     Author: Nicholas Jo'Foski
-    Filename: fn_loadCreateCharacter.sqf
+    Filename: fn_openCharacterCreation.sqf
     Description: Moves the newly joined player into a plane!
 */
 
-NZF_loadCreateCharacter = { 
+NZF_openCharacterCreation = { 
  	// Spawn Building 
     _obj = "Land_Offices_01_V1_F" createVehicleLocal [0,0,0]; 
     _obj enableSimulation false; 
