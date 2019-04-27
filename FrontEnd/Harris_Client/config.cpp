@@ -792,8 +792,8 @@ class cfgSounds
 	sounds[] = {};
 	class introMusic
 	{
-		name = "introMusic";
-		sound[] = { "\a3\music_f_bootcamp\music\LeadTrack02_F_Bootcamp", 1, 1};
+		name = ".";
+		sound[] = { "Harris_Client\sounds\introMusic.ogg", 1, 1};
 		titles[] = {};
 	};
 	class cuttingWire
