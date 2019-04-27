@@ -31,10 +31,11 @@ NZF_spawnInPlane = {
     spawnInPlane = missionNamespace getVariable ["spawnInPlane", []];
     spawnInPlane deleteAt (spawnInPlane find _plane);
     missionNamespace setVariable ["spawnInPlane", spawnInPlane, true];
-    sleep 10;
+    sleep 5;
+    10 fadeSound 0;
+    10 fadeMusic 0;
+    sleep 5;
     cutText ["","Black Out", 2];
-    5 fadeSound 0;
-    3 fadeMusic 0;
     sleep 3;
     {
         deleteVehicle _x;
