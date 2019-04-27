@@ -1,7 +1,6 @@
 /*
     Author: Nicholas Jo'Foski
-    Filename: fn_spawnInPlane.sqf
-    Description: Spawns in a plane for new players!
+    Description: Spawns in a plane for new characters (identities) to get moved into
 */
 
 NZF_spawnInPlane = {

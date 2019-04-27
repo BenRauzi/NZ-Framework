@@ -1,7 +1,6 @@
 /*
     Author: Nicholas Jo'Foski
-    Filename: fn_updatedCharacter.sqf
-    Description: Updates the targets appearence based off of the parameters!
+    Description: Updates the NPC's appearence based off of the parameters
 */
 
 NZF_updateCharacter = { 

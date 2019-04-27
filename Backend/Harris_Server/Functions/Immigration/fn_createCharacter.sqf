@@ -1,7 +1,6 @@
 /*
     Author: Nicholas Jo'Foski
-    Filename: fn_createCharacter.sqf
-    Description: Creates the players character, and saves it to the db!
+    Description: Creates and saves the players character, as well as starts the intro
 */
 
 NZF_createCharacter = { 
