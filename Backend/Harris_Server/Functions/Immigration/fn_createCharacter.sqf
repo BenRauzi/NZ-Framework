@@ -10,7 +10,8 @@ NZF_createCharacter = {
     _target = player;
 
     // Load Character
-    [_target,_face] remoteExec ["NZF_setFaceGlobal",0,true];
+    [_face, _uniform, _vest, _backpack, _glasses, _headgear] call NZF_setDefaultGear;
+    [] call NZF_loadGear;
     _target forceAddUniform _uniform;
     _target addVest _vest;
     removeBackpack _target;
@@ -20,7 +21,6 @@ NZF_createCharacter = {
     _target allowDamage false;
 
     // Save Crap to DB (Ben)
-    /* blah blah blah...*/
 
     // Intro Scene
     cutText ["","Black Out", 2];
