@@ -22,18 +22,14 @@ Harris_loadStats = {
 
 	player setVariable ["bank", _info select 2];
 
-	_currentLoadOut = getUnitLoadout player;
+	_gearLoaded = false;
 	{
 		if (_x select 1 == _identity) exitWith {
 			player setUnitLoadout ( _x select 0);
+			_gearLoaded = true;
 		};
 	} forEach (_info select 3); //loadout example of multi-identity
-	
-	/*
-	if (getUnitLoadout player == _currentLoadOut) then {
-		//[] call NZF_defaultLoadOut;
-	};
-	*/
+
 	{
 		if (_x select 1 == _identity) exitWith {
 			player setVariable ["copLevel", ( _x select 0)];
@@ -45,4 +41,9 @@ Harris_loadStats = {
 			player setVariable ["medicLevel", ( _x select 0)];
 		};
 	} forEach (_info select 5); //medicLevel example of multi-identity
+
+	if !(_gearLoaded) then {
+		[] spawn NZF_openCharacterCreation;
+	};
+
 };
