@@ -42,9 +42,13 @@ NZF_spawnInPlane = {
     player setPos (getMarkerPos "newCharacterSpawn");
     player setDir (markerDir "newCharacterSpawn");
     player switchCamera "Internal";
-    player allowDamage true;
     titleText ["<t font='EtelkaMonospaceProBold' size='1.5'>1 Hour Later</t>", "PLAIN", 0.3,true,true];
     sleep 6;
     5 fadeSound 1;
     cutText ["","Black In", 2];
+    player allowDamage true;
 };
+
+/*
+    What will happen to the plane if the player disconnects before it lands? Most likely wont get deleted?
+*/
