@@ -3,7 +3,7 @@
 	Description: Lists all the users identities so they can select one
 */
 
-NZF_listIdentites = {
+NZF_listIdentities = {
 	waitUntil{!isNull (findDisplay 5041)};
 
 	_ctrl = [77777, 77778, 77779, 77780, 77781, 77782,71324,71328,71325,71329,71327,71326,1202];

@@ -29,10 +29,11 @@ Harris_loadStats = {
 		};
 	} forEach (_info select 3); //loadout example of multi-identity
 	
+	/*
 	if (getUnitLoadout player == _currentLoadOut) then {
 		//[] call NZF_defaultLoadOut;
 	};
-
+	*/
 	{
 		if (_x select 1 == _identity) exitWith {
 			player setVariable ["copLevel", ( _x select 0)];

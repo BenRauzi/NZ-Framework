@@ -303,7 +303,7 @@ class NZF_identityListGUI
 {
   idd = 5041;
   movingEnabled = false;
-  onLoad = "[] spawn NZF_listIdentites";
+  onLoad = "[] spawn NZF_listIdentities";
 
   class controls
   {
