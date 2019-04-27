@@ -1,7 +1,7 @@
 // Mission Details
 onLoadName = "New Zealand 0.0.1";
 author = "John Doe, Nicholas Jo'Foski, Ben Harris";
-onLoadMission = "NZ < Aussie";
+onLoadMission = "Australia is the better country!";
 //loadScreen = "textures\missionPicture.paa";
 
 joinUnassigned = 1;
