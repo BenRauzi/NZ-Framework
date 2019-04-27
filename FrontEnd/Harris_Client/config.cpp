@@ -868,6 +868,12 @@ class cfgSounds
 		sound[] = {"Harris_Client\sounds\intro.ogg", 1, 1};
 		titles[] = {};
 	};
+	class introMusic
+	{
+		name = "introMusic";
+		sound[] = {"Harris_Client\sounds\introMusic.ogg", 1, 1};
+		titles[] = {};
+	};
 	class lock
 	{
 		name = "lock";

@@ -26,5 +26,12 @@ Harris_clientInit = {
 	outerButton3 = [1221,2221,3221,4221,5221,6221,7221,8221];
 	outerButton4 = [1222,2222,3222,4222,5222,6222,7222,8222];
 
+	Harris_MessagesN = 0;
+	message1_active = false;
+	message2_active = false;
+	message3_active = false;
+	message4_active = false;
+	message5_active = false;
+
 	(findDisplay 46) displayAddEventHandler ["KeyDown","_this call NZF_keyHandler"];
 };

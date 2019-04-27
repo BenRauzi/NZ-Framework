@@ -78,7 +78,7 @@ class Harris_invis_button: Harris_RscButton {
 };
 
 
-class Harris_immigrationMemo
+class NZF_immigrationMemo
 {
   idd = 5040;
   movingEnabled = false;
@@ -106,8 +106,15 @@ class Harris_immigrationMemo
   };
 };
 
+class Harris_Edit: RscEdit {
+  idc = -1;
+  colorText[] = {-1,-1,-1,1};
+  colorShadow[] = {0.62,0.62,0.62,0.1};
+  colorBackground[] = {0,0,0,0};
+};
 
-class Harris_immigrationPapersCreate
+
+class NZF_createIdentityGUI
 {
   idd = 5042;
   movingEnabled = false;
@@ -123,7 +130,7 @@ class Harris_immigrationPapersCreate
       w = 0.417656 * safezoneW;
       h = 0.715 * safezoneH;
     };
-    class First_Name_E: RscEdit
+    class First_Name_E: Harris_Edit
     {
       idc = 1400;
       font = "PuristaLight";
@@ -132,12 +139,9 @@ class Harris_immigrationPapersCreate
       y = 0.343519 * safezoneH + safezoneY;
       w = 0.12525 * safezoneW;
       h = 0.035 * safezoneH;
-      colorShadow[] = {0.62,0.62,0.62,0.1};
-        colorBorder[] = {0,0,0,0};
-        colorText[] = {-1,-1,-1,1};
 
     };
-    class Sur_Name_E: RscEdit
+    class Sur_Name_E: Harris_Edit
     {
       idc = 1401;
       font = "PuristaLight";
@@ -146,10 +150,8 @@ class Harris_immigrationPapersCreate
       y = 0.344445 * safezoneH + safezoneY;
       w = 0.14525 * safezoneW;
       h = 0.035 * safezoneH;
-      colorText[] = {-1,-1,-1,1};
-      colorShadow[] = {0.62,0.62,0.62,0.1};
     };
-    class Middle_Name_E: RscEdit
+    class Middle_Name_E: Harris_Edit
     {
       idc = 1402;
       font = "PuristaLight";
@@ -158,10 +160,8 @@ class Harris_immigrationPapersCreate
       y = 0.407407 * safezoneH + safezoneY;
       w = 0.028 * safezoneW;
       h = 0.035 * safezoneH;
-      colorText[] = {-1,-1,-1,1};
-      colorShadow[] = {0.62,0.62,0.62,0.1};
     };
-    class Sex_Lb: RscEdit
+    class Sex_Lb: Harris_Edit
     {
       idc = 2100;
       font = "PuristaLight";
@@ -171,11 +171,9 @@ class Harris_immigrationPapersCreate
       y = 0.406444 * safezoneH + safezoneY;
       w = 0.028 * safezoneW;
       h = 0.035 * safezoneH;
-      colorText[] = {-1,-1,-1,1};
-      colorShadow[] = {0.62,0.62,0.62,0.1};
       autofill = "M";
     };
-    class DOB_1_E: RscEdit
+    class DOB_1_E: Harris_Edit
     {
       idc = 1403;
       font = "PuristaLight";
@@ -184,10 +182,8 @@ class Harris_immigrationPapersCreate
       y = 0.406444 * safezoneH + safezoneY;
       w = 0.02 * safezoneW;
       h = 0.035 * safezoneH;
-      colorText[] = {-1,-1,-1,1};
-      colorShadow[] = {0.62,0.62,0.62,0.1};
     };
-    class DOB_2_E: RscEdit
+    class DOB_2_E: Harris_Edit
     {
       idc = 1404;
       font = "PuristaLight";
@@ -196,10 +192,8 @@ class Harris_immigrationPapersCreate
       y = 0.406444 * safezoneH + safezoneY;
       w = 0.02 * safezoneW;
       h = 0.035 * safezoneH;
-      colorText[] = {-1,-1,-1,1};
-      colorShadow[] = {0.62,0.62,0.62,0.1};
     };
-    class DOB_3_E: RscEdit
+    class DOB_3_E: Harris_Edit
     {
       idc = 1405;
       font = "PuristaLight";
@@ -208,8 +202,6 @@ class Harris_immigrationPapersCreate
       y = 0.406444 * safezoneH + safezoneY;
       w = 0.027 * safezoneW;
       h = 0.035 * safezoneH;
-      colorText[] = {-1,-1,-1,1};
-      colorShadow[] = {0.62,0.62,0.62,0.1};
     };
     class Eye_Lb: RscCombo
     {
@@ -227,7 +219,7 @@ class Harris_immigrationPapersCreate
       colorBackgroundDisabled[] = {1,1,1,1};
       colorDisabled[] = {1,1,1,1};
     };
-    class Previous_Country_E: RscEdit
+    class Previous_Country_E: Harris_Edit
     {
       idc = 1406;
       font = "PuristaLight";
@@ -236,8 +228,6 @@ class Harris_immigrationPapersCreate
       y = 0.47037 * safezoneH + safezoneY;
       w = 0.15125 * safezoneW;
       h = 0.035 * safezoneH;
-      colorText[] = {-1,-1,-1,1};
-      colorShadow[] = {0.62,0.62,0.62,0.1};
     };
     class Passport_T: RscText
     {
@@ -275,7 +265,7 @@ class Harris_immigrationPapersCreate
       colorText[] = {-1,-1,-1,1};
       colorShadow[] = {0.62,0.62,0.62,0.1};
     };
-    class Signature_E: RscEdit
+    class Signature_E: Harris_Edit
     {
       idc = 1410;
       font = "Palace";
@@ -284,8 +274,6 @@ class Harris_immigrationPapersCreate
       y = 0.703703 * safezoneH + safezoneY;
       w = 0.17 * safezoneW;
       h = 0.035 * safezoneH;
-      colorText[] = {-1,-1,-1,1};
-      colorShadow[] = {0.62,0.62,0.62,0.1};
       sizeEx = 0.05;
     };
     class Submit_B: Harris_invis_button
@@ -295,7 +283,7 @@ class Harris_immigrationPapersCreate
       y = 0.752778 * safezoneH + safezoneY;
       w = 0.05525 * safezoneW;
       h = 0.035 * safezoneH;
-      action = "[] spawn Harris_identityCreate";
+      action = "[] call NZF_createIdentity";
     };
     class Cancel_B: Harris_invis_button
     {
@@ -310,10 +298,11 @@ class Harris_immigrationPapersCreate
   };
 };
 
-class Harris_immigrationPapersSelect
+class NZF_identityListGUI
 {
   idd = 5041;
   movingEnabled = false;
+  onLoad = "[] call NZF_listIdentites";
 
   class controls
   {
@@ -430,33 +419,25 @@ class Harris_immigrationPapersSelect
     class FileChar_P: RscPicture
     {
       idc = 1201;
-      text = "\HarrisFramework_Client2\icons\immigration\filenewCharacter.paa";
+      text = "\Harris_Client\Immigration\filenewCharacter.paa";
       x = 0.288594 * safezoneW + safezoneX;
       y = 0.137 * safezoneH + safezoneY;
       w = 0.417656 * safezoneW;
       h = 0.715 * safezoneH;
     };
-    class FileChar_B: RscButton
+    class FileChar_B: Harris_invis_button
     {
       idc = 1601;
       x = 0.402031 * safezoneW + safezoneX;
       y = 0.654 * safezoneH + safezoneY;
       w = 0.08525 * safezoneW;
       h = 0.035 * safezoneH;
-      colorBackground[] = {0,0,0,0};
-      colorActive[] = {0,0,0,0};
-      colorBackgroundActive[] = {0,0,0,0};
-      colorBackgroundDisabled[] = {0,0,0,0};
-      colorDisabled[] = {0,0,0,0};
-      colorFocused[] = {0,0,0,0};
-        colorShadow[] = {0,0,0,0};
-        colorBorder[] = {0,0,0,0};
-        action = "closeDialog 0; [] call Harris_openIdentityCreation";
+      action = "closeDialog 0; [] call Harris_openIdentityCreation";
     };
     class RscPicture_1202: RscPicture
     {
       idc = 1202;
-      text = "\HarrisFramework_Client2\icons\immigration\LakesideIslesID.paa";
+      text = "\Harris_Client\Immigration\newZealandID.paa";
       x = 0.628906 * safezoneW + safezoneX;
       y = -0.017 * safezoneH + safezoneY;
       w = 0.34125 * safezoneW;

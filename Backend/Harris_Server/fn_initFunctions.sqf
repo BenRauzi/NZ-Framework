@@ -12,12 +12,13 @@ Save_Functions = ["Server", "Save", "Harris", Save_Function_List, "Client"]; //M
 Misc_Function_List = ["keyHandler","spawnInPlane","moveInPlane"];
 Misc_Functions = ["Functions", "Misc", "NZF", Misc_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-
 Interaction_Function_List = ["colourRadialInner" , "colourRadialOuter", "interactionExecute", "openInteraction"];
 Interaction_Functions = ["Functions", "Interaction", "Harris", Interaction_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
+Notifications_Function_List = ["Notifications"];
+Notifications_Functions = ["Functions", "Notifications", "NZF", Notifications_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions];
+Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Notifications_Functions];
 
 {
 	_dir = format["\Harris_Server\%1\%2", _x select 0, _x select 1];
