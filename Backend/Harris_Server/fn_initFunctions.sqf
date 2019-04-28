@@ -7,7 +7,7 @@ if (!isMultiplayer || isServer) then {
 	Init_Function_List = ["serverInit", "clientInit"];
 	Init_Functions = ["Functions", "Init", "Harris", Init_Function_List, "Client"];//Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Save_Function_List = ["initStats", "loadStats", "saveStats"];
+	Save_Function_List = ["initStats", "loadStats", "saveStats", "saveStatsLocal"];
 	Save_Functions = ["Server", "Save", "Harris", Save_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Misc_Function_List = ["keyHandler","hideLocally","setFaceGlobal"];

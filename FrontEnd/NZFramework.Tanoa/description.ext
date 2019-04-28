@@ -20,7 +20,6 @@ disableChannels[] = {
 enableDebugConsole[] = {"76561198072625284","76561198099644981","76561198062192032"};  // Nicholas Jo'Foski -> Ben Harris -> John Doe
 
 respawnDialog = 0;
-//onPauseScript[] = { "" }; // When people press esc
 
 class Header
 {
@@ -530,3 +529,5 @@ class NZF_identityListGUI
     };
   };
 };
+
+onPauseScript[] = { "Harris_saveStatsLocal" }; // When people press esc

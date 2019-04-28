@@ -11,6 +11,7 @@ Harris_saveStats = {
 
 	_identity = (_player getVariable "currentIdentity") select 1;
 	_info = _player getVariable "playerInfo";
+	_bankaccount = _info select 0;
 
 	_playerItems = (_info select 3);
 	{
@@ -23,7 +24,7 @@ Harris_saveStats = {
 	_info set [1, _cash];
 	_info set [2, _bank];
 
-	_info = [_cash, _bank, _info select 3];
+	_info = [_bankaccount, _cash, _bank, _playerItems];
 
 	_player setVariable ["playerInfo", _info, true];
 

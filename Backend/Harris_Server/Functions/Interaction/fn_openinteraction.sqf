@@ -94,8 +94,6 @@ Harris_openInteraction = {
 
 	} forEach ("true" configClasses (missionConfigFile >> "CfgInteractions"));
 
-	diag_log (str _processing);
-
 	if (count Harris_currentActions < 2 && count Harris_currentMenus < 1) then {
 		((findDisplay 1723) displayCtrl 1113) ctrlSetEventHandler ["MouseExit", "[((findDisplay 1723) displayCtrl 1110) ctrlSetTextColor [0, 0, 0, 0.66]]"];
 	};
