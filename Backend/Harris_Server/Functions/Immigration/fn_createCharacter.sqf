@@ -20,8 +20,6 @@ NZF_createCharacter = {
     _target addHeadgear _headgear;
     _target allowDamage false;
 
-    // Save Crap to DB (Ben)
-
     // Intro Scene
     cutText ["","Black Out", 2];
     5 fadeSound 0;
@@ -31,7 +29,7 @@ NZF_createCharacter = {
     deleteVehicle cNPC;
     cCam cameraEffect ["terminate","back"];
     camDestroy cCam;
-    [false] call NZF_moveInPlane;
+    [false] spawn NZF_moveInPlane;
     5 fadeSound 0.3;
     1 fadeMusic 1;
     playMusic "LeadTrack02_F_Bootcamp";

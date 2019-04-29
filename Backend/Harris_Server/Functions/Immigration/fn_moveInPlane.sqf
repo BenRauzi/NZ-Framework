@@ -19,6 +19,8 @@ NZF_moveInPlane = {
             } forEach crew _x;
             player setDir (getDir _x);
             player moveInCargo _x;
+            player switchCamera "External";
+            sleep 5;
             player switchCamera "Internal";
         };
         something = true;

@@ -26,7 +26,7 @@ NZF_spawnInPlane = {
         _x setFace selectRandom ["WhiteHead_18","WhiteHead_04","TanoanHead_A3_08","Barklem","AsianHead_A3_04"]; 
         _x allowDamage false; 
     } forEach [pilot,coPilot]; 
-    [true] call NZF_moveInPlane; 
+    [true] spawn NZF_moveInPlane; 
     waitUntil {isTouchingGround _plane || !(alive _plane) || isNull _plane}; 
     spawnInPlane = missionNamespace getVariable ["spawnInPlane", []]; 
     spawnInPlane deleteAt (spawnInPlane find _plane); 
@@ -48,7 +48,7 @@ NZF_spawnInPlane = {
     players = nil;
     pilot = nil;
     coPilot = nil;
-}
+};
 
 /*
     What will happen to the plane if the player disconnects before it lands? Most likely wont get deleted?
