@@ -20,6 +20,9 @@ NZF_openCharacterCreation = {
     removeUniform cNPC; 
     removeHeadgear cNPC; 
     [cNPC, "STAND_U1", "NONE"] call BIS_fnc_ambientAnim; 
+ 
+    // Fade out screen
+    cutText ["","BLACK FADED",0];
     sleep 5;
 
     // Setup Camera
