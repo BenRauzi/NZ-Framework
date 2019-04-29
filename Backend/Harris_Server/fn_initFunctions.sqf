@@ -19,7 +19,7 @@ if (!isMultiplayer || isServer) then {
 	Notifications_Function_List = ["Notifications"];
 	Notifications_Functions = ["Functions", "Notifications", "NZF", Notifications_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Immigration_Function_List = ["openCharacterCreation", "updateCharacter", "createCharacter", "moveInPlane", "spawnInPlane", "planeLanded", "createIdentity", "identityCreate", "openIdentityCreation", "listIdentities", "onIdentityLbChanged", "identitySelect", "loadGear", "setDefaultGear"];
+	Immigration_Function_List = ["openCharacterCreation", "updateCharacter", "createCharacter", "moveInPlane", "spawnInPlane", "planeLanded", "createIdentity", "identityCreate", "openIdentityCreation", "listIdentities", "onIdentityLbChanged", "identitySelect", "loadGear", "setDefaultGear", "planeLandedServer"];
 	Immigration_Functions = ["Functions", "Immigration", "NZF", Immigration_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions];

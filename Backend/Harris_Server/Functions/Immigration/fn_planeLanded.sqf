@@ -11,12 +11,14 @@ NZF_planeLanded = {
     cutText ["","Black Out", 2];
     sleep 3;
     player action ["Eject", vehicle player];
-    player setPos (getMarkerPos "newCharacterSpawn");
+    waitUntil{vehicle player == player};
+    player setPosAtl (getMarkerPos "newCharacterSpawn");
     player setDir (markerDir "newCharacterSpawn");
     player switchCamera "Internal";
     titleText ["<t font='EtelkaMonospaceProBold' size='1.5'>1 Hour Later</t>", "PLAIN", 0.3,true,true];
     sleep 6;
     5 fadeSound 1;
     cutText ["","Black In", 2];
+    sleep 5;
     player allowDamage true;
 };
