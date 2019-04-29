@@ -5,6 +5,5 @@
 */
 
 Harris_saveStatsLocal = {
-	//[player] remoteExecCall ["Harris_saveStats", 2];
-	hint "test";
+	[player] remoteExecCall ["Harris_saveStats", 2];
 };
