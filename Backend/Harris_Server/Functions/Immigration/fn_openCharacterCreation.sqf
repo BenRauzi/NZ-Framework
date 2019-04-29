@@ -23,7 +23,7 @@ NZF_openCharacterCreation = {
  
     // Fade out screen
     cutText ["","BLACK FADED",0];
-    sleep 5;
+    sleep 2;
 
     // Setup Camera
     cCam = "CAMERA" camCreate [0,0,0];

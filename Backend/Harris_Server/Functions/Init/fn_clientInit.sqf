@@ -15,14 +15,14 @@ Harris_clientInit = {
 	NZF_createCharGlasses = ["G_Aviator","G_Spectacles","G_Spectacles_Tinted","G_Shades_Black"];
 	NZF_createCharHeadgear = ["H_Cap_grn_BI","H_Cap_blk","H_Cap_blu","H_Cap_grn"];
 
-	cutText ["Fetching Player Information","BLACK OUT"]; 
+	cutText ["Fetching Player Information","BLACK FADED",0];
 	[player] remoteExecCall	["Harris_initStats", 2];
 	waitUntil{!isNull (findDisplay 46)};
 	createDialog "NZF_identityListGUI";
 
 	waitUntil{!isNil {player getVariable "dataReceived"}};
 	player setVariable ["dataReceived", nil];
-	cutText ["Player Information Received... Please Wait","BLACK",1]; 
+	cutText ["Player Information Received... Please Wait","BLACK FADED",0];
 
 	outerImage = [1210,2210,3210,4210,5210,6210,7210,8210];
 	outerIcon1 = [1211,2211,3211,4211,5211,6211,7211,8211];
