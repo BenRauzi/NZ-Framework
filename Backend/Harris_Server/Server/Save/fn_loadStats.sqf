@@ -44,6 +44,8 @@ Harris_loadStats = {
 
 	if !(_gearLoaded) then {
 		[] spawn NZF_openCharacterCreation;
+		cutText ["","BLACK",1]; 
+	} else {
+		cutText ["","BLACK IN",1]; 
 	};
-
 };
