@@ -65,30 +65,30 @@ NZF_openCharacterCreation = {
     { // Load Uniforms
     	_index = lbAdd [1006, getText (configFile >> "CfgWeapons" >> _x >> "DisplayName")];
     	lbSetData [1006, _index, _x]; // Needs to be changed to ID number to save to profileNameSpace to prevent people changing uniforms out of the server
-	} forEach ["U_C_man_casual_1_F","U_C_man_casual_2_F","U_C_man_casual_3_F"]; // Should be moved to a global array in server config
+	} forEach NZF_createCharUniforms; // Should be moved to a global array in server config
 	lbSetCurSel [1006, 0];
 
     { // Load Vests
     	_index = lbAdd [1008, getText (configFile >> "CfgWeapons" >> _x >> "DisplayName")];
     	lbSetData [1008, _index, _x]; // Needs to be changed to ID number to save to profileNameSpace to prevent people changing vests out of the server
-	} forEach ["V_Safety_yellow_F","V_Safety_orange_F","V_Safety_blue_F","V_Press_F"]; // Should be moved to a global array in server config
+	} forEach NZF_createCharVests; // Should be moved to a global array in server config
 	lbSetCurSel [1008, 0];
 
     { // Load Backpacks
     	_index = lbAdd [1010, getText (configFile >> "CfgVehicles" >> _x >> "DisplayName")];
     	lbSetData [1010, _index, _x]; // Needs to be changed to ID number to save to profileNameSpace to prevent people changing backpacks out of the server
-	} forEach ["B_AssaultPack_blk","B_AssaultPack_cbr","B_AssaultPack_khk","B_AssaultPack_sgg"]; // Should be moved to a global array in server config
+	} forEach NZF_createCharBackpacks; // Should be moved to a global array in server config
 	lbSetCurSel [1010, 0];
 
     { // Load Glasses
     	_index = lbAdd [1012, getText (configFile >> "CfgGlasses" >> _x >> "DisplayName")];
     	lbSetData [1012, _index, _x]; // Needs to be changed to ID number to save to profileNameSpace to prevent people changing glasses out of the server
-	} forEach ["G_Aviator","G_Spectacles","G_Spectacles_Tinted","G_Shades_Black"]; // Should be moved to a global array in server config
+	} forEach NZF_createCharGlasses; // Should be moved to a global array in server config
 	lbSetCurSel [1012, 0];
 
     { // Load Headgear
     	_index = lbAdd [1014, getText (configFile >> "CfgWeapons" >> _x >> "DisplayName")];
     	lbSetData [1014, _index, _x]; // Needs to be changed to ID number to save to profileNameSpace to prevent people changing headgear out of the server
-	} forEach ["H_Cap_grn_BI","H_Cap_blk","H_Cap_blu","H_Cap_grn"]; // Should be moved to a global array in server config
+	} forEach NZF_createCharHeadgear; // Should be moved to a global array in server config
 	lbSetCurSel [1014, 0];
 };
