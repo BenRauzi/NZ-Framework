@@ -32,5 +32,4 @@ NZF_spawnInPlane = {
 
     pilot = nil;
     coPilot = nil;
-    
 };
