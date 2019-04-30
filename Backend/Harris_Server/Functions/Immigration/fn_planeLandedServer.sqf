@@ -8,7 +8,7 @@ NZF_planeLandedServer = {
     waitUntil {isTouchingGround _plane || !(alive _plane) || isNull _plane}; 
     spawnInPlane = missionNamespace getVariable ["spawnInPlane", []]; 
     spawnInPlane deleteAt (spawnInPlane find _plane); 
-    missionNamespace setVariable ["spawnInPlane", spawnInPlane, true]; 
+    missionNamespace setVariable ["spawnInPlane", spawnInPlane, true];
     _players = []; 
     { 
         if (isPlayer _x) then { 

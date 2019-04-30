@@ -17,9 +17,8 @@ NZF_moveInPlane = {
                     [player] remoteExec ["NZF_hideLocally", _x];
                 };
             } forEach crew _x;
-            player switchCamera "Internal";
-            //sleep 1;
             player moveInCargo _x;
+            player switchCamera "Internal";
         };
         something = true;
     } forEach (missionNamespace getVariable ["spawnInPlane", []]);
