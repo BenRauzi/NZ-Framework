@@ -10,7 +10,6 @@ NZF_planeLanded = {
     sleep 5;
     cutText ["","Black Out", 2];
     sleep 3;
-    player action ["Eject", vehicle player];
     waitUntil{vehicle player == player};
     player setPosAtl (getMarkerPos "newCharacterSpawn");
     player setDir (markerDir "newCharacterSpawn");
