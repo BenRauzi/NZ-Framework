@@ -16,7 +16,7 @@ NZF_keyHandler = {
 		{
 			// Interaction Menu
 			if (alive player && !_alt && !_shift && !_ctrlKey && !(isNull (findDisplay 46)) && (isNull (findDisplay 1723))) then {
-					[]call Harris_openInteraction;
+					[] call Harris_openInteraction;
 					_handled = true;
 			};
 		};
@@ -24,20 +24,20 @@ NZF_keyHandler = {
 		case 35: // H
 		{
 			// Holster & Unholster Weapon
-			//if !(player restrained || player surrendered) then {
+			if !(player getVariable ["NZF_Surrendering", false] || player getVariable ["NZF_Restrained", false]) then {
 				if (_shift && !_ctrlKey) then {
 					["holster"] call NZF_weaponHolster;
 				};
 				if (!_shift && _ctrlKey) then {
 					["unholster"] call NZF_weaponHolster;
 				};
-			//};
+			};
 		};
 
 		case 48: // B
 		{
 			// Surrender
-			if (alive player && _shift) then {
+			if (_shift) then {
 				[] spawn NZF_playerSurrender;
 			};
 		};
