@@ -12,15 +12,36 @@ NZF_keyHandler = {
 
 	switch (_this select 1) do
 	{
-		case 15:
+		case 15: // TAB
 		{
+			// Interaction Menu
 			if (alive player && !_alt && !_shift && !_ctrlKey && !(isNull (findDisplay 46)) && (isNull (findDisplay 1723))) then {
 					[]call Harris_openInteraction;
 					_handled = true;
+			};
+		};
+
+		case 35: // H
+		{
+			// Holster & Unholster Weapon
+			//if !(player restrained || player surrendered) then {
+				if (_shift && !_ctrlKey) then {
+					["holster"] call NZF_weaponHolster;
+				};
+				if (!_shift && _ctrlKey) then {
+					["unholster"] call NZF_weaponHolster;
+				};
+			//};
+		};
+
+		case 48: // B
+		{
+			// Surrender
+			if (alive player && _shift) then {
+				[] spawn NZF_playerSurrender;
 			};
 		};
 	};
 
 	_handled;
 };
-
