@@ -1,6 +1,6 @@
 /*
     Author: Nicholas Jo'Foski
-    Description: Hides target locally
+    Description: Plays an action on a target globally (for everyone on the server)
 */
 
 NZF_actionSyncMP = {
