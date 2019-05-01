@@ -22,7 +22,13 @@ if (!isMultiplayer || isServer) then {
 	Immigration_Function_List = ["openCharacterCreation", "updateCharacter", "createCharacter", "moveInPlane", "spawnInPlane", "planeLanded", "createIdentity", "identityCreate", "openIdentityCreation", "listIdentities", "onIdentityLbChanged", "identitySelect", "loadGear", "setDefaultGear", "planeLandedServer"];
 	Immigration_Functions = ["Functions", "Immigration", "NZF", Immigration_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions];
+	Occupation_Function_List = ["onDuty"];
+	Occupation_Functions = ["Functions", "Occupations", "NZF", Occupation_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
+
+	Police_Function_List = [""];
+	Police_Functions = ["Functions", "Police", "NZF", Police_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
+
+	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions, Occupation_Function_List, Police_Function_List];
 
 	{
 		_dir = format["\Harris_Server\%1\%2", _x select 0, _x select 1];
