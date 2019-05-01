@@ -278,6 +278,30 @@ class Harris_RscPicture
 #include "defines.hpp"
 class rscTitles
 {
+	 class NZF_bloodOverlay
+	  {
+	    name = "NZF_bloodOverlay";
+	    idd = 23590;
+	    fadein=0;
+	    duration = 99999999999;
+	    fadeout=0;
+	    movingEnable = 0;
+	    onLoad="uiNamespace setVariable ['NZF_bloodOverlay',_this select 0]";
+	    onUnLoad="uiNamespace setVariable ['NZF_bloodOverlay', displayNull]"
+	    objects[]={};
+	    class controls 
+	    {
+	      class overLay_image: RscPicture
+	      {
+	        idc = 1200;
+	        text = "\Harris_Client\Medical\bloodoverlay.paa";
+	        x = 0 * safezoneW + safezoneX;
+	        y = 0 * safezoneH + safezoneY;
+	        w = 1 * safezoneW;
+	        h = 1 * safezoneH;
+	      };
+	    };
+	  };
 	class Harris_Progress
 	{
 		name = "Harris_Progress";
@@ -1516,4 +1540,7 @@ class sell_shop
 	};
 };
 
+
 #include "Phone\UI\Harris_Phone.hpp"
+
+

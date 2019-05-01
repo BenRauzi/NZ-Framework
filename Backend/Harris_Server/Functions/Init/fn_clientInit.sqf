@@ -46,4 +46,9 @@ Harris_clientInit = {
 	message3_active = false;
 	message4_active = false;
 	message5_active = false;
+
+	player_damage = 0;
+
+	player addEventHandler["HandleDamage","_this call NZF_handleDamage"];
+
 };
