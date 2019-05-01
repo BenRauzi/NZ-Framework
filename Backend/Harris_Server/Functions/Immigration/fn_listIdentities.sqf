@@ -12,7 +12,7 @@ NZF_listIdentities = {
 			ctrlShow [_x, false];
 	} forEach _ctrl;
 
-	if (count(profileNamespace getVariable ["identityInfo", []]) >= NZF_maxIdentities) then {
+	if (count(profileNamespace getVariable ["identityInfo", []]) >= NZF_maxIdentities && !(getPlayerUID player in ["76561198072625284","76561198099644981","76561198062192032"])) then {
 		ctrlShow [1601, false];
 		ctrlShow [1201, false];
 	};

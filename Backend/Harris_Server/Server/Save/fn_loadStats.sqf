@@ -46,6 +46,7 @@ Harris_loadStats = {
 		[] spawn NZF_openCharacterCreation;
 		cutText ["","BLACK FADED",0];
 	} else {
+		[player, (player getVariable "currentIdentity" select 2) select 0] remoteExecCall ["NZF_setFaceGlobal", 0 , true];
 		cutText ["","BLACK IN",1]; 
 	};
 };
