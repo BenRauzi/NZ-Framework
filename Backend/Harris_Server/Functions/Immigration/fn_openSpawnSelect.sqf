@@ -29,7 +29,6 @@ NZF_openSpawnSelect = {
     showCinemaBorder false;
     sCam cameraEffect ["INTERNAL", "BACK"];    
     sCam attachTo [sObj,[10.5,5.2,-6.15]];   
-    sCam camSetFocus [0,0];  
     sCam camCommit 0;
 
     // Fade In Screen
