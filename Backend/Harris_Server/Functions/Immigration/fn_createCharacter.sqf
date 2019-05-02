@@ -29,7 +29,7 @@ NZF_createCharacter = {
     deleteVehicle cNPC;
     cCam cameraEffect ["terminate","back"];
     camDestroy cCam;
-    [false] spawn NZF_moveInPlane;
+    [false] call NZF_moveInPlane;
     5 fadeSound 0.3;
     1 fadeMusic 1;
     playMusic "LeadTrack02_F_Bootcamp";

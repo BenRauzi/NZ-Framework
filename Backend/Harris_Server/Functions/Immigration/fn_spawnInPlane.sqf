@@ -26,7 +26,7 @@ NZF_spawnInPlane = {
         _x setFace selectRandom ["WhiteHead_18","WhiteHead_04","TanoanHead_A3_08","Barklem","AsianHead_A3_04"]; 
         _x allowDamage false; 
     } forEach [pilot,coPilot]; 
-    [true] spawn NZF_moveInPlane; 
+    [true] call NZF_moveInPlane; 
 
     [_plane, pilot, coPilot] remoteExec ["NZF_planeLandedServer", 2];
 

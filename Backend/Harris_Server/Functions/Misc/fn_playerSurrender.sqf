@@ -33,18 +33,17 @@ NZF_playerSurrender = {
 			player setVariable ["tf_unable_to_use_radio", false];
 		};
 		// Block Certain Actions
+		if (vehicle player == player && !(currentWeapon player == "" || currentWeapon player isKindOf ["Pistol", configFile >> "CfgWeapons"])) then { // Block any type of weapon switching
+			["holster"] call NZF_weaponHolster;
+			[[player,"AmovPercMstpSnonWnonDnon"],"life_fnc_animSync", true, false] spawn bis_fnc_mp;
+			player switchMove "AmovPercMstpSnonWnonDnon";
+		};
 		if (vehicle player != player) then { // Constantly loop animation to stop it from being overidden
 			[player,"Foski_Surrender"] remoteExecCall ["NZF_actionSyncMP", 0];
 		} else {
 			player playAction "Foski_Surrender";
 		}; 
 		player setVariable ["tf_unable_to_use_radio", true]; // Disable the use of a radio
-		// Block any type of weapon switching | V
-		if (vehicle player == player && !(currentWeapon player == "" || currentWeapon player isKindOf ["Pistol", configFile >> "CfgWeapons"])) then {
-			["holster"] call NZF_weaponHolster;
-			[[player,"AmovPercMstpSnonWnonDnon"],"life_fnc_animSync", true, false] spawn bis_fnc_mp;
-			player switchMove "AmovPercMstpSnonWnonDnon";
-		};
 		if (currentVisionMode player == 1) then { // Check if the player has enabled night vision, if so disable it
 			player action ["nvGogglesOff", player];
 		};
