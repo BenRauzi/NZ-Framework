@@ -36,6 +36,10 @@ NZF_openSpawnSelect = {
     cutText ["","Black In", 5];
     5 fadeSound 0.3;
 
+    sleep 10;
+    sCam cameraEffect ["terminate","back"];
+    camDestroy sCam;
+
     /*
     // Create Dialog 
     createDialog "createCharacter";
