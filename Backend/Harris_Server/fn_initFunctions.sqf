@@ -10,7 +10,7 @@ if (!isMultiplayer || isServer) then {
 	Save_Function_List = ["initStats", "loadStats", "saveStats", "saveStatsLocal"];
 	Save_Functions = ["Server", "Save", "Harris", Save_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Misc_Function_List = ["keyHandler","hideLocally","setFaceGlobal","weaponHolster","playerSurrender","actionSyncMP", "setBlood", "dropHandgun"];
+	Misc_Function_List = ["keyHandler","hideLocally","setFaceGlobal","weaponHolster","playerSurrender","actionSyncMP", "dropHandgun"];
 	Misc_Functions = ["Functions", "Misc", "NZF", Misc_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Interaction_Function_List = ["colourRadialInner", "colourRadialOuter", "interactionExecute", "openInteraction"];
@@ -28,8 +28,8 @@ if (!isMultiplayer || isServer) then {
 	Police_Function_List = [""];
 	Police_Functions = ["Functions", "Police", "NZF", Police_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Medical_Function_List = ["handleDamage"];
-	Medical_Functions = ["Functions", "Police", "NZF", Medical_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
+	Medical_Function_List = ["handleDamage", "setBlood"];
+	Medical_Functions = ["Functions", "Medical", "NZF", Medical_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions, Occupation_Function_List, Police_Function_List, Medical_Functions];
 
