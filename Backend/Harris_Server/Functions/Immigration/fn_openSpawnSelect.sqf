@@ -15,10 +15,8 @@ NZF_openSpawnSelect = {
     // Position Player
     player attachTo [sObj,[9.3,7.5,-7.07]];
     detach player;
-    player enableSimulation false; 
     player allowDamage false;
     player setDir 150;
-    [player, "STAND_U1", "NONE"] call BIS_fnc_ambientAnim;
 
     // Fade Out Screen
     cutText ["","BLACK FADED",0];
