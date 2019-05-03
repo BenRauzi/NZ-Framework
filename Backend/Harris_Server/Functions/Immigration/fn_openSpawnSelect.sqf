@@ -13,10 +13,18 @@ NZF_openSpawnSelect = {
     sObj setPos [0,0,1000];
 
     // Position Player
+    _ppos = getPosATL player;
     player attachTo [sObj,[9.3,7.5,-7.07]];
     detach player;
     player allowDamage false;
     player setDir 150;
+    player switchMove ""; // Fix Holding Invisible Gun Animation
+
+    // Play Random Funny Animations (Only a 1 in 100 chance)
+    if ((random 100) > 99) then {
+    	_anims = ["AmovPercMstpSnonWnonDnon_exerciseKata","AmovPercMstpSnonWnonDnon_exercisePushup","AmovPercMstpSnonWnonDnon_exercisekneeBendB"]; // Kung Fu -> Pushups -> Squats
+    	player playMove (selectRandom _anims); 
+    };
 
     // Fade Out Screen
     cutText ["","BLACK FADED",0];
@@ -36,6 +44,10 @@ NZF_openSpawnSelect = {
     sleep 10;
     sCam cameraEffect ["terminate","back"];
     camDestroy sCam;
+    sCam = nil;
+    player setPosATL _ppos;
+    deleteVehicle sObj;
+    sObj = nil;
 
     /*
     // Create Dialog 
