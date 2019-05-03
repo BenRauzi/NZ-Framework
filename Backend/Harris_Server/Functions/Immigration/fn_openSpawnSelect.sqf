@@ -12,18 +12,19 @@ NZF_openSpawnSelect = {
     sObj allowDamage false;
     sObj setPos [0,0,1000];
 
-    // Position Player
-    _ppos = getPosATL player;
-    player attachTo [sObj,[9.3,7.5,-7.07]];
-    detach player;
-    player allowDamage false;
-    player setDir 150;
-    player switchMove ""; // Fix Holding Invisible Gun Animation
+    // Spawn NPC
+    sNPC = "C_man_1" createVehicleLocal [0,0,0];
+    sNPC allowDamage false;
+    sNPC attachTo [sObj,[9.3,7.5,-7.07]];
+    detach sNPC;
+    sNPC setDir 150;
+    sNPC setUnitLoadout (getUnitLoadout player);
+    sNPC setFace ((player getvariable "currentidentity" select 2) select 0);
 
     // Play Random Funny Animations (Only a 1 in 100 chance)
-    if ((random 100) > 99) then {
+    if ((random 100) > 1) then {
     	_anims = ["AmovPercMstpSnonWnonDnon_exerciseKata","AmovPercMstpSnonWnonDnon_exercisePushup","AmovPercMstpSnonWnonDnon_exercisekneeBendB"]; // Kung Fu -> Pushups -> Squats
-    	player playMove (selectRandom _anims); 
+    	sNPC playMove (selectRandom _anims); 
     };
 
     // Fade Out Screen
@@ -45,9 +46,10 @@ NZF_openSpawnSelect = {
     sCam cameraEffect ["terminate","back"];
     camDestroy sCam;
     sCam = nil;
-    player setPosATL _ppos;
     deleteVehicle sObj;
+    deleteVehicle sNPC;
     sObj = nil;
+    sNPC = nil;
 
     /*
     // Create Dialog 
