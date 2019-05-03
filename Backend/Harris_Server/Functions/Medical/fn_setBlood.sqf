@@ -13,7 +13,6 @@ NZF_setBlood = {
 
 	_damageChange = _damage - player_damage;
 
-
 	for "_i" from player_damage to _damage step (_damageChange / 10) do {
 		(_bloodOverlay displayCtrl 1200) ctrlSetTextColor [1,1,1,_i];
 		sleep 0.05;
