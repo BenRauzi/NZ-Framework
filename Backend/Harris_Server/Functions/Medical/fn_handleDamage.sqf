@@ -8,6 +8,9 @@ NZF_handleDamage = {
 	_person = _this select 6;
 	_returnDamage = _damage;
 
-	[_damage] spawn NZF_setBlood;
+	if (_damage > player_damage) then {
+		[_damage] spawn NZF_setBlood;
+	};
+
 	_returnDamage;
 };
