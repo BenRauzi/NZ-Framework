@@ -44,7 +44,7 @@ class rscTitles {
     duration = 99999999999;
     fadeout=3;
     onLoad="uiNamespace setVariable ['NZF_HUD',_this select 0]";
-    onUnLoad="uiNamespace setVariable ['NZF_HUD', displayNull]"
+    onUnLoad="uiNamespace setVariable ['NZF_HUD', displayNull]";
     objects[]={};
     class controls 
     {
