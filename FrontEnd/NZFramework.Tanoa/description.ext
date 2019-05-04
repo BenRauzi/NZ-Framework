@@ -35,7 +35,58 @@ corpseLimit = 30;
 corpseRemovalMinTime = 600;
 corpseRemovalMaxTime = 800;
 
-class RscTitles {};
+class rscTitles {
+  class NZF_HUD
+  {
+    name = "NZF_HUD";
+    idd = 23590;
+    fadein=3;
+    duration = 99999999999;
+    fadeout=3;
+    onLoad="uiNamespace setVariable ['NZF_HUD',_this select 0]";
+    onUnLoad="uiNamespace setVariable ['NZF_HUD', displayNull]"
+    objects[]={};
+    class controls 
+    {
+      class Thirst_Bar: RscPicture
+      {
+        idc = 1200;
+        text = "\Harris_Client\HUD\100%.paa";
+        x = 0.824844 * safezoneW + safezoneX;
+        y = 0.874 * safezoneH + safezoneY;
+        w = 0.0464063 * safezoneW;
+        h = 0.077 * safezoneH;
+      };
+      class Hunger_Bar: RscPicture
+      {
+        idc = 1201;
+        text = "\Harris_Client\HUD\100%.paa";
+        x = 0.886719 * safezoneW + safezoneX;
+        y = 0.874 * safezoneH + safezoneY;
+        w = 0.0464063 * safezoneW;
+        h = 0.077 * safezoneH;
+      };
+      class Thirst_Icon: RscPicture
+      {
+        idc = 1202;
+        text = "\Harris_Client\HUD\Food.paa";
+        x = 0.887761 * safezoneW + safezoneX;
+        y = 0.874926 * safezoneH + safezoneY;
+        w = 0.0464063 * safezoneW;
+        h = 0.077 * safezoneH;
+      };
+      class Hunger_Icon: RscPicture
+      {
+        idc = 1203;
+        text = "\Harris_Client\HUD\Water.paa";
+        x = 0.824844 * safezoneW + safezoneX;
+        y = 0.874 * safezoneH + safezoneY;
+        w = 0.0464063 * safezoneW;
+        h = 0.077 * safezoneH;
+      };
+    };
+  };
+};
 
 class CfgRemoteExec
 {        
