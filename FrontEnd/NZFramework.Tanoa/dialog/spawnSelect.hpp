@@ -456,7 +456,7 @@ class spawnSelect
 			rowHeight = 0;
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect",0.09,1.0};
-			onLBSelChanged = "((findDisplay 2000) displayCtrl 2006) ctrlMapAnimAdd [0.1, 0.1, getMarkerPos lbData[2004,(lbCurSel 2004)]]; ctrlMapAnimCommit ((findDisplay 2000) displayCtrl 2006);";
+			onLBSelChanged = "((findDisplay 2000) displayCtrl 2006) ctrlMapAnimAdd [0.5, 0.1, getMarkerPos lbData[2004,(lbCurSel 2004)]]; ctrlMapAnimCommit ((findDisplay 2000) displayCtrl 2006);";
 			class ListScrollBar
 			{
 				color[] = {1,1,1,1};
@@ -496,6 +496,7 @@ class spawnSelect
 			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			action = "[lbData[2004,(lbCurSel 2004)]] spawn NZF_spawnPlayer;";
 		};
 		class Map: NZF_RscMapControl
 		{

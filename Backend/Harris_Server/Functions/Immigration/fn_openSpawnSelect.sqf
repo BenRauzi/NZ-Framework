@@ -53,14 +53,4 @@ NZF_openSpawnSelect = {
 		lbSetData [2004, _index, (_x select 1)];
 	} forEach NZF_spawnLocations;
 	lbSetCurSel [2004, 0];
-
-    sleep 10;
-    closeDialog 0;
-    sCam cameraEffect ["terminate","back"];
-    camDestroy sCam;
-    sCam = nil;
-    deleteVehicle sObj;
-    deleteVehicle sNPC;
-    sObj = nil;
-    sNPC = nil;
 };
