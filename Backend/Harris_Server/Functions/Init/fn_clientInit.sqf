@@ -51,4 +51,7 @@ Harris_clientInit = {
 
 	player addEventHandler["HandleDamage","_this call NZF_handleDamage"];
 
+	NZF_Thirst = 100;
+	NZF_Hunger = 100;
+
 };
