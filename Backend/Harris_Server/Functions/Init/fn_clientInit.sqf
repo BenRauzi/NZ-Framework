@@ -15,11 +15,17 @@ Harris_clientInit = {
 	NZF_createCharGlasses = ["G_Aviator","G_Spectacles","G_Spectacles_Tinted","G_Shades_Black"];
 	NZF_createCharHeadgear = ["H_Cap_grn_BI","H_Cap_blk","H_Cap_blu","H_Cap_grn"];
 
-	NZF_spawnLocations = [ // ["Display Name","Marker Name"]
+	NZF_spawnLocations = [
 		["Rautake","Rautake_SP"],
 		["Lifou","Lifou_SP"],
 		["Moddergat","Moddergat_SP"],
 		["Tuvunaka","Tuvanaka_SP"]
+	];
+
+	NZF_licenseList = [
+		["Driver's License","NZF_license_driver"],
+		["Truck License","NZF_license_truck"],
+		["Boat License","NZF_license_boat"]
 	];
 
 	cutText ["Fetching Player Information","BLACK FADED",0];
