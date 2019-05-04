@@ -6,7 +6,6 @@
 NZF_spawnPlayer = { 
     params ["_sMarker"];
     closeDialog 0;
-    
     20 cutText ["","Black Out", 2];
     5 fadeSound 0;
     sleep 5;
