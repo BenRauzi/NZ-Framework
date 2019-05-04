@@ -43,8 +43,13 @@ NZF_openSpawnSelect = {
     // Fade In Screen
     cutText ["","Black In", 5];
     5 fadeSound 0.3;
+    
+    // Create Dialog 
+    createDialog "spawnSelect";
+    (findDisplay 2000) displaySetEventHandler ["KeyDown","if((_this select 1) isEqualTo 1) then {true}"];
 
     sleep 10;
+    closeDialog 0;
     sCam cameraEffect ["terminate","back"];
     camDestroy sCam;
     sCam = nil;
@@ -52,12 +57,7 @@ NZF_openSpawnSelect = {
     deleteVehicle sNPC;
     sObj = nil;
     sNPC = nil;
-
-    /*
-    // Create Dialog 
-    createDialog "createCharacter";
-    (findDisplay 1000) displaySetEventHandler ["KeyDown","if((_this select 1) isEqualTo 1) then {true}"];
-
+	/*
     // Load Spawn Locations
 	_facesArray = [];
 	_cfg = (configFile >> "CfgFaces"); 

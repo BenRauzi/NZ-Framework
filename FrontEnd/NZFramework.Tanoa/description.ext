@@ -64,6 +64,7 @@ class CfgRemoteExec
 #include "dialog\common.hpp"
 #include "dialog\interactionMenu.hpp"
 #include "dialog\createCharacter.hpp"
+#include "dialog\spawnSelect.hpp"
 #include "cfgInteractions.hpp"
 
 class Harris_invis_button: Harris_RscButton {
