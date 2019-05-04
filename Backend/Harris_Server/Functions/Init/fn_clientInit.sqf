@@ -15,6 +15,12 @@ Harris_clientInit = {
 	NZF_createCharGlasses = ["G_Aviator","G_Spectacles","G_Spectacles_Tinted","G_Shades_Black"];
 	NZF_createCharHeadgear = ["H_Cap_grn_BI","H_Cap_blk","H_Cap_blu","H_Cap_grn"];
 
+	NZF_spawnLocations = [
+		["Spawn Name1","Marker Name1"],
+		["Spawn Name2","Marker Name2"],
+		["Spawn Name3","Marker Name3"]
+	];
+
 	cutText ["Fetching Player Information","BLACK FADED",0];
 	[player] remoteExecCall	["Harris_initStats", 2];
 	waitUntil{!isNull (findDisplay 46)};
