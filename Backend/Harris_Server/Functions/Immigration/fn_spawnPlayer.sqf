@@ -6,7 +6,6 @@
 NZF_spawnPlayer = { 
     params ["_sMarker"];
     closeDialog 0;
-    
     20 cutText ["","Black Out", 2];
     5 fadeSound 0;
     sleep 5;
@@ -25,6 +24,4 @@ NZF_spawnPlayer = {
     player switchCamera "Internal";
     20 cutText ["","Black in", 5];
     5 fadeSound 1;
-
-
 };
