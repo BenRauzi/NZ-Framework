@@ -35,6 +35,12 @@ corpseLimit = 30;
 corpseRemovalMinTime = 600;
 corpseRemovalMaxTime = 800;
 
+#include "dialog\common.hpp"
+#include "dialog\interactionMenu.hpp"
+#include "dialog\createCharacter.hpp"
+#include "dialog\spawnSelect.hpp"
+#include "cfgInteractions.hpp"
+
 class rscTitles {
   class NZF_HUD
   {
@@ -111,12 +117,6 @@ class CfgRemoteExec
           
 	};
 };
-
-#include "dialog\common.hpp"
-#include "dialog\interactionMenu.hpp"
-#include "dialog\createCharacter.hpp"
-#include "dialog\spawnSelect.hpp"
-#include "cfgInteractions.hpp"
 
 class Harris_invis_button: Harris_RscButton {
   colorBackground[] = {0,0,0,0};
