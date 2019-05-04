@@ -6,7 +6,10 @@
 NZF_spawnPlayer = { 
     params ["_sMarker"];
     closeDialog 0;
-    cutText ["","Black Out", 2];
+    if (isNull (uiNamespace getVariable ['NZF_HUD', displayNull])) then {
+        [] spawn NZF_hudLoop;
+    };
+    20 cutText ["","Black Out", 2];
     5 fadeSound 0;
     sleep 5;
     deleteVehicle sObj;
@@ -21,4 +24,6 @@ NZF_spawnPlayer = {
     player switchCamera "Internal";
     cutText ["","Black in", 5];
     5 fadeSound 1;
+
+
 };
