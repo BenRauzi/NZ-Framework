@@ -6,12 +6,13 @@
 NZF_spawnPlayer = { 
     params ["_sMarker"];
     closeDialog 0;
-    if (isNull (uiNamespace getVariable ['NZF_HUD', displayNull])) then {
-        [] spawn NZF_hudLoop;
-    };
+    
     20 cutText ["","Black Out", 2];
     5 fadeSound 0;
     sleep 5;
+    if (isNull (uiNamespace getVariable ['NZF_HUD', displayNull])) then {
+        [] spawn NZF_hudLoop;
+    };
     deleteVehicle sObj;
     deleteVehicle sNPC;
     sCam cameraEffect ["terminate","back"];
@@ -22,7 +23,7 @@ NZF_spawnPlayer = {
     player setPos (getMarkerPos _sMarker);
     player setDir (markerDir _sMarker);
     player switchCamera "Internal";
-    cutText ["","Black in", 5];
+    20 cutText ["","Black in", 5];
     5 fadeSound 1;
 
 
