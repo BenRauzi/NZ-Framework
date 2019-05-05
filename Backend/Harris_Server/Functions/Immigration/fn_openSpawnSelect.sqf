@@ -45,7 +45,7 @@ NZF_openSpawnSelect = {
     5 fadeSound 0.3;
     
     // Create Dialog 
-    createDialog "spawnSelect";
+    createDialog "NZF_spawnSelect";
     (findDisplay 2000) displaySetEventHandler ["KeyDown","if((_this select 1) isEqualTo 1) then {true}"];
 	
 	{ // Load Spawn Locations

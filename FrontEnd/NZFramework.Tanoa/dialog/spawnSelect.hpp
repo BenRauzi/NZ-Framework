@@ -382,7 +382,7 @@ class NZF_RscMapControl
 	};
 };
 
-class spawnSelect
+class NZF_spawnSelect
 {
 	idd = 2000;
 	class ControlsBackground

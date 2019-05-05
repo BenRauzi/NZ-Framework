@@ -1,4 +1,4 @@
-class createCharacter
+class NZF_createCharacter
 {
 	idd = 1000;
 	

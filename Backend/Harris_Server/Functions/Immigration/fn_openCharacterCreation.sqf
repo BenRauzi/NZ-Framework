@@ -38,7 +38,7 @@ NZF_openCharacterCreation = {
     5 fadeSound 0.3;
 
     // Create Dialog
-    createDialog "createCharacter";
+    createDialog "NZF_createCharacter";
     (findDisplay 1000) displaySetEventHandler ["KeyDown","if((_this select 1) isEqualTo 1) then {true}"];
 
     // Load Faces
