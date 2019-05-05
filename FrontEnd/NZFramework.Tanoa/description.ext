@@ -37,9 +37,12 @@ corpseRemovalMaxTime = 800;
 
 #include "dialog\common.hpp"
 #include "dialog\interactionMenu.hpp"
+#include "cfgInteractions.hpp"
+
+// Foski's Dialogs
 #include "dialog\createCharacter.hpp"
 #include "dialog\spawnSelect.hpp"
-#include "cfgInteractions.hpp"
+#include "dialog\shopDialog.hpp"
 
 class rscTitles {
   class NZF_HUD
