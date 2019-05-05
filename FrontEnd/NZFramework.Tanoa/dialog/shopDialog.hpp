@@ -91,7 +91,7 @@ class NZF_shopDialog
 			soundExpand[] = {"\A3\ui_f\data\sound\RscCombo\soundExpand",0.1,1.0};
 			soundSelect[] = {"\A3\ui_f\data\sound\RscCombo\soundSelect",0.1,1.0};
 			wholeHeight = 0.3;
-			onLBSelChanged = "[((lbData[_category,(lbCurSel _category)]) splitString ',') select 0)] spawn NZF_loadShopItems;";
+			onLBSelChanged = "[(((lbData[3005,(lbCurSel 3005)]) splitString ',') select 0)] spawn NZF_loadShopItems;";
 			class ComboScrollBar
 			{
 				color[] = {1,1,1,1};
@@ -109,7 +109,7 @@ class NZF_shopDialog
 			x = safeZoneX + safeZoneW * 0.51875;
 			y = safeZoneY + safeZoneH * 0.29777778;
 			w = safeZoneW * 0.2625;
-			h = safeZoneH * 0.34888889;
+			h = safeZoneH * 0.3;
 			style = 16;
 			colorBackground[] = {0,0,0,0.75};
 			colorDisabled[] = {0.2,0.2,0.2,1};
@@ -123,7 +123,7 @@ class NZF_shopDialog
 			rowHeight = 0;
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect",0.09,1.0};
-			onLBSelChanged = "((findDisplay 2000) displayCtrl 2006) ctrlMapAnimAdd [0.5, 0.1, getMarkerPos lbData[2004,(lbCurSel 2004)]]; ctrlMapAnimCommit ((findDisplay 2000) displayCtrl 2006);";
+			onLBSelChanged = "[] spawn NZF_shopLBChange;";
 			class ListScrollBar
 			{
 				color[] = {1,1,1,1};
@@ -134,10 +134,41 @@ class NZF_shopDialog
 				
 			};
 		};
+		class ItemPrice_Title
+		{
+			type = 0;
+			idc = 3007;
+			x = safeZoneX + safeZoneW * 0.51875;
+			y = safeZoneY + safeZoneH * 0.60666667;
+			w = safeZoneW * 0.1375;
+			h = safeZoneH * 0.03666667;
+			style = 2;
+			text = "Item Price: $100";
+			colorBackground[] = {0.4,0.4,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
+
+		class LackPrice_Title
+		{
+			type = 0;
+			idc = 3008;
+			x = safeZoneX + safeZoneW * 0.64375;
+			y = safeZoneY + safeZoneH * 0.60666667;
+			w = safeZoneW * 0.1375;
+			h = safeZoneH * 0.03666667;
+			style = 2;
+			text = "You Lack: $100";
+			colorBackground[] = {0.4,0.4,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+		};
 		class Purchase_BTN
 		{
 			type = 1;
-			idc = 3005;
+			idc = 3009;
 			x = safeZoneX + safeZoneW * 0.51875;
 			y = safeZoneY + safeZoneH * 0.66444445;
 			w = safeZoneW * 0.2625;

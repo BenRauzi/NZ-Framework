@@ -3,25 +3,6 @@
     Description: Opens a shop
 */
 
-NZF_shopList = [ // (((NZF_shopList select 1) select 2) select 1) select 1
-	["Firearms Store","NZF_firearmStore",[
-		["Handguns",[
-			["hgun_Rook40_F","Pew Pew Pew",760]
-		]],
-		["Rifles",[
-			["hgun_Rook40_F","Pew Pew Pew",760]
-		]]
-	]],
-	["Corner Store","NZF_cornerStore",[
-		["Items",[
-			["Item_ToolKit","Mr. Fix",250]
-		]],
-		["Food",[
-			["hgun_Rook40_F","Pew Pew Pew",760]
-		]]
-	]]
-];
-
 NZF_openShop = {
 	params ["_shop"];
 	if (isNil "_shop") exitWith {};
@@ -48,7 +29,7 @@ NZF_openShop = {
 
 		    // Fade Out Screen
 		    2 fadeSound 0;
-		    cutText ["","BLACK Out",2];
+		    20 cutText ["","BLACK Out",2];
 		    sleep 3;
 
 		    // Setup Camera
@@ -60,7 +41,7 @@ NZF_openShop = {
 		    shCam camCommit 0;
 
 		    // Fade In Screen
-		    cutText ["","Black In", 5];
+		    20 cutText ["","Black In", 5];
 		    5 fadeSound 0.1;
 
 	    	// Create Dialog 

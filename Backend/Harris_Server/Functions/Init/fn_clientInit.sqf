@@ -28,6 +28,25 @@ Harris_clientInit = {
 		["Boat License","NZF_license_boat"]
 	];
 
+	NZF_shopList = [
+		["Firearms Store","NZF_firearmStore",[
+			["Handguns",[
+				["hgun_Rook40_F","Pew Pew Pew",760]
+			]],
+			["Rifles",[
+				["hgun_Rook40_F","Pew Pew Pew Pew Pew Pew",760]
+			]]
+		]],
+		["Corner Store","NZF_cornerStore",[
+			["Items",[
+				["Item_ToolKit","Mr. FixIt",250]
+			]],
+			["Food",[
+				["hgun_Rook40_F","Pew Pew Pew Munch Munch Pew Pew",760]
+			]]
+		]]
+	];
+
 	cutText ["Fetching Player Information","BLACK FADED",0];
 	[player] remoteExecCall	["Harris_initStats", 2];
 	waitUntil{!isNull (findDisplay 46)};
