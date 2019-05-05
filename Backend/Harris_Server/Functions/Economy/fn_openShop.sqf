@@ -4,7 +4,7 @@
 */
 
 NZF_shopList = [ // (((NZF_shopList select 1) select 2) select 1) select 1
-	["Firearm Store","NZF_firearmStore",[
+	["Firearms Store","NZF_firearmStore",[
 		["Handguns",[
 			["hgun_Rook40_F","Pew Pew Pew",760]
 		]],
@@ -65,7 +65,8 @@ NZF_openShop = {
 
 	    	// Create Dialog 
 	    	createDialog "NZF_shopDialog";
-	    	(findDisplay 2000) displaySetEventHandler ["KeyDown","if((_this select 1) isEqualTo 1) then {[] spawn {
+	    	ctrlSetText [3002, _x select 0];
+	    	(findDisplay 3000) displaySetEventHandler ["KeyDown","if((_this select 1) isEqualTo 1) then {[] spawn {
 	    	    closeDialog 0;
 	    		20 cutText ['','Black Out', 2];
 	    		5 fadeSound 0;
@@ -80,6 +81,14 @@ NZF_openShop = {
 	    		20 cutText ['','Black in', 5];
     			5 fadeSound 1;
 	    	};};"];
+
+	    	{ // Load Categories
+			   	_index = lbAdd [3005, _x select 0];
+			    lbSetData [3005, _index, _shop + "," + (_x select 0)];
+			} forEach (_x select 2);
+			lbSetCurSel [3005, 0];
+
+	    	[_shop] call NZF_loadShopItems;
 		};
 	} forEach NZF_shopList;
 };

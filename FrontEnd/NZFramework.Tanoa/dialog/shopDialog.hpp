@@ -79,8 +79,10 @@ class NZF_shopDialog
 			arrowFull = "\A3\ui_f\data\GUI\RscCommon\RscCombo\arrow_combo_active_ca.paa";
 			colorBackground[] = {0,0,0,0.75};
 			colorDisabled[] = {0.2,0.2,0.2,1};
-			colorSelect[] = {1,1,1,1};
+			colorSelect[] = {0,0,0,1};
+			colorSelect2[] = {0,0,0,1};
 			colorSelectBackground[] = {0.8,0.8,0.8,1};
+			colorSelectBackground2[] = {1,1,1,0.5};
 			colorText[] = {1,1,1,1};
 			font = "PuristaMedium";
 			maxHistoryDelay = 0;
@@ -89,6 +91,7 @@ class NZF_shopDialog
 			soundExpand[] = {"\A3\ui_f\data\sound\RscCombo\soundExpand",0.1,1.0};
 			soundSelect[] = {"\A3\ui_f\data\sound\RscCombo\soundSelect",0.1,1.0};
 			wholeHeight = 0.3;
+			onLBSelChanged = "[((lbData[_category,(lbCurSel _category)]) splitString ",") select 0)] spawn NZF_loadShopItems;";
 			class ComboScrollBar
 			{
 				color[] = {1,1,1,1};
