@@ -118,6 +118,9 @@ class NZF_shopDialog
 			colorSelectBackground[] = {0.8,0.8,0.8,1};
 			colorSelectBackground2[] = {1,1,1,0.5};
 			colorText[] = {1,1,1,1};
+			colorPicture[] = {1,1,1,1};
+			colorPictureSelected[] = {1,1,1,1};
+			colorPictureDisabled[] = {1,1,1,1};
 			font = "PuristaMedium";
 			maxHistoryDelay = 0;
 			rowHeight = 0;
@@ -149,7 +152,6 @@ class NZF_shopDialog
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 		};
-
 		class LackPrice_Title
 		{
 			type = 0;

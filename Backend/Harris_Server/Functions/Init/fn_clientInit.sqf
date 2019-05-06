@@ -42,6 +42,7 @@ Harris_clientInit = {
 				["Item_ToolKit","Mr. FixIt",250]
 			]],
 			["Food",[
+				["hgun_Rook40_F","Pew Pew Pew Munch Munch Pew Pew",760],
 				["hgun_Rook40_F","Pew Pew Pew Munch Munch Pew Pew",760]
 			]]
 		]]

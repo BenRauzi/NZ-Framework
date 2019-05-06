@@ -63,6 +63,8 @@ NZF_openShop = {
     			5 fadeSound 1;
 	    	};};"];
 
+	    	shNPC addWeapon "SMG_03_hex";
+
 	    	{ // Load Categories
 			   	_index = lbAdd [3005, _x select 0];
 			    lbSetData [3005, _index, _shop + "," + (_x select 0)];
