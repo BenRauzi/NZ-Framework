@@ -5,6 +5,8 @@
 
 NZF_listIdentities = {
 	waitUntil{!isNull (findDisplay 5041)};
+	(findDisplay 5041) displaySetEventHandler ["KeyDown","if((_this select 1) isEqualTo 1) then {true}"];
+
 
 	_ctrl = [77777, 77778, 77779, 77780, 77781, 77782,71324,71328,71325,71329,71327,71326,1202];
 

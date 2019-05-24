@@ -18,9 +18,9 @@ Harris_loadStats = {
 
 	_bankAccount = _info select 0;
 
-	player setVariable ["cash", _info select 1];
+	player setVariable ["cash", _info select 1, true];
 
-	player setVariable ["bank", _info select 2];
+	player setVariable ["bank", _info select 2, true];
 
 	_gearLoaded = false;
 	{
@@ -41,6 +41,20 @@ Harris_loadStats = {
 			player setVariable ["medicLevel", ( _x select 0)];
 		};
 	} forEach (_info select 5); //medicLevel example of multi-identity
+
+	{
+		if (_x select 1 == _identity) exitWith {
+			_identity = (player getVariable "currentIdentity");
+			_identity set[3, _x select 0];
+			player setVariable ["currentIdentity", _identity, true];
+		};
+	} forEach (_info select 6); //medicLevel example of multi-identity
+
+	if (isNil {(player getVariable "currentIdentity") select 3}) then {
+		_identity = (player getVariable "currentIdentity");
+		_identity set[3, []];
+		player setVariable ["currentIdentity", _identity, true];
+	};
 
 	if !(_gearLoaded) then {
 		[] spawn NZF_openCharacterCreation;

@@ -5,5 +5,5 @@
 */
 
 Harris_saveStatsLocal = {
-	[player] remoteExecCall ["Harris_saveStats", 2];
+	[player, player getVariable "playerInfo"] remoteExecCall ["Harris_saveStats", 2];
 };

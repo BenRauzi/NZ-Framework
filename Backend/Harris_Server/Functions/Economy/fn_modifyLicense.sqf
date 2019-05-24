@@ -13,12 +13,14 @@ NZF_modifyLicense = {
 			{
 				if (_license == _x select 1 && !(_license in _pLicenses)) then {
 					_pLicenses pushBack _license;
+					player setVariable ["currentIdentity", (player getVariable "currentIdentity"), true];
 				};
 			};
 			case "remove":
 			{
 				if (_license in _pLicenses) then {
 					_pLicenses deleteAt (_pLicenses find _license);
+					player setVariable ["currentIdentity", (player getVariable "currentIdentity"), true];
 				};
 			};
 		};

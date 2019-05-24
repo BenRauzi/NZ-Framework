@@ -7,7 +7,7 @@ if (!isMultiplayer || isServer) then {
 	Init_Function_List = ["serverInit", "clientInit"];
 	Init_Functions = ["Functions", "Init", "Harris", Init_Function_List, "Client"];//Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Save_Function_List = ["initStats", "loadStats", "saveStats", "saveStatsLocal"];
+	Save_Function_List = ["initStats", "loadStats", "saveStats", "saveStatsLocal", "statsReturned"];
 	Save_Functions = ["Server", "Save", "Harris", Save_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Misc_Function_List = ["keyHandler","hideLocally","setFaceGlobal","weaponHolster","playerSurrender","actionSyncMP", "dropHandgun", "hudLoop", "getConfigName"];
@@ -48,7 +48,6 @@ if (!isMultiplayer || isServer) then {
 		_scope = _x select 4;
 		{
 			_file = format["%1\fn_%2.sqf", _dir, _x];
-			diag_log format["%1 Opened", _file];
 			[] call compile preprocessFileLineNumbers _file; //Could move this to compileFinal for security, however call compile allows more flexibility
 			if (_scope == "Client") then {
 				publicVariable format["%1_%2", _tag, _x];

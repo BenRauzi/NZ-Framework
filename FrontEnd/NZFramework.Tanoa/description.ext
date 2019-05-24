@@ -585,4 +585,62 @@ class NZF_identityListGUI
   };
 };
 
+
+class NZF_jailHUD
+{
+  idd = 5042;
+  movingEnabled = false;
+  onLoad = "";
+
+  class controls
+  {
+    class HUD_image: RscPicture
+    {
+      idc = 1200;
+      text = "\Harris_Client\police\jailHud.paa";
+      x = 0.860937 * safezoneW + safezoneX;
+      y = 0.049 * safezoneH + safezoneY;
+      w = 0.149531 * safezoneW;
+      h = 0.275 * safezoneH;
+    };
+   
+    class Time_Label: RscText
+    {
+      idc = 1001;
+      text = "Time Remaining:"; //--- ToDo: Localize;
+      x = 0.907344 * safezoneW + safezoneX;
+      y = 0.126 * safezoneH + safezoneY;
+      w = 0.0670312 * safezoneW;
+      h = 0.033 * safezoneH;
+    };
+    class Time_Text: RscText
+    {
+      idc = 1002;
+      text = "00:00"; //--- ToDo: Localize;
+      x = 0.907344 * safezoneW + safezoneX;
+      y = 0.159 * safezoneH + safezoneY;
+      w = 0.061875 * safezoneW;
+      h = 0.022 * safezoneH;
+    };
+    class Crimes_Label: RscText
+    {
+      idc = 1000;
+      text = "Crimes Committed:"; //--- ToDo: Localize;
+      x = 0.902187 * safezoneW + safezoneX;
+      y = 0.192 * safezoneH + safezoneY;
+      w = 0.0721875 * safezoneW;
+      h = 0.022 * safezoneH;
+    };
+    class Crimes_Text: RscText
+    {
+      idc = 1003;
+      style = ST_MULTI + ST_NO_RECT;
+      text = "1x Manslaughter, 1x Murder, 1x Drunk Driving"; //--- ToDo: Localize;
+      x = 0.884115 * safezoneW + safezoneX;
+      y = 0.219556 * safezoneH + safezoneY;
+      w = 0.103125 * safezoneW;
+      h = 0.055 * safezoneH;
+    };
+  };
+};
 onPauseScript[] = { "Harris_saveStatsLocal" }; // When people press esc

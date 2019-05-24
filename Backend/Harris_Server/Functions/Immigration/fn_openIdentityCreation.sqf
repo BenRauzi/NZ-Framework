@@ -5,7 +5,7 @@
 
 NZF_openIdentityCreation = {
 	createDialog "NZF_createIdentityGUI";
-
+	(findDisplay 5041) displaySetEventHandler ["KeyDown","if((_this select 1) isEqualTo 1) then {true}"];
 	{
 		_index = lbAdd [2101, _x];
 		lbSetData [2101, _index, _x];
