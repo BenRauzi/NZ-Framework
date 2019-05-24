@@ -9,13 +9,13 @@ respawn = BASE;
 respawndelay = 1;
 disabledAI = true;
 disableChannels[] = {
-	{0, true, true}, //--- Global Chat
-	{1, true, true}, //--- Side Chat
-	{2, true, true}, //--- Command Chat
-	{3, true, true}, //--- Group Chat
-	{4, true, true}, //--- Vehicle Chat
-	{5, true, true}, //--- Direct Chat
-	{6, true, true} //--- System Chat
+  {0, true, true}, //--- Global Chat
+  {1, true, true}, //--- Side Chat
+  {2, true, true}, //--- Command Chat
+  {3, true, true}, //--- Group Chat
+  {4, true, true}, //--- Vehicle Chat
+  {5, true, true}, //--- Direct Chat
+  {6, true, true} //--- System Chat
 };
 enableDebugConsole[] = {"76561198072625284","76561198099644981","76561198062192032"};  // Nicholas Jo'Foski -> Ben Harris -> John Doe
 
@@ -23,9 +23,9 @@ respawnDialog = 0;
 
 class Header
 {
-	gameType = RPG;
-	minPlayers = 1;
-	maxPlayers = 123;
+  gameType = RPG;
+  minPlayers = 1;
+  maxPlayers = 123;
 };
 
 wreckLimit = 3;
@@ -95,6 +95,74 @@ class rscTitles {
       };
     };
   };
+
+class NZF_jailHUD
+{
+  name = "NZF_jailHUD";
+  idd = 23595;
+  fadein=1;
+  duration = 99999999999;
+  fadeout=3;
+  onLoad="uiNamespace setVariable ['NZF_jailHUD',_this select 0]";
+  onUnLoad="uiNamespace setVariable ['NZF_jailHUD', displayNull]";
+  objects[]={};
+
+  class controls
+  {
+    class HUD_image: RscPicture
+    {
+      idc = 1200;
+      text = "\Harris_Client\police\jailHud.paa";
+      x = 0.860937 * safezoneW + safezoneX;
+      y = 0.049 * safezoneH + safezoneY;
+      w = 0.149531 * safezoneW;
+      h = 0.275 * safezoneH;
+    };
+   
+    class Time_Label: RscText
+    {
+      idc = 1001;
+      text = "Time Remaining:"; //--- ToDo: Localize;
+      x = 0.907344 * safezoneW + safezoneX;
+      y = 0.09 * safezoneH + safezoneY;
+      w = 0.0670312 * safezoneW;
+      h = 0.08 * safezoneH;
+      colorShadow[] = {0,0,0,0};
+    };
+    class Time_Text: RscText
+    {
+      idc = 1002;
+      style = ST_CENTER;
+      text = "00:00"; //--- ToDo: Localize;
+      x = 0.907344 * safezoneW + safezoneX;
+      y = 0.115 * safezoneH + safezoneY;
+      w = 0.061875 * safezoneW;
+      h = 0.08 * safezoneH;
+      colorShadow[] = {0,0,0,0};
+    };
+    class Crimes_Label: RscText
+    {
+      idc = 1000;
+      text = "Crimes Committed:"; //--- ToDo: Localize;
+      x = 0.902187 * safezoneW + safezoneX;
+      y = 0.145 * safezoneH + safezoneY;
+      w = 0.0721875 * safezoneW;
+      h = 0.08 * safezoneH;
+      colorShadow[] = {0,0,0,0};
+    };
+    class Crimes_Text: RscText
+    {
+      idc = 1003;
+      style = ST_MULTI + ST_NO_RECT;
+      text = "1x Manslaughter, 1x Murder, 1x Drunk Driving, 2x Mass Potato, 5x Reckless Driving"; //--- ToDo: Localize;
+      x = 0.884115 * safezoneW + safezoneX;
+      y = 0.195 * safezoneH + safezoneY;
+      w = 0.103125 * safezoneW;
+      h = 0.08 * safezoneH;
+      colorShadow[] = {0,0,0,0};
+    };
+  };
+};
 };
 
 class CfgRemoteExec
@@ -118,7 +186,7 @@ class CfgRemoteExec
    {
           /*your commands here*/
           
-	};
+  };
 };
 
 class Harris_invis_button: Harris_RscButton {
@@ -586,61 +654,193 @@ class NZF_identityListGUI
 };
 
 
-class NZF_jailHUD
+class NZF_arrestPapers
 {
-  idd = 5042;
+  idd = 5065;
   movingEnabled = false;
-  onLoad = "";
-
+  onLoad = "[] spawn NZF_arrestGUIOpened";
   class controls
   {
-    class HUD_image: RscPicture
+    class Background_P: RscPicture
     {
       idc = 1200;
-      text = "\Harris_Client\police\jailHud.paa";
-      x = 0.860937 * safezoneW + safezoneX;
-      y = 0.049 * safezoneH + safezoneY;
-      w = 0.149531 * safezoneW;
-      h = 0.275 * safezoneH;
+      text = "Harris_Client\Police\arrestPapers";
+      x = 0.309219 * safezoneW + safezoneX;
+      y = 0.192 * safezoneH + safezoneY;
+      w = 0.35 * safezoneW;
+      h = 0.6 * safezoneH;
     };
-   
-    class Time_Label: RscText
-    {
-      idc = 1001;
-      text = "Time Remaining:"; //--- ToDo: Localize;
-      x = 0.907344 * safezoneW + safezoneX;
-      y = 0.126 * safezoneH + safezoneY;
-      w = 0.0670312 * safezoneW;
-      h = 0.033 * safezoneH;
-    };
-    class Time_Text: RscText
-    {
-      idc = 1002;
-      text = "00:00"; //--- ToDo: Localize;
-      x = 0.907344 * safezoneW + safezoneX;
-      y = 0.159 * safezoneH + safezoneY;
-      w = 0.061875 * safezoneW;
-      h = 0.022 * safezoneH;
-    };
-    class Crimes_Label: RscText
+    class First_T: RscText
     {
       idc = 1000;
-      text = "Crimes Committed:"; //--- ToDo: Localize;
-      x = 0.902187 * safezoneW + safezoneX;
-      y = 0.192 * safezoneH + safezoneY;
-      w = 0.0721875 * safezoneW;
-      h = 0.022 * safezoneH;
+      font = "PuristaLight";
+      text = "Ben"; //--- ToDo: Localize;
+      x = 0.381406 * safezoneW + safezoneX;
+      y = 0.269 * safezoneH + safezoneY;
+      w = 0.1 * safezoneW;
+      h = 0.025 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
     };
-    class Crimes_Text: RscText
+    class Last_T: RscText
+    {
+      idc = 1001;
+      font = "PuristaLight";
+      text = "Harris"; //--- ToDo: Localize;
+      x = 0.381406 * safezoneW + safezoneX;
+      y = 0.313 * safezoneH + safezoneY;
+      w = 0.1 * safezoneW;
+      h = 0.025 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
+    };
+    class Middle_T: RscText
+    {
+      idc = 1002;
+      font = "PuristaLight";
+      text = "I."; //--- ToDo: Localize;
+      x = 0.53125 * safezoneW + safezoneX;
+      y = 0.267593 * safezoneH + safezoneY;
+      w = 0.1 * safezoneW;
+      h = 0.025 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
+    };
+    class DOB_T: RscText
     {
       idc = 1003;
-      style = ST_MULTI + ST_NO_RECT;
-      text = "1x Manslaughter, 1x Murder, 1x Drunk Driving"; //--- ToDo: Localize;
-      x = 0.884115 * safezoneW + safezoneX;
-      y = 0.219556 * safezoneH + safezoneY;
-      w = 0.103125 * safezoneW;
-      h = 0.055 * safezoneH;
+      font = "PuristaLight";
+      text = "26/04/1999"; //--- ToDo: Localize;
+      x = 0.530937 * safezoneW + safezoneX;
+      y = 0.313 * safezoneH + safezoneY;
+      w = 0.1 * safezoneW;
+      h = 0.025 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
+    };
+    class License_T: RscText
+    {
+      idc = 1004;
+      font = "PuristaLight";
+      text = "Yes"; //--- ToDo: Localize;
+      x = 0.530937 * safezoneW + safezoneX;
+      y = 0.357 * safezoneH + safezoneY;
+      w = 0.1 * safezoneW;
+      h = 0.025 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
+    };
+    class country_T: RscText
+    {
+      idc = 1005;
+      font = "PuristaLight";
+      text = "Lakeside Isles"; //--- ToDo: Localize;
+      x = 0.381406 * safezoneW + safezoneX;
+      y = 0.357 * safezoneH + safezoneY;
+      w = 0.1 * safezoneW;
+      h = 0.025 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
+    };
+    class crimes_E: RscEdit
+    {
+      idc = 1400;
+      style = ST_NO_RECT;
+      font = "PuristaLight";
+      x = 0.383854 * safezoneW + safezoneX;
+      y = 0.430556 * safezoneH + safezoneY;
+      w = 0.21 * safezoneW;
+      h = 0.027 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
+      colorBackground[] = {0,0,0,0};
+    };
+    class other_info: RscEdit
+    {
+      idc = 2100;
+      font = "PuristaLight";
+      style = ST_NO_RECT;
+      x = 0.384478 * safezoneW + safezoneX;
+      y = 0.479852 * safezoneH + safezoneY;
+      w = 0.13 * safezoneW;
+      h = 0.025 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
+      colorBackground[] = {0,0,0,0};
+    };
+    class arrestTime: RscEdit
+    {
+      idc = 1401;
+      style = ST_NO_RECT;
+      font = "PuristaLight";
+      x = 0.525781 * safezoneW + safezoneX;
+      y = 0.478 * safezoneH + safezoneY;
+      w = 0.05 * safezoneW;
+      h = 0.027 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
+      colorBackground[] = {0,0,0,0};
+    };
+    class submittingOfficer_T: RscText
+    {
+      idc = 1006;
+      font = "PuristaLight";
+      text = "Ben Harris"; //--- ToDo: Localize;
+      x = 0.383334 * safezoneW + safezoneX;
+      y = 0.548148 * safezoneH + safezoneY;
+      w = 0.1 * safezoneW;
+      h = 0.025 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
+      colorBackground[] = {0,0,0,0};
+    };
+    class badge_T: RscEdit
+    {
+      idc = 1402;
+      style = ST_NO_RECT;
+      font = "PuristaLight";
+      x = 0.513542 * safezoneW + safezoneX;
+      y = 0.548148 * safezoneH + safezoneY;
+      w = 0.08 * safezoneW;
+      h = 0.027 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
+      colorBackground[] = {0,0,0,0};
+    };
+    class Signature_T: RscEdit
+    {
+      idc = 1403;
+      font = "Palace";
+      style = ST_NO_RECT;
+      x = 0.390104 * safezoneW + safezoneX;
+      y = 0.697223 * safezoneH + safezoneY;
+      w = 0.2 * safezoneW;
+      h = 0.035 * safezoneH;
+      colorText[] = {-1,-1,-1,1};
+      colorShadow[] = {0,0,0,0};
+      colorBackground[] = {0,0,0,0};
+    };
+    class Accept_B: Harris_invis_button
+    {
+      idc = 1600;
+      x = 0.517552 * safezoneW + safezoneX;
+      y = 0.753 * safezoneH + safezoneY;
+      w = 0.075 * safezoneW;
+      h = 0.03 * safezoneH;
+      action = "[] call NZF_arrestPlayer";
+    };
+    class cancel_button: Harris_invis_button
+    {
+      idc = 1600;
+
+      x = 0.386562 * safezoneW + safezoneX;
+      y = 0.753 * safezoneH + safezoneY;
+      w = 0.075 * safezoneW;
+      h = 0.0300001 * safezoneH;
+      action = "closeDialog 0";
     };
   };
 };
+
+
 onPauseScript[] = { "Harris_saveStatsLocal" }; // When people press esc

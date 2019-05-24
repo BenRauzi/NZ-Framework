@@ -35,5 +35,5 @@ Harris_saveStats = {
 	[_info] remoteExecCall ["NZF_statsReturned", _player];
 
 	_insertstr = format["updatePlayerInfo:%1:%2:%3:%4:%5", _cash, _bank, _playerItems, _licenses, getPlayerUID _player];
-	_insert = [0, _insertstr] call MySQL_fnc_ExtDBquery;
+	_insert = [_insertstr, 2] call MySQL_fnc_ExtDBasync;
 }; 

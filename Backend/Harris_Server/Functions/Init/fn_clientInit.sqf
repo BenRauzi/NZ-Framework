@@ -98,4 +98,5 @@ Harris_clientInit = {
 		["Green","Green",getPlayerUID player in ["76561198072625284","76561198099644981","76561198062192032"]]
 	];
 
+	NZF_jailMarkers = 20;
 };
