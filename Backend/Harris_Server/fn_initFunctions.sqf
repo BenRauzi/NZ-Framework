@@ -31,7 +31,7 @@ if (!isMultiplayer || isServer) then {
 	Medical_Function_List = ["handleDamage", "setBlood"];
 	Medical_Functions = ["Functions", "Medical", "NZF", Medical_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Economy_Function_List = ["modifyLicense","openShop","loadShopItems", "getCash", "addCash", "removeCash"];
+	Economy_Function_List = ["modifyLicense", "getLicense", "openShop", "loadShopItems", "shopLBChange", "getCash", "addCash", "removeCash"];
 	Economy_Functions = ["Functions", "Economy", "NZF", Economy_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions, Occupation_Function_List, Police_Function_List, Medical_Functions, Economy_Functions];
