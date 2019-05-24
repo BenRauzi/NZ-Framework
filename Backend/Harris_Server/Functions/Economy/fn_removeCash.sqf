@@ -12,4 +12,4 @@ NZF_removeCash = {
 	} catch {
 		["Error", "Please input a number", "Failure"] spawn NZF_Notifications;
 	};
-}
+};

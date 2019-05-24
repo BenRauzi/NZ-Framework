@@ -1,4 +1,4 @@
-Harris_setTwitterName = {
+NZF_setTwitterName = {
 	params["_colour"];
 
 	if !(isNil "_colour") then {

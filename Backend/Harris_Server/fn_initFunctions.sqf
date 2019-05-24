@@ -25,16 +25,22 @@ if (!isMultiplayer || isServer) then {
 	Occupation_Function_List = ["onDuty"];
 	Occupation_Functions = ["Functions", "Occupations", "NZF", Occupation_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Police_Function_List = ["escort", "escorted", "escortStop", "patDown", "pattedDown", "shackle", "strippedDown", "tazed", "unescorted"];
+	Police_Function_List = ["escort", "escorted", "escortStop", "patDown", "pattedDown", "shackle", "strippedDown", "tazed", "unescorted", "getInCar", "putInCar", "pulloutAction", "ejectPlayer"];
 	Police_Functions = ["Functions", "Police", "NZF", Police_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Medical_Function_List = ["handleDamage", "setBlood"];
 	Medical_Functions = ["Functions", "Medical", "NZF", Medical_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Economy_Function_List = ["modifyLicense","openShop","loadShopItems", "getCash", "addCash", "removeCash"];
+	Economy_Function_List = ["modifyLicense","openShop","loadShopItems", "getCash", "addCash", "removeCash", "canPay"];
 	Economy_Functions = ["Functions", "Economy", "NZF", Economy_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions, Occupation_Function_List, Police_Function_List, Medical_Functions, Economy_Functions];
+	Twitter_Function_List = ["addMessage","openTwitterType","sendMessage", "setTwitterName", "updateTwitter"];
+	Twitter_Functions = ["Functions", "Twitter", "NZF", Twitter_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
+
+	Citations_Function_List = ["openGiveTicket","payTicket","receiveTicket", "refuseTicket", "sendTicket"];
+	Citations_Functions = ["Functions", "Citations", "NZF", Citations_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
+
+	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions, Occupation_Function_List, Police_Function_List, Medical_Functions, Economy_Functions, Twitter_Functions, Citations_Functions];
 
 	{
 		_dir = format["\Harris_Server\%1\%2", _x select 0, _x select 1];

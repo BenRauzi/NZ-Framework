@@ -1,33 +1,33 @@
-Harris_updateTwitter = {
+NZF_updateTwitter = {
 	disableSerialization;
 	params["_twitterMessages","_inst"];
 
-	Harris_twitterMessages = _twitterMessages;
+	NZF_twitterMessages = _twitterMessages;
 
 	_displayText = "";
 	{
 		_displayText = _displayText + _x;
 	} forEach _twitterMessages;
 
-	if (isNull Harris_twitterUI) then {
-		5 cutRsc ["Harris_TwitterFeed","PLAIN"];
+	if (isNull NZF_twitterUI) then {
+		5 cutRsc ["NZF_TwitterFeed","PLAIN"];
 	};
 
-	Harris_twitterUI = uiNameSpace getVariable ["Harris_TwitterFeed",displayNull];
-	_text = Harris_twitterUI displayCtrl 1100;
+	NZF_twitterUI = uiNameSpace getVariable ["NZF_TwitterFeed",displayNull];
+	_text = NZF_twitterUI displayCtrl 1100;
 	_text ctrlSetStructuredText parseText _displayText;
 
 	if (_inst == 0) then {
-		[(Harris_twitterMessages select (count Harris_twitterMessages - 1))] spawn {
+		[(NZF_twitterMessages select (count NZF_twitterMessages - 1))] spawn {
 			sleep 20;
-			_index = Harris_twitterMessages find (_this select 0);
+			_index = NZF_twitterMessages find (_this select 0);
 			if (_index != -1) then {
-					Harris_twitterMessages deleteAt _index;
-					[Harris_twitterMessages,1] call Harris_updateTwitter;
+					NZF_twitterMessages deleteAt _index;
+					[NZF_twitterMessages,1] call NZF_updateTwitter;
 			}; 
-			if (count Harris_twitterMessages == 0) then {
+			if (count NZF_twitterMessages == 0) then {
 				5 cutText ["","PLAIN"];
-				Harris_twitterUI = displayNull;
+				NZF_twitterUI = displayNull;
 			};
 		};
 	};
