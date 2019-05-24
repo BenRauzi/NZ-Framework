@@ -616,14 +616,14 @@ class rscTitles
 			};
 		};
 	};
-	class Harris_TwitterFeed
+	class NZF_TwitterFeed
 	{
-		name = "Harris_TwitterFeed";
+		name = "NZF_TwitterFeed";
 		idd = 5001;
 		movingEnable = true;
 		enableSimulation = true;
 		duration = 99999;
-	    onLoad = "uiNamespace setVariable ['Harris_TwitterFeed',_this select 0]";
+	    onLoad = "uiNamespace setVariable ['NZF_TwitterFeed',_this select 0]";
 		class controls
 		{
 				
@@ -650,7 +650,7 @@ class rscTitles
 	};
 };
 
-class Harris_twitterType 
+class NZF_twitterType 
 {
 	idd = 5002;
 	movingEnable = false;
@@ -659,7 +659,7 @@ class Harris_twitterType
 		class Title: Harris_RscText
 		{
 			idc = 1000;
-			text = "LIMMITT Twitter Feed"; //--- ToDo: Localize;
+			text = "NZ Framework Twitter Feed"; //--- ToDo: Localize;
 			x = 0.0 * safezoneW + safezoneX;
 			y = 0.595 * safezoneH + safezoneY;
 			w = 0.25 * safezoneW;
