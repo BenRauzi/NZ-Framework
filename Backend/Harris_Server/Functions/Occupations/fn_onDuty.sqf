@@ -8,23 +8,17 @@
 NZF_onDuty = {
 	params["_job", "_bool"]; // _bool == on or off duty
 
+	if !(_bool) exitWith { player setVariable ["currentJob", ["Civilian"], true]}; // Sets job back as civilian
+
 	switch(_job) do
 	{
 		case "Cop":
 		{
-			if(_bool) then {
-				player setVariable ["currentJob", ["Cop", player getVariable "copLevel"], true];
-			} else {
-				player setVariable ["currentJob", ["Civilian"], true];
-			};
+			player setVariable ["currentJob", ["Cop", player getVariable "copLevel"], true]; // Sets job to cop
 		};
 		case "Medic":
 		{
-			if(_bool) then {
-				player setVariable ["currentJob", ["Cop", player getVariable "medicLevel"], true];
-			} else {
-				player setVariable ["currentJob", ["Civilian"], true];
-			};
+			player setVariable ["currentJob", ["Cop", player getVariable "medicLevel"], true]; // Sets Job to Medic
 		};
 	};	
 };
