@@ -13,6 +13,7 @@ NZF_openShop = {
 				_licenseDN = ([(_x select 3),true] call NZF_getLicense);
 				["Incorrect License", format["You can only access this store if you have a valid %1.",_licenseDN], "Failure"] call NZF_Notifications;
 			} else {
+				holder = nil;
 				0 fadeSound 1;
 
 			 	// Spawn Building 
@@ -66,6 +67,7 @@ NZF_openShop = {
 		    		shNPC = nil;
 		    		20 cutText ['','Black in', 5];
 	    			5 fadeSound 1;
+	    			holder = nil;
 		    	};};"];
 
 		    	shNPC addWeapon "SMG_03_hex";
