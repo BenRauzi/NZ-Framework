@@ -32,7 +32,8 @@ Harris_clientInit = {
 	NZF_shopList = [
 		["Firearms Store","NZF_firearmStore",[
 			["Handguns",[
-				["hgun_Rook40_F","Pew Pew Pew",760]
+				["hgun_Rook40_F","Pew Pew Pew",760,nil],
+				["hgun_Rook40_F","Pew Pew Pew",760,"NZF_license_boat"]
 			]],
 			["Rifles",[
 				["hgun_Rook40_F","Pew Pew Pew Pew Pew Pew",1875]
