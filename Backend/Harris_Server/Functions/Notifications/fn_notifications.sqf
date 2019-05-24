@@ -96,8 +96,8 @@ NZF_Notifications = {
 	{
 		case 1:
 		{
-			5 cutRsc ["Harris_Notifications1","PLAIN"];
-			_display1 = uiNameSpace getVariable ["Harris_Notifications1",displayNull];
+			5 cutRsc ["NZF_Notifications1","PLAIN"];
+			_display1 = uiNameSpace getVariable ["NZF_Notifications1",displayNull];
 			_typeCtrl = _display1 displayCtrl 1500; 
 			_iconCtrl = _display1 displayCtrl 1200; 
 			_titleCtrl = _display1 displayCtrl 1001; 
@@ -106,8 +106,8 @@ NZF_Notifications = {
 		};
 		case 2:
 		{
-			6 cutRsc ["Harris_Notifications2","PLAIN"];
-			_display2 = uiNameSpace getVariable ["Harris_Notifications2",displayNull];
+			6 cutRsc ["NZF_Notifications2","PLAIN"];
+			_display2 = uiNameSpace getVariable ["NZF_Notifications2",displayNull];
 			_typeCtrl = _display2 displayCtrl 2500; 
 			_iconCtrl = _display2 displayCtrl 2200; 
 			_titleCtrl = _display2 displayCtrl 2001; 
@@ -116,8 +116,8 @@ NZF_Notifications = {
 		};
 		case 3:
 		{
-			15 cutRsc ["Harris_Notifications3","PLAIN"];
-			_display3 = uiNameSpace getVariable ["Harris_Notifications3",displayNull];
+			15 cutRsc ["NZF_Notifications3","PLAIN"];
+			_display3 = uiNameSpace getVariable ["NZF_Notifications3",displayNull];
 			_typeCtrl = _display3 displayCtrl 3500; 
 			_iconCtrl = _display3 displayCtrl 3200; 
 			_titleCtrl = _display3 displayCtrl 3001; 
@@ -126,8 +126,8 @@ NZF_Notifications = {
 		};
 		case 4:
 		{
-			123 cutRsc ["Harris_Notifications4","PLAIN"];
-			_display4 = uiNameSpace getVariable ["Harris_Notifications4",displayNull];
+			123 cutRsc ["NZF_Notifications4","PLAIN"];
+			_display4 = uiNameSpace getVariable ["NZF_Notifications4",displayNull];
 			_typeCtrl = _display4 displayCtrl 4500; 
 			_iconCtrl = _display4 displayCtrl 4200; 
 			_titleCtrl = _display4 displayCtrl 4001; 
@@ -136,8 +136,8 @@ NZF_Notifications = {
 		};
 		case 5: 
 		{
-			9 cutRsc ["Harris_Notifications5","PLAIN"];
-			_display5 = uiNameSpace getVariable ["Harris_Notifications5",displayNull];
+			9 cutRsc ["NZF_Notifications5","PLAIN"];
+			_display5 = uiNameSpace getVariable ["NZF_Notifications5",displayNull];
 			_typeCtrl = _display5 displayCtrl 5500; 
 			_iconCtrl = _display5 displayCtrl 5200; 
 			_titleCtrl = _display5 displayCtrl 5001; 
