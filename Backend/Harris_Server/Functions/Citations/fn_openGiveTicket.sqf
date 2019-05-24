@@ -23,7 +23,7 @@ NZF_openGiveTicket = {
 	ctrlSetText [1003, NZF_dob];
 	ctrlSetText [1005, NZF_originCountry];
 
-	if (["NZF_license_driver"] call NZF_getLicense;) then {
+	if (["NZF_license_driver"] call NZF_getLicense) then {
 		ctrlSetText [1004, "Yes"];
 	} else  {
 		ctrlSetText [1004, "No"];

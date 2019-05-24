@@ -1056,7 +1056,7 @@ class Harris_setName
 
 
 
-class Harris_getCitation
+class NZF_getCitation
 {
 	idd = 5064;
 	movingEnabled = false;
@@ -1253,7 +1253,7 @@ class Harris_getCitation
 };
 
 
-class Harris_giveCitation
+class NZF_giveCitation
 {
 	idd = 5063;
 	movingEnabled = false;

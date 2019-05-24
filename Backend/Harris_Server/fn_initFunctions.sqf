@@ -40,7 +40,7 @@ if (!isMultiplayer || isServer) then {
 	Citations_Function_List = ["openGiveTicket","payTicket","receiveTicket", "refuseTicket", "sendTicket"];
 	Citations_Functions = ["Functions", "Citations", "NZF", Citations_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions, Occupation_Function_List, Police_Function_List, Medical_Functions, Economy_Functions, Twitter_Functions, Citations_Functions];
+	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions, Occupation_Functions, Police_Functions, Medical_Functions, Economy_Functions, Twitter_Functions, Citations_Functions];
 
 	{
 		_dir = format["\Harris_Server\%1\%2", _x select 0, _x select 1];
