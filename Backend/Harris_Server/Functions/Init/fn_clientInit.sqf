@@ -99,4 +99,6 @@ Harris_clientInit = {
 	];
 
 	NZF_jailMarkers = 20;
+
+	[] call NZF_playerTags;
 };

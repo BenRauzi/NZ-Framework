@@ -10,7 +10,7 @@ if (!isMultiplayer || isServer) then {
 	Save_Function_List = ["initStats", "loadStats", "saveStats", "saveStatsLocal", "statsReturned"];
 	Save_Functions = ["Server", "Save", "Harris", Save_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Misc_Function_List = ["keyHandler","hideLocally","setFaceGlobal","weaponHolster","playerSurrender","actionSyncMP", "dropHandgun", "hudLoop", "getConfigName", "spawnItem"];
+	Misc_Function_List = ["keyHandler","hideLocally","setFaceGlobal","weaponHolster","playerSurrender","actionSyncMP", "dropHandgun", "hudLoop", "getConfigName", "playerTags", "setName", "openSetName", "spawnItem"];
 	Misc_Functions = ["Functions", "Misc", "NZF", Misc_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Interaction_Function_List = ["colourRadialInner", "colourRadialOuter", "interactionExecute", "openInteraction"];
