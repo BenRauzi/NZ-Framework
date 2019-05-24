@@ -1017,7 +1017,7 @@ class Harris_Refine
 	};
 };
 
-class Harris_setName
+class NZF_setName
 {
 	idd = 1233;
 	movingEnabled = false;
@@ -1417,125 +1417,6 @@ class NZF_giveCitation
 			colorFocused[] = {0,0,0,0};
   			colorShadow[] = {0,0,0,0};
    			colorBorder[] = {0,0,0,0};
-		};
-	};
-};
-
-class Harris_whiteList
-{
-	name = "Harris_whiteList";
-	idd = 123312;
-	fadein=0;
-	fadeout=0;
-	movingEnable = 0;
-	objects[]={};
-
-	class controlsBackground 
-	{
-		class Whitelist_Combo: RscCombo
-		{
-			idc = 2100;
-			x = 0.427812 * safezoneW + safezoneX;
-			y = 0.39 * safezoneH + safezoneY;
-			w = 0.07 * safezoneW;
-			h = 0.03 * safezoneH;
-		};
-		class Whitelist_B: RscButton
-		{
-			idc = 1600;
-			text = "Whitelist"; //--- ToDo: Localize;
-			x = 0.5 * safezoneW + safezoneX;
-			y = 0.39 * safezoneH + safezoneY;
-			w = 0.07 * safezoneW;
-			h = 0.03 * safezoneH;
-			action = "[] call Harris_fnc_whitelist; closeDialog 0";
-		};
-	};
-};
-
-
-class sell_shop
-{
-	idd = 123123;
-	movingEnabled = false;
-	enableSimulation = true;
-	class controlsBackground
-	{
-		
-
-		class RscTitleBackground : RscText
-		{
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			idc = -1;
-			x = 0.1; y = 0.2;
-			w = 0.32; h = (1 / 25);
-		};
-		
-		class Mainbackground : RscText
-		{
-			colorBackground[] = {0,0,0,0.7};
-			idc = -1;
-			x = 0.1; y = 0.2 + (11 / 250);
-			w = 0.32; h = 0.6 - (22 / 250);
-		};
-		
-		class itemInfo : RscStructuredText
-		{
-			idc = 38404;
-			text = "";
-			sizeEx = 0.035;
-			x = 0.11; y = 0.68;
-			w = 0.2; h = 0.2;
-		};
-		
-		class FilterList : RscCombo
-		{
-			idc = 38402;
-			onLBSelChanged = "";
-			x = 0.11; y = 0.64;
-			w = 0.3; h = 0.035;
-		};
-		class Title : Harris_RscText
-		{
-			colorBackground[] = {0,0,0,0};
-			idc = 38401;
-			text = "";
-			x = 0.1; y = 0.1425;
-			w = 0.32; h = 0.1;
-		};
-	};
-	
-	class controls
-	{
-		class itemList : RscListBox
-		{
-			idc = 38403;
-			onLBSelChanged = "[] call Harris_onLbSelChanged";
-			sizeEx = 0.035;
-			x = 0.11; y = 0.25;
-			w = 0.3; h = 0.38;
-		};
-		
-		class ButtonSell : RscButtonMenu
-		{
-			idc = 38405;
-			text = "Sell";
-			onButtonClick = "[] call Harris_sellItem;";
-			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.8 - (1 / 25);
-			w = (6.25 / 40);
-			h = (1 / 25);
-		};
-		
-		class ButtonClose : RscButtonMenu 
-		{
-			idc = -1;
-			text = "Cancel";
-			onButtonClick = "closeDialog 0;";
-			x = 0.1;
-			y = 0.8 - (1 / 25);
-			w = (6.25 / 40);
-			h = (1 / 25);
 		};
 	};
 };

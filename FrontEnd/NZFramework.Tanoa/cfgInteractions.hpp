@@ -102,4 +102,12 @@ class cfgInteractions
 			text = "Ticket";
 		};		
 	};
+
+	class setName
+	{
+		condition = "[isPlayer Harris_currentCursorObject, player distance Harris_currentCursorObject < 5]";
+		action = "[Harris_currentCursorObject] call NZF_openSetName";
+		icon = "002_Tag.paa";
+		text = "Set Name";
+	};
 };

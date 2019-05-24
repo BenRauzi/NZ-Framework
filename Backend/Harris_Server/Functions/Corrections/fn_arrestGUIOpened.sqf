@@ -2,6 +2,7 @@
 	Author: Ben Harris
 	Description: Initalises the Arrest GUI
 */
+
 NZF_arrestGUIOpened = {
 	waitUntil {!isNull (findDisplay 5065)};
 
