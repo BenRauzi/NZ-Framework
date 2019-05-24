@@ -345,14 +345,14 @@ class rscTitles
 			};
 		};
 	};
-	class Harris_Notifications1
+	class NZF_Notifications1
 	{
-		name = "Harris_Notifications1";
+		name = "NZF_Notifications1";
 		idd = 4503;
 		movingEnable = true;
 		enableSimulation = true;
 		duration = 5;
-	    onLoad = "uiNamespace setVariable ['Harris_Notifications1',_this select 0]";
+	    onLoad = "uiNamespace setVariable ['NZF_Notifications1',_this select 0]";
 		class controls
 		{
 			class Image_1: RscPicture
@@ -398,14 +398,14 @@ class rscTitles
 
 		};
 	};
-	class Harris_Notifications2
+	class NZF_Notifications2
 	{
-		name = "Harris_Notifications2";
+		name = "NZF_Notifications2";
 		idd = 4504;
 		movingEnable = true;
 		enableSimulation = true;
 		duration = 5;
-	    onLoad = "uiNamespace setVariable ['Harris_Notifications2',_this select 0]";
+	    onLoad = "uiNamespace setVariable ['NZF_Notifications2',_this select 0]";
 
 		class controls
 		{
@@ -452,14 +452,14 @@ class rscTitles
 		};
 	};
 
-	class Harris_Notifications3
+	class NZF_Notifications3
 	{
-		name = "Harris_Notifications3";
+		name = "NZF_Notifications3";
 		idd = 4505;
 		movingEnable = true;
 		enableSimulation = true;
 		duration = 5;
-	    onLoad = "uiNamespace setVariable ['Harris_Notifications3',_this select 0]";
+	    onLoad = "uiNamespace setVariable ['NZF_Notifications3',_this select 0]";
 
 		class controls
 		{
@@ -507,14 +507,14 @@ class rscTitles
 		};
 	};
 
-	class Harris_Notifications4
+	class NZF_Notifications4
 	{
-		name = "Harris_Notifications4";
+		name = "NZF_Notifications4";
 		idd = 4506;
 		movingEnable = true;
 		enableSimulation = true;
 		duration = 5;
-	    onLoad = "uiNamespace setVariable ['Harris_Notifications4',_this select 0]";
+	    onLoad = "uiNamespace setVariable ['NZF_Notifications4',_this select 0]";
 
 		class controls
 		{
@@ -562,14 +562,14 @@ class rscTitles
 		};
 	};
 
-	class Harris_Notifications5
+	class NZF_Notifications5
 	{
-		name = "Harris_Notifications5";
+		name = "NZF_Notifications5";
 		idd = 4507;
 		movingEnable = true;
 		enableSimulation = true;
 		duration = 5;
-	    onLoad = "uiNamespace setVariable ['Harris_Notifications5',_this select 0]";
+	    onLoad = "uiNamespace setVariable ['NZF_Notifications5',_this select 0]";
 
 		class controls
 		{
