@@ -1,6 +1,6 @@
 /*
     Author: Nicholas Jo'Foski
-    Description: Loads the shops items (Really jank and shitty but it works so....)
+    Description: Loads the shops items (Really jank and shitty because you can't use multiple exitWiths inside of each other, but it works so....)
 */
 
 NZF_loadShopItems = {
