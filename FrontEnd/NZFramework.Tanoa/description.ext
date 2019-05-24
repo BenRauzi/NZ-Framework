@@ -60,38 +60,38 @@ class rscTitles {
       class Thirst_Bar: RscPicture
       {
         idc = 1200;
-        text = "\Harris_Client\HUD\100%.paa";
-        x = 0.824844 * safezoneW + safezoneX;
-        y = 0.874 * safezoneH + safezoneY;
-        w = 0.0464063 * safezoneW;
-        h = 0.077 * safezoneH;
+        text = "Harris_Client\hud\100%.paa";
+        x = 0.897031 * safezoneW + safezoneX;
+        y = 0.907 * safezoneH + safezoneY;
+        w = 0.0360937 * safezoneW;
+        h = 0.066 * safezoneH;
       };
       class Hunger_Bar: RscPicture
       {
         idc = 1201;
-        text = "\Harris_Client\HUD\100%.paa";
-        x = 0.886719 * safezoneW + safezoneX;
-        y = 0.874 * safezoneH + safezoneY;
-        w = 0.0464063 * safezoneW;
-        h = 0.077 * safezoneH;
+        text = "Harris_Client\hud\100%.paa";
+        x = 0.938281 * safezoneW + safezoneX;
+        y = 0.907 * safezoneH + safezoneY;
+        w = 0.0360937 * safezoneW;
+        h = 0.066 * safezoneH;
       };
       class Thirst_Icon: RscPicture
       {
         idc = 1202;
-        text = "\Harris_Client\HUD\Food.paa";
-        x = 0.887761 * safezoneW + safezoneX;
-        y = 0.874926 * safezoneH + safezoneY;
-        w = 0.0464063 * safezoneW;
-        h = 0.077 * safezoneH;
+        text = "Harris_Client\hud\water.paa";
+        x = 0.897031 * safezoneW + safezoneX;
+        y = 0.907 * safezoneH + safezoneY;
+        w = 0.0360937 * safezoneW;
+        h = 0.066 * safezoneH;
       };
       class Hunger_Icon: RscPicture
       {
         idc = 1203;
-        text = "\Harris_Client\HUD\Water.paa";
-        x = 0.824844 * safezoneW + safezoneX;
-        y = 0.874 * safezoneH + safezoneY;
-        w = 0.0464063 * safezoneW;
-        h = 0.077 * safezoneH;
+        text = "Harris_Client\hud\food.paa";
+        x = 0.938281 * safezoneW + safezoneX;
+        y = 0.907 * safezoneH + safezoneY;
+        w = 0.0360937 * safezoneW;
+        h = 0.066 * safezoneH;
       };
     };
   };

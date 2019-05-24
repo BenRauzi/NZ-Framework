@@ -7,4 +7,5 @@ NZF_escort = {
 	
 	[] remoteExecCall ["NZF_escorted", _ct];
 	_ct attachTo [player, [0.5, 0, 0]];
+	NZF_currentEscort = _ct;
 };

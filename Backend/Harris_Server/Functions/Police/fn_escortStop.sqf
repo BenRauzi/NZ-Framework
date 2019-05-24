@@ -9,4 +9,6 @@ NZF_escortStop = {
 			[] remoteExecCall ["NZF_unescorted", _x];
 		};
 	} forEach attachedObjects player;
+
+	NZF_currentEscort = nil;
 };

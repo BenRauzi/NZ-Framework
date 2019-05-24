@@ -41,6 +41,12 @@ NZF_keyHandler = {
 				[] spawn NZF_playerSurrender;
 			};
 		};
+
+		case 28:
+		{
+			if (isNull (findDisplay 5002)) then { [] call NZF_openTwitterType; } else { [] call NZF_sendMessage }; true;
+		};
+
 	};
 
 	_handled;
