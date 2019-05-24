@@ -25,18 +25,20 @@ Harris_clientInit = {
 	NZF_licenseList = [
 		["Driver's License","NZF_license_driver"],
 		["Truck License","NZF_license_truck"],
-		["Boat License","NZF_license_boat"]
+		["Boat License","NZF_license_boat"],
+		["Firearms License","NZF_license_firearms"]
 	];
 
 	NZF_shopList = [
 		["Firearms Store","NZF_firearmStore",[
 			["Handguns",[
-				["hgun_Rook40_F","Pew Pew Pew",760]
+				["hgun_Rook40_F","Pew Pew Pew",760,nil],
+				["hgun_Rook40_F","Pew Pew Pew",760,"NZF_license_boat"]
 			]],
 			["Rifles",[
-				["hgun_Rook40_F","Pew Pew Pew Pew Pew Pew",760]
+				["hgun_Rook40_F","Pew Pew Pew Pew Pew Pew",1875]
 			]]
-		]],
+		],"NZF_license_firearms"],
 		["Corner Store","NZF_cornerStore",[
 			["Items",[
 				["Item_ToolKit","Mr. FixIt",250]
@@ -45,7 +47,7 @@ Harris_clientInit = {
 				["hgun_Rook40_F","Pew Pew Pew Munch Munch Pew Pew",760],
 				["hgun_Rook40_F","Pew Pew Pew Munch Munch Pew Pew",760]
 			]]
-		]]
+		],0]
 	];
 
 	cutText ["Fetching Player Information","BLACK FADED",0];
