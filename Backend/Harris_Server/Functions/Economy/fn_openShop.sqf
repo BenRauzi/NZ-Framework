@@ -15,6 +15,10 @@ NZF_openShop = {
 			} else {
 				0 fadeSound 1;
 				NZF_curShopCategory = "item";
+				if (isNil "_vSpawn") then {
+					_vSpawn = "unknown";
+				};
+				NZF_curShopVSpawn = _vSpawn;
 
 			 	// Spawn Building 
 			    shObj = "Land_Offices_01_V1_F" createVehicleLocal [0,0,0];
@@ -68,6 +72,7 @@ NZF_openShop = {
 		    		20 cutText ['','Black in', 5];
 	    			5 fadeSound 1;
 	    			NZF_curShopCategory = nil;
+	    			NZF_curShopVSpawn = nil;
 	    			NZF_shopItemHolder = nil;
 		    	};};"];
 

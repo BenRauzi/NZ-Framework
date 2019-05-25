@@ -42,7 +42,8 @@ Harris_clientInit = {
 		],"NZF_license_firearms"],
 		["Corner Store","NZF_cornerStore",[
 			["Items",[
-				["ToolKit","Mr. FixIt",250]
+				["ToolKit","Mr. FixIt",250],
+				["C_Plane_Civil_01_F",nil,0]
 			]],
 			["Food",[
 				["hgun_Rook40_F","Pew Pew Pew Munch Munch Pew Pew",760],

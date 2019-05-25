@@ -196,7 +196,7 @@ class NZF_shopDialog
 			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-			action = "[lbText [3006,(lbCurSel 3006)],(((lbData[3006,(lbCurSel 3006)]) splitString ',') select 0),parseNumber(((lbData[3006,(lbCurSel 3006)]) splitString ',') select 1)] call NZF_buyItem;";
+			action = "[lbText [3006,(lbCurSel 3006)],(((lbData[3006,(lbCurSel 3006)]) splitString ',') select 0),parseNumber(((lbData[3006,(lbCurSel 3006)]) splitString ',') select 1),NZF_curShopVSpawn] call NZF_buyItem;";
 		};
 	};
 };
