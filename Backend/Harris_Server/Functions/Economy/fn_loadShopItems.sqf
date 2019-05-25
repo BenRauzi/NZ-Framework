@@ -22,6 +22,9 @@ NZF_loadShopItems = {
 						   	_index = lbAdd [3006, _iName];
 						    lbSetData [3006, _index, (_x select 0) + "," + str (_x select 2)];
 						    lbSetPicture [3006, _index, getText (configFile >> ([_x select 0] call NZF_getConfigName) >> (_x select 0) >> "picture")];
+						    if (NZF_curShopCategory == "vehicle") then {
+						    	lbSetTooltip [3006, _index, format["Vehicle Information\n-----------------------------\nMax Speed: %1 km/h\nHorse Power: %2\nPassenger Seats: %3\nStorage Capacity: %4\nFuel Capacity: %5",getNumber(configFile >> "CfgVehicles" >> (_x select 0) >> "maxSpeed"),getNumber(configFile >> "CfgVehicles" >> (_x select 0) >> "enginePower"),getNumber(configFile >> "CfgVehicles" >> (_x select 0) >> "transportSoldier"),getNumber(configFile >> "CfgVehicles" >> (_x select 0) >> "maximumLoad"),getNumber(configFile >> "CfgVehicles" >> (_x select 0) >> "fuelCapacity")]];
+						    };
 						    lbSetCurSel [3006, 0];
 						};
 					};

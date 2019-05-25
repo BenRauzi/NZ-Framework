@@ -73,13 +73,25 @@ NZF_openShop = {
 	    			5 fadeSound 1;
 	    			NZF_curShopCategory = nil;
 	    			NZF_curShopVSpawn = nil;
+					if !(isNil 'NZF_curShopVeh') then {
+						deleteVehicle NZF_curShopVeh;
+						NZF_curShopVeh = nil;
+					};
 	    			NZF_shopItemHolder = nil;
 		    	};};"];
 
 		    	{ // Load Categories
 		    		if (count (_x select 1) > 0) then {
-					   	_index = lbAdd [3005, _x select 0];
-					    lbSetData [3005, _index, _shop + "," + (_x select 0)];
+		    			_accessibleItem = false;
+		    			{
+		    				if (isNil {_x select 3} || {[_x select 3] call NZF_getLicense}) exitWith {
+		    					_accessibleItem = true;
+		    				};
+		    			} forEach (_x select 1);
+		    			if (_accessibleItem) then {
+						   	_index = lbAdd [3005, _x select 0];
+						    lbSetData [3005, _index, _shop + "," + (_x select 0)];
+						};
 					};
 				} forEach (_x select 2);
 				lbSetCurSel [3005, 0];

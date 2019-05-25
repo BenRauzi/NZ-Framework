@@ -18,6 +18,19 @@ NZF_shopLBChange = {
 	ctrlSetText [3007, "Item Price: $" + _itemPrice];
 	ctrlSetText [3008, "You Lack: $" + _priceLack];
 
+	// Vehicles
+	if (NZF_curShopCategory == "vehicle") exitWith {
+		if !(isNil "NZF_curShopVeh") then {
+			deleteVehicle NZF_curShopVeh;
+		};
+		NZF_curShopVeh = _item createVehicleLocal [0,0,0];
+		NZF_curShopVeh enableSimulation false;
+		NZF_curShopVeh allowDamage false;
+	    NZF_curShopVeh attachTo [shObj,[6,15,-5.5]];
+	    detach NZF_curShopVeh;
+	    NZF_curShopVeh setDir 130;
+	};
+
 	// Clothing Items Crap
 	shNPC setUnitLoadout (getUnitLoadout player);
 	if ((_item call BIS_fnc_itemType) select 0 == "Equipment") then {

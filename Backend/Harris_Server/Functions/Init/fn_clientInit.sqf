@@ -42,8 +42,7 @@ Harris_clientInit = {
 		],"NZF_license_firearms"],
 		["Corner Store","NZF_cornerStore",[
 			["Items",[
-				["ToolKit","Mr. FixIt",250],
-				["C_Plane_Civil_01_F",nil,0]
+				["ToolKit","Mr. FixIt",250]
 			]],
 			["Food",[
 				["hgun_Rook40_F","Pew Pew Pew Munch Munch Pew Pew",760],
@@ -72,7 +71,23 @@ Harris_clientInit = {
 				["B_AssaultPack_khk",nil,50],
 				["B_AssaultPack_sgg",nil,50]
 			]]
-		],0]
+		],0],
+		["Vehicle Store","NZF_vehicleStore",[
+			["Cars",[
+				["C_Quadbike_01_F",nil,250],
+				["C_Quadbike_01_black_F",nil,250],
+				["C_Quadbike_01_blue_F",nil,250],
+				["C_Quadbike_01_red_F",nil,250],
+				["C_Quadbike_01_white_F",nil,250],
+				["C_Hatchback_01_F",nil,500],
+				["C_Hatchback_01_sport_F",nil,650],
+				["C_SUV_01_F",nil,350]
+			]],
+			["Planes",[
+				["C_Plane_Civil_01_F",nil,5640],
+				["C_Plane_Civil_01_racing_F",nil,10345]
+			]]
+		],"NZF_license_driver"]
 	];
 
 	cutText ["Fetching Player Information","BLACK FADED",0];
