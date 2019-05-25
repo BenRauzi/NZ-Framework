@@ -91,7 +91,7 @@ class NZF_shopDialog
 			soundExpand[] = {"\A3\ui_f\data\sound\RscCombo\soundExpand",0.1,1.0};
 			soundSelect[] = {"\A3\ui_f\data\sound\RscCombo\soundSelect",0.1,1.0};
 			wholeHeight = 0.3;
-			onLBSelChanged = "[(((lbData[3005,(lbCurSel 3005)]) splitString ',') select 0)] spawn NZF_loadShopItems;";
+			onLBSelChanged = "[] call NZF_shopCategoryChange;";
 			class ComboScrollBar
 			{
 				color[] = {1,1,1,1};

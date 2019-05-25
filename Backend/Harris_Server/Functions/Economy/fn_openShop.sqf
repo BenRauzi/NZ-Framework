@@ -4,7 +4,7 @@
 */
 
 NZF_openShop = {
-	params ["_shop"];
+	params ["_shop","_vSpawn"];
 	if (isNil "_shop") exitWith {};
 	{
 		if (_shop == _x select 1) exitWith {
@@ -14,6 +14,7 @@ NZF_openShop = {
 				["Incorrect License", format["You can only access this store if you have a valid %1.",_licenseDN], "Failure"] call NZF_Notifications;
 			} else {
 				0 fadeSound 1;
+				NZF_curShopCategory = "item";
 
 			 	// Spawn Building 
 			    shObj = "Land_Offices_01_V1_F" createVehicleLocal [0,0,0];
@@ -66,10 +67,9 @@ NZF_openShop = {
 		    		shNPC = nil;
 		    		20 cutText ['','Black in', 5];
 	    			5 fadeSound 1;
-	    			holder = nil;
+	    			NZF_curShopCategory = nil;
+	    			NZF_shopItemHolder = nil;
 		    	};};"];
-
-		    	shNPC addWeapon "SMG_03_hex";
 
 		    	{ // Load Categories
 		    		if (count (_x select 1) > 0) then {

@@ -5,6 +5,8 @@
 
 NZF_shopLBChange = {
 	if (lbCurSel 3006 == -1) exitWith {};
+
+	// Prices
 	_item = ((lbData[3006,(lbCurSel 3006)]) splitString ",") select 0;
 	_itemPrice = ((lbData[3006,(lbCurSel 3006)]) splitString ",") select 1;
 	_priceLack = 0;
@@ -15,4 +17,33 @@ NZF_shopLBChange = {
 	};
 	ctrlSetText [3007, "Item Price: $" + _itemPrice];
 	ctrlSetText [3008, "You Lack: $" + _priceLack];
+
+	// Clothing Items Crap
+	shNPC setUnitLoadout (getUnitLoadout player);
+	if ((_item call BIS_fnc_itemType) select 0 == "Equipment") then {
+		switch ((_item call BIS_fnc_itemType) select 1) do { 
+			case "Glasses":
+			{
+				shNPC addGoggles _item;
+			};
+			case "Headgear":
+			{
+				shNPC addHeadgear _item;
+			};
+			case "Vest":
+			{
+				shNPC addVest _item;
+			};
+			case "Backpack":
+			{
+				removeBackpack shNPC;
+				shNPC addBackpack _item;
+			};
+			case "Uniform":
+			{
+				shNPC forceAddUniform _item;
+			};
+			default {}; 
+		};
+	};
 };

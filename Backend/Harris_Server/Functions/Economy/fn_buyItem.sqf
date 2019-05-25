@@ -42,7 +42,6 @@ NZF_buyItem = {
 			};
 			default 
 			{
-				//holder = nil; // here just for testing
 				if ((_cName call BIS_fnc_itemType) select 0 == "Equipment") then { // Is clothing, not an item
 					switch ((_cName call BIS_fnc_itemType) select 1) do { 
 						case "Glasses":

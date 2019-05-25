@@ -32,11 +32,12 @@ Harris_clientInit = {
 	NZF_shopList = [
 		["Firearms Store","NZF_firearmStore",[
 			["Handguns",[
-				["hgun_Rook40_F","Pew Pew Pew",760,nil],
+				["hgun_Rook40_F","Pew Pew Pew",760],
 				["hgun_Rook40_F","Pew Pew Pew",760,"NZF_license_boat"]
 			]],
 			["Rifles",[
-				["hgun_Rook40_F","Pew Pew Pew Pew Pew Pew",1875]
+				["hgun_Rook40_F","Pew Pew Pew Pew",900],
+				["hgun_Rook40_F","Pew Pew Pew Pew Pew Pew Pew",1000]
 			]]
 		],"NZF_license_firearms"],
 		["Corner Store","NZF_cornerStore",[
@@ -46,6 +47,29 @@ Harris_clientInit = {
 			["Food",[
 				["hgun_Rook40_F","Pew Pew Pew Munch Munch Pew Pew",760],
 				["hgun_Rook40_F","Pew Pew Pew Munch Munch Pew Pew",760]
+			]]
+		],0],
+		["Clothing Store","NZF_clothingStore",[
+			["Clothing",[
+				["H_Cap_grn_BI",nil,10],
+				["H_Cap_blk",nil,10],
+				["H_Cap_blu",nil,10],
+				["H_Cap_grn",nil,10],
+				["G_Aviator",nil,15],
+				["G_Spectacles",nil,15],
+				["G_Spectacles_Tinted",nil,15],
+				["G_Shades_Black",nil,15],
+				["U_C_man_casual_1_F",nil,25],
+				["U_C_man_casual_2_F",nil,25],
+				["U_C_man_casual_3_F",nil,25],
+				["V_Safety_yellow_F",nil,30],
+				["V_Safety_orange_F",nil,30],
+				["V_Safety_blue_F",nil,30],
+				["V_Press_F",nil,40],
+				["B_AssaultPack_blk",nil,50],
+				["B_AssaultPack_cbr",nil,50],
+				["B_AssaultPack_khk",nil,50],
+				["B_AssaultPack_sgg",nil,50]
 			]]
 		],0]
 	];
