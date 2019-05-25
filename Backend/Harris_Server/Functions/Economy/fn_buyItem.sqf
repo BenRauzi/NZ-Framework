@@ -19,23 +19,30 @@ NZF_buyItem = {
 	                player addBackpack _cName;
 				};
 
-				// Now spawn the actual vehicle
-				if (count (nearestObjects [(getMarkerPos _vSpawn),["Car","Motorcycle","Ship","Air"],5]) > 0) exitWith {
-					["Vehicle Spawn Error", "There is currently a vehicle blocking the spawn point, you have been fully refunded.", "Failure"] call NZF_Notifications;
-					_exit = true;
+				// If item is a special item
+				if ((_cName call BIS_fnc_itemType) select 0 == "Item") exitWith {
+					[_cName] call NZF_addItem;
 				};
-				_veh = _cName createVehicle [0,0,0];
-				_veh allowDamage false;
-				_veh lock true;
-				_veh setPosATL (getMarkerPos _vSpawn);
-				_veh setDir (markerDir _vSpawn);
-				_veh allowDamage true;
 
-				// Add vehicle ownership and db crap here...
+				if !(isNil "_vSpawn") then {
+					// Now spawn the actual vehicle
+					if (count (nearestObjects [(getMarkerPos _vSpawn),["Car","Motorcycle","Ship","Air"],5]) > 0) exitWith {
+						["Vehicle Spawn Error", "There is currently a vehicle blocking the spawn point, you have been fully refunded.", "Failure"] call NZF_Notifications;
+						_exit = true;
+					};
+					_veh = _cName createVehicle [0,0,0];
+					_veh allowDamage false;
+					_veh lock true;
+					_veh setPosATL (getMarkerPos _vSpawn);
+					_veh setDir (markerDir _vSpawn);
+					_veh allowDamage true;
+
+					// Add vehicle ownership and db crap here...
+				};
 			};
 			default 
 			{
-				holder = nil; // here just for testing
+				//holder = nil; // here just for testing
 				if ((_cName call BIS_fnc_itemType) select 0 == "Equipment") then { // Is clothing, not an item
 					switch ((_cName call BIS_fnc_itemType) select 1) do { 
 						case "Glasses":
@@ -77,11 +84,7 @@ NZF_buyItem = {
 						default {}; 
 					};
 				} else { // Is a item, not clothing
-					if (player canAdd _cName) then {
-						player addItem _cName;
-					} else {
-						[_cName] call NZF_spawnItem;
-					};
+					[_cName] call NZF_addItem;
 				};
 			}; 
 		};
