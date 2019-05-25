@@ -10,7 +10,7 @@ if (!isMultiplayer || isServer) then {
 	Save_Function_List = ["initStats", "loadStats", "saveStats", "saveStatsLocal", "statsReturned"];
 	Save_Functions = ["Server", "Save", "Harris", Save_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Misc_Function_List = ["keyHandler","hideLocally","setFaceGlobal","weaponHolster","playerSurrender","actionSyncMP", "dropHandgun", "hudLoop", "getConfigName", "playerTags", "setName", "openSetName", "spawnItem"];
+	Misc_Function_List = ["keyHandler","hideLocally","setFaceGlobal","weaponHolster","playerSurrender","actionSyncMP", "dropHandgun", "hudLoop", "getConfigName", "playerTags", "setName", "openSetName", "spawnItem", "addItem"];
 	Misc_Functions = ["Functions", "Misc", "NZF", Misc_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Interaction_Function_List = ["colourRadialInner", "colourRadialOuter", "interactionExecute", "openInteraction"];
@@ -31,7 +31,7 @@ if (!isMultiplayer || isServer) then {
 	Medical_Function_List = ["handleDamage", "setBlood"];
 	Medical_Functions = ["Functions", "Medical", "NZF", Medical_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Economy_Function_List = ["modifyLicense", "getLicense", "openShop", "loadShopItems", "shopLBChange", "getCash", "addCash", "removeCash", "canPay"];
+	Economy_Function_List = ["modifyLicense", "getLicense", "openShop", "loadShopItems", "shopLBChange", "getCash", "addCash", "removeCash", "canPay", "buyItem"];
 	Economy_Functions = ["Functions", "Economy", "NZF", Economy_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Twitter_Function_List = ["addMessage","openTwitterType","sendMessage", "setTwitterName", "updateTwitter"];
