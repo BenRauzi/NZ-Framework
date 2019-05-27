@@ -13,8 +13,6 @@ NZF_arrestPlayer = {
 
 	_badge = ctrlText 1402;
 	if (count _badge != 3) exitWith { ["Error", "Please Enter a valid bad number", "Failure"] spawn NZF_Notification; };
-
-
 	_signature = ctrlText 1403;
 	if (count _signature < 5) exitWith { ["Error", "Please Enter a valid signature", "Failure"] spawn NZF_Notification; };
 
