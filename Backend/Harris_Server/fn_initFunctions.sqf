@@ -25,7 +25,7 @@ if (!isMultiplayer || isServer) then {
 	Occupation_Function_List = ["onDuty"];
 	Occupation_Functions = ["Functions", "Occupations", "NZF", Occupation_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Police_Function_List = ["escort", "escorted", "escortStop", "patDown", "pattedDown", "shackle", "strippedDown", "tazed", "unescorted"];
+	Police_Function_List = ["escort", "escorted", "escortStop", "patDown", "pattedDown", "shackle", "strippedDown", "tazed", "unescorted", "playerRestrained", "playerUnRestrained", "restrainPlayer", "unRestrainPlayer"];
 	Police_Functions = ["Functions", "Police", "NZF", Police_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Medical_Function_List = ["handleDamage", "setBlood"];

@@ -4,8 +4,11 @@
 */
 
 NZF_playerSurrender = {
-	if (player getVariable ["NZF_Surrendering", false]) then {
-		player setVariable ["NZF_Surrendering", false, true];
+	if (isNil {player getVariable "NZF_Surrendering"}) then {
+		player setVariable ["NZF_Surrendering", [false], true];
+	};
+	if ((player getVariable "NZF_Surrendering") select 0) then {
+		player setVariable ["NZF_Surrendering", [false], true];
 		player setVariable ["tf_unable_to_use_radio", false];
 		if (vehicle player != player) then {
 		    [player,"Foski_StopSurrendering"] remoteExecCall ["NZF_actionSyncMP", 0];
@@ -18,7 +21,7 @@ NZF_playerSurrender = {
 			[[player,"AmovPercMstpSnonWnonDnon"],"life_fnc_animSync", true, false] spawn bis_fnc_mp;
 			player switchMove "AmovPercMstpSnonWnonDnon";
 		};
-		player setVariable ["NZF_Surrendering", true, true];
+		player setVariable ["NZF_Surrendering", [true], true];
 		player setVariable ["tf_unable_to_use_radio", true];
 		["NZF_Surrendering"] call NZF_dropHandgun;
 		if (vehicle player != player) then {
@@ -29,7 +32,7 @@ NZF_playerSurrender = {
 	};
 	// Manage the surrendered player 
 	while {true} do {
-		if !(player getVariable ["NZF_Surrendering", false]) exitWith {
+		if !((player getVariable "NZF_Surrendering") select 0) exitWith {
 			player setVariable ["tf_unable_to_use_radio", false];
 		};
 		// Block Certain Actions
