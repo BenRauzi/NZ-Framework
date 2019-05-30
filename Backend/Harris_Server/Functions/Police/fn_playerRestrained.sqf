@@ -4,9 +4,10 @@
 */
 
 NZF_playerRestrained ={
-	[_this select 0] spawn {
+	[_this select 0, _this select 1] spawn {
 		// Restrain the player
 		_pos = _this select 0;
+		_type = _this select 1;
 		if (isNil "_pos") then {
 			_pos = "back";
 		};
@@ -27,6 +28,22 @@ NZF_playerRestrained ={
 				[[player,"AmovPercMstpSnonWnonDnon"],"life_fnc_animSync", true, false] spawn bis_fnc_mp;
 				player switchMove "AmovPercMstpSnonWnonDnon";
 			};
+			// Play Sound
+			_snd = nil;
+			switch (_type) do { 
+				case "cuff":
+				{
+					_snd = "cuttingWire";
+				};
+				case "rope":{
+					_snd = "cough";
+				};
+				default {}; 
+			};
+			if !(isNil "_snd") then {
+				player say3D _snd;
+			};
+			sleep 0.2;
 			player playAction ("Foski_Cuff_" + _pos);
 			["NZF_Restrained"] call NZF_dropHandgun;
 			player forceWalk true;
