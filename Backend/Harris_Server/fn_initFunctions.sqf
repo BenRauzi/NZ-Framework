@@ -44,7 +44,7 @@ if (!isMultiplayer || isServer) then {
 	Corrections_Functions = ["Functions", "Corrections", "NZF", Corrections_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	EventHandler_Function_List = ["inventoryOpened", "getInMan", "seatSwitchedMan"];
-	EventHandler_Functions = ["Functions", "EventHandler", "NZF", EventHandler_Functions, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
+	EventHandler_Functions = ["Functions", "Event Handlers", "NZF", EventHandler_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions, Occupation_Functions, Police_Functions, Medical_Functions, Economy_Functions, Twitter_Functions, Citations_Functions, Corrections_Functions, EventHandler_Functions];
 

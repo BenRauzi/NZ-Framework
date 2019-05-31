@@ -144,6 +144,9 @@ Harris_clientInit = {
 
 	[] call NZF_playerTags;
 
+	player setVariable ["NZF_Surrendering",[false],true];
+	player setVariable ["NZF_Restrained",[false,""],true];
+
 	// Setup Event Handlers
 	player addEventHandler ["InventoryOpened",{_this call NZF_inventoryOpened}];
 	player addEventHandler["GetInMan",{_this call NZF_getInMan}];
