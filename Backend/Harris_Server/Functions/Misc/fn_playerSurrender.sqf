@@ -7,6 +7,7 @@ NZF_playerSurrender = {
 	if (isNil {player getVariable "NZF_Surrendering"}) then {
 		player setVariable ["NZF_Surrendering", [false], true];
 	};
+	if ((player getVariable "NZF_Restrained") select 0) exitWith {};
 	if ((player getVariable "NZF_Surrendering") select 0) then {
 		player setVariable ["NZF_Surrendering", [false], true];
 		player setVariable ["tf_unable_to_use_radio", false];
