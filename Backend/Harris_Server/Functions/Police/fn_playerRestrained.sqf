@@ -19,7 +19,7 @@ NZF_playerRestrained ={
 		};
 		if !((player getVariable "NZF_Restrained") select 0) then {
 			if ((player getVariable "NZF_Surrendering") select 0) then {
-				[] call Foski_playerSurrender;
+				[] call NZF_playerSurrender;
 			};
 			sleep 0.1;
 			player setVariable ["NZF_Restrained", [true, _pos], true];
