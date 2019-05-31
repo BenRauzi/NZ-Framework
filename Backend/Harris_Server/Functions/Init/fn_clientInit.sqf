@@ -15,6 +15,8 @@ Harris_clientInit = {
 	NZF_createCharGlasses = ["G_Aviator","G_Spectacles","G_Spectacles_Tinted","G_Shades_Black"];
 	NZF_createCharHeadgear = ["H_Cap_grn_BI","H_Cap_blk","H_Cap_blu","H_Cap_grn"];
 
+	NZF_ATCFreq = "80.7";
+
 	NZF_spawnLocations = [
 		["Rautake","Rautake_SP"],
 		["Lifou","Lifou_SP"],
@@ -141,4 +143,9 @@ Harris_clientInit = {
 	NZF_jailMarkers = 20;
 
 	[] call NZF_playerTags;
+
+	// Setup Event Handlers
+	player addEventHandler ["InventoryOpened",{_this call NZF_inventoryOpened}];
+	player addEventHandler["GetInMan",{_this call NZF_getInMan}];
+	player addEventHandler["SeatSwitchedMan",{_this call NZF_seatSwitchedMan}];
 };
