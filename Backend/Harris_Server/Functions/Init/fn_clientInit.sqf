@@ -15,6 +15,8 @@ Harris_clientInit = {
 	NZF_createCharGlasses = ["G_Aviator","G_Spectacles","G_Spectacles_Tinted","G_Shades_Black"];
 	NZF_createCharHeadgear = ["H_Cap_grn_BI","H_Cap_blk","H_Cap_blu","H_Cap_grn"];
 
+	NZF_ATCFreq = "80.7";
+
 	NZF_spawnLocations = [
 		["Rautake","Rautake_SP"],
 		["Lifou","Lifou_SP"],
@@ -32,11 +34,12 @@ Harris_clientInit = {
 	NZF_shopList = [
 		["Firearms Store","NZF_firearmStore",[
 			["Handguns",[
-				["hgun_Rook40_F","Pew Pew Pew",760,nil],
+				["hgun_Rook40_F","Pew Pew Pew",760],
 				["hgun_Rook40_F","Pew Pew Pew",760,"NZF_license_boat"]
 			]],
 			["Rifles",[
-				["hgun_Rook40_F","Pew Pew Pew Pew Pew Pew",1875]
+				["hgun_Rook40_F","Pew Pew Pew Pew",900],
+				["hgun_Rook40_F","Pew Pew Pew Pew Pew Pew Pew",1000]
 			]]
 		],"NZF_license_firearms"],
 		["Corner Store","NZF_cornerStore",[
@@ -47,7 +50,46 @@ Harris_clientInit = {
 				["hgun_Rook40_F","Pew Pew Pew Munch Munch Pew Pew",760],
 				["hgun_Rook40_F","Pew Pew Pew Munch Munch Pew Pew",760]
 			]]
-		],0]
+		],0],
+		["Clothing Store","NZF_clothingStore",[
+			["Clothing",[
+				["H_Cap_grn_BI",nil,10],
+				["H_Cap_blk",nil,10],
+				["H_Cap_blu",nil,10],
+				["H_Cap_grn",nil,10],
+				["G_Aviator",nil,15],
+				["G_Spectacles",nil,15],
+				["G_Spectacles_Tinted",nil,15],
+				["G_Shades_Black",nil,15],
+				["U_C_man_casual_1_F",nil,25],
+				["U_C_man_casual_2_F",nil,25],
+				["U_C_man_casual_3_F",nil,25],
+				["V_Safety_yellow_F",nil,30],
+				["V_Safety_orange_F",nil,30],
+				["V_Safety_blue_F",nil,30],
+				["V_Press_F",nil,40],
+				["B_AssaultPack_blk",nil,50],
+				["B_AssaultPack_cbr",nil,50],
+				["B_AssaultPack_khk",nil,50],
+				["B_AssaultPack_sgg",nil,50]
+			]]
+		],0],
+		["Vehicle Store","NZF_vehicleStore",[
+			["Cars",[
+				["C_Quadbike_01_F",nil,250],
+				["C_Quadbike_01_black_F",nil,250],
+				["C_Quadbike_01_blue_F",nil,250],
+				["C_Quadbike_01_red_F",nil,250],
+				["C_Quadbike_01_white_F",nil,250],
+				["C_Hatchback_01_F",nil,500],
+				["C_Hatchback_01_sport_F",nil,650],
+				["C_SUV_01_F",nil,350]
+			]],
+			["Planes",[
+				["C_Plane_Civil_01_F",nil,5640],
+				["C_Plane_Civil_01_racing_F",nil,10345]
+			]]
+		],"NZF_license_driver"]
 	];
 
 	cutText ["Fetching Player Information","BLACK FADED",0];
@@ -101,4 +143,12 @@ Harris_clientInit = {
 	NZF_jailMarkers = 20;
 
 	[] call NZF_playerTags;
+
+	player setVariable ["NZF_Surrendering",[false],true];
+	player setVariable ["NZF_Restrained",[false,""],true];
+
+	// Setup Event Handlers
+	player addEventHandler ["InventoryOpened",{_this call NZF_inventoryOpened}];
+	player addEventHandler["GetInMan",{_this call NZF_getInMan}];
+	player addEventHandler["SeatSwitchedMan",{_this call NZF_seatSwitchedMan}];
 };

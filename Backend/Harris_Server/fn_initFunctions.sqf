@@ -25,13 +25,13 @@ if (!isMultiplayer || isServer) then {
 	Occupation_Function_List = ["onDuty"];
 	Occupation_Functions = ["Functions", "Occupations", "NZF", Occupation_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Police_Function_List = ["escort", "escorted", "escortStop", "patDown", "pattedDown", "shackle", "strippedDown", "tazed", "unescorted"];
+	Police_Function_List = ["escort", "escorted", "escortStop", "patDown", "pattedDown", "shackle", "strippedDown", "tazed", "unescorted", "playerRestrained", "playerUnRestrained", "restrainPlayer", "unRestrainPlayer"];
 	Police_Functions = ["Functions", "Police", "NZF", Police_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Medical_Function_List = ["handleDamage", "setBlood"];
 	Medical_Functions = ["Functions", "Medical", "NZF", Medical_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Economy_Function_List = ["modifyLicense", "getLicense", "openShop", "loadShopItems", "shopLBChange", "getCash", "addCash", "removeCash", "canPay", "buyItem"];
+	Economy_Function_List = ["modifyLicense", "getLicense", "openShop", "loadShopItems", "shopLBChange", "getCash", "addCash", "removeCash", "canPay", "buyItem", "shopCategoryChange"];
 	Economy_Functions = ["Functions", "Economy", "NZF", Economy_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Twitter_Function_List = ["addMessage","openTwitterType","sendMessage", "setTwitterName", "updateTwitter"];
@@ -43,7 +43,10 @@ if (!isMultiplayer || isServer) then {
 	Corrections_Function_List = ["arrestGUIOpened","arrestPlayer","initJailLoop", "jailRelease"];
 	Corrections_Functions = ["Functions", "Corrections", "NZF", Corrections_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
 
-	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions, Occupation_Functions, Police_Functions, Medical_Functions, Economy_Functions, Twitter_Functions, Citations_Functions, Corrections_Functions];
+	EventHandler_Function_List = ["inventoryOpened", "getInMan", "seatSwitchedMan"];
+	EventHandler_Functions = ["Functions", "Event Handlers", "NZF", EventHandler_Function_List, "Client"]; //Main Folder, Sub Folder, Function Tag, Function List, Scope
+
+	Functions_List = [Init_Functions, Save_Functions, Misc_Functions, Interaction_Functions, Immigration_Functions, Notifications_Functions, Occupation_Functions, Police_Functions, Medical_Functions, Economy_Functions, Twitter_Functions, Citations_Functions, Corrections_Functions, EventHandler_Functions];
 
 	{
 		_dir = format["\Harris_Server\%1\%2", _x select 0, _x select 1];

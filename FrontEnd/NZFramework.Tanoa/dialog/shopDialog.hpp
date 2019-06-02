@@ -91,7 +91,7 @@ class NZF_shopDialog
 			soundExpand[] = {"\A3\ui_f\data\sound\RscCombo\soundExpand",0.1,1.0};
 			soundSelect[] = {"\A3\ui_f\data\sound\RscCombo\soundSelect",0.1,1.0};
 			wholeHeight = 0.3;
-			onLBSelChanged = "[(((lbData[3005,(lbCurSel 3005)]) splitString ',') select 0)] spawn NZF_loadShopItems;";
+			onLBSelChanged = "[] call NZF_shopCategoryChange;";
 			class ComboScrollBar
 			{
 				color[] = {1,1,1,1};
@@ -196,7 +196,7 @@ class NZF_shopDialog
 			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-			action = "[lbText [3006,(lbCurSel 3006)],(((lbData[3006,(lbCurSel 3006)]) splitString ',') select 0),parseNumber(((lbData[3006,(lbCurSel 3006)]) splitString ',') select 1)] call NZF_buyItem;";
+			action = "[lbText [3006,(lbCurSel 3006)],(((lbData[3006,(lbCurSel 3006)]) splitString ',') select 0),parseNumber(((lbData[3006,(lbCurSel 3006)]) splitString ',') select 1),NZF_curShopVSpawn] call NZF_buyItem;";
 		};
 	};
 };

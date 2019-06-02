@@ -4,7 +4,7 @@
 */
 
 NZF_openShop = {
-	params ["_shop"];
+	params ["_shop","_vSpawn"];
 	if (isNil "_shop") exitWith {};
 	{
 		if (_shop == _x select 1) exitWith {
@@ -14,6 +14,11 @@ NZF_openShop = {
 				["Incorrect License", format["You can only access this store if you have a valid %1.",_licenseDN], "Failure"] call NZF_Notifications;
 			} else {
 				0 fadeSound 1;
+				NZF_curShopCategory = "item";
+				if (isNil "_vSpawn") then {
+					_vSpawn = "unknown";
+				};
+				NZF_curShopVSpawn = _vSpawn;
 
 			 	// Spawn Building 
 			    shObj = "Land_Offices_01_V1_F" createVehicleLocal [0,0,0];
@@ -66,15 +71,27 @@ NZF_openShop = {
 		    		shNPC = nil;
 		    		20 cutText ['','Black in', 5];
 	    			5 fadeSound 1;
-	    			holder = nil;
+	    			NZF_curShopCategory = nil;
+	    			NZF_curShopVSpawn = nil;
+					if !(isNil 'NZF_curShopVeh') then {
+						deleteVehicle NZF_curShopVeh;
+						NZF_curShopVeh = nil;
+					};
+	    			NZF_shopItemHolder = nil;
 		    	};};"];
-
-		    	shNPC addWeapon "SMG_03_hex";
 
 		    	{ // Load Categories
 		    		if (count (_x select 1) > 0) then {
-					   	_index = lbAdd [3005, _x select 0];
-					    lbSetData [3005, _index, _shop + "," + (_x select 0)];
+		    			_accessibleItem = false;
+		    			{
+		    				if (isNil {_x select 3} || {[_x select 3] call NZF_getLicense}) exitWith {
+		    					_accessibleItem = true;
+		    				};
+		    			} forEach (_x select 1);
+		    			if (_accessibleItem) then {
+						   	_index = lbAdd [3005, _x select 0];
+						    lbSetData [3005, _index, _shop + "," + (_x select 0)];
+						};
 					};
 				} forEach (_x select 2);
 				lbSetCurSel [3005, 0];

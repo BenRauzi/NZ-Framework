@@ -24,7 +24,7 @@ NZF_keyHandler = {
 		case 35: // H
 		{
 			// Holster & Unholster Weapon
-			if !(player getVariable ["NZF_Surrendering", false] || player getVariable ["NZF_Restrained", false]) then {
+			if !(((player getVariable "NZF_Surrendering") select 0) || ((player getVariable "NZF_Restrained") select 0)) then {
 				if (_shift && !_ctrlKey) then {
 					["holster"] call NZF_weaponHolster;
 				};
@@ -39,6 +39,7 @@ NZF_keyHandler = {
 			// Surrender
 			if (_shift) then {
 				[] spawn NZF_playerSurrender;
+				_handled = true; // Prevent binoculars coming out
 			};
 		};
 

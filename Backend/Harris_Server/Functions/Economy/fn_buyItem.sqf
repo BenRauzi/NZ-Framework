@@ -24,7 +24,7 @@ NZF_buyItem = {
 					[_cName] call NZF_addItem;
 				};
 
-				if !(isNil "_vSpawn") then {
+				if !(isNil "_vSpawn" || _vSpawn == "unknown") then {
 					// Now spawn the actual vehicle
 					if (count (nearestObjects [(getMarkerPos _vSpawn),["Car","Motorcycle","Ship","Air"],5]) > 0) exitWith {
 						["Vehicle Spawn Error", "There is currently a vehicle blocking the spawn point, you have been fully refunded.", "Failure"] call NZF_Notifications;
@@ -38,11 +38,14 @@ NZF_buyItem = {
 					_veh allowDamage true;
 
 					// Add vehicle ownership and db crap here...
+					
+				} else {
+					["Vehicle Spawn Error", "There seems to be no spawn point for this store, you have been fully refunded.", "Failure"] call NZF_Notifications;
+					_exit = true;
 				};
 			};
 			default 
 			{
-				//holder = nil; // here just for testing
 				if ((_cName call BIS_fnc_itemType) select 0 == "Equipment") then { // Is clothing, not an item
 					switch ((_cName call BIS_fnc_itemType) select 1) do { 
 						case "Glasses":
