@@ -4,7 +4,7 @@
 */
 
 NZF_openShop = {
-	params ["_shop","_vSpawn"];
+	params ["_shop","_vSpawn","_sObj"];
 	if (isNil "_shop") exitWith {};
 	{
 		if (_shop == _x select 1) exitWith {
@@ -19,6 +19,11 @@ NZF_openShop = {
 					_vSpawn = "unknown";
 				};
 				NZF_curShopVSpawn = _vSpawn;
+				if !(isNil "_sObj") then {
+					if (typeOf _sObj == "Foski_CashRegister") then {
+						NZF_curShopCR = _sObj;
+					};
+				};
 
 			 	// Spawn Building 
 			    shObj = "Land_Offices_01_V1_F" createVehicleLocal [0,0,0];

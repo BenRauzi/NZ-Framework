@@ -8,8 +8,8 @@ NZF_spawnItem = {
     if (isNil "_item") exitWith {}; 
     if (isNil "_amount") then {_amount = 1;}; 
     if (isNil "NZF_shopItemHolder") then {
-    	NZF_shopItemHolder = "groundWeaponHolder" createVehicle position player;
-    	NZF_shopItemHolder setPos (getpos player); 
+    	NZF_shopItemHolder = "groundWeaponHolder" createVehicle [0,0,0];
+    	NZF_shopItemHolder setPosATL (getPosATL player); 
 	};
  	NZF_shopItemHolder addItemCargoGlobal [_item, _amount]; 
 };
