@@ -11,8 +11,8 @@ NZF_inventoryOpened = {
     _handle = false;
 
     // Prevent restrained and surrendering players to be able to open their inventory
-    if (((player getVariable "NZF_Restrained") select 0) || ((player getVariable "NZF_Surrender") select 0)) exitWith {
+    if (((player getVariable "NZF_Restrained") select 0) || ((player getVariable "NZF_Surrendering") select 0)) exitWith {
         _handle = true;
-        _handle;
+        true
     };
 };
