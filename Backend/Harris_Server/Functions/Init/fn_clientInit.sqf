@@ -42,7 +42,7 @@ Harris_clientInit = {
 				["hgun_Rook40_F","Pew Pew Pew Pew Pew Pew Pew",1000]
 			]]
 		],"NZF_license_firearms"],
-		["Corner Store","NZF_cornerStore",[
+		["Continental Store","NZF_continentalStore",[
 			["Items",[
 				["ToolKit","Mr. FixIt",250]
 			]],
