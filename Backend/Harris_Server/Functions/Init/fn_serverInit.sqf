@@ -22,7 +22,7 @@ Harris_serverInit = {
 		if (!isNil {_x getVariable "NZF_Shop"} && ((_x getVariable "NZF_Shop") select 0) in _shops) then {
 			// Set Variables etc.
 			_x allowDamage false;
-			_x setVariable ["Foski_disableActions",true];
+			_x setVariable ["Foski_disableActions",true,true];
 			_x enableSimulation false;
 			// Turn Register On
 			if (isNil {_x getVariable "Foski_Power"}) then {
