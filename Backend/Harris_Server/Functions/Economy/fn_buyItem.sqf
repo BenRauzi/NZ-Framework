@@ -33,7 +33,11 @@ NZF_buyItem = {
 					_veh = _cName createVehicle [0,0,0];
 					_veh allowDamage false;
 					_veh lock true;
-					_veh setPosATL (getMarkerPos _vSpawn);
+					if (isNil "NZF_curShopVSpawnOffset") then {
+						_veh setPosATL (getMarkerPos _vSpawn);
+					} else {
+						_veh setPosATL [(getMarkerPos _vSpawn) select 0, (getMarkerPos _vSpawn) select 1, NZF_curShopVSpawnOffset];
+					};
 					_veh setDir (markerDir _vSpawn);
 					_veh allowDamage true;
 

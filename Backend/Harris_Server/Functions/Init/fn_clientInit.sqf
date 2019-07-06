@@ -42,7 +42,7 @@ Harris_clientInit = {
 				["hgun_Rook40_F","Pew Pew Pew Pew Pew Pew Pew",1000]
 			]]
 		],"NZF_license_firearms"],
-		["Corner Store","NZF_cornerStore",[
+		["Continental Store","NZF_continentalStore",[
 			["Items",[
 				["ToolKit","Mr. FixIt",250]
 			]],
@@ -92,6 +92,11 @@ Harris_clientInit = {
 		],"NZF_license_driver"]
 	];
 
+	NZF_Shops = [];
+	{
+		NZF_Shops pushBack (_x select 1);
+	} forEach NZF_shopList;
+	
 	cutText ["Fetching Player Information","BLACK FADED",0];
 	[player] remoteExecCall	["Harris_initStats", 2];
 	waitUntil{!isNull (findDisplay 46)};

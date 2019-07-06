@@ -4,7 +4,7 @@
 */
 
 NZF_openShop = {
-	params ["_shop","_vSpawn"];
+	params ["_shop","_vSpawn","_sObj","_vOffset"];
 	if (isNil "_shop") exitWith {};
 	{
 		if (_shop == _x select 1) exitWith {
@@ -19,6 +19,19 @@ NZF_openShop = {
 					_vSpawn = "unknown";
 				};
 				NZF_curShopVSpawn = _vSpawn;
+				if !(isNil "_sObj") then {
+					if (typeOf _sObj == "Foski_CashRegister") then {
+						NZF_curShopCR = _sObj;
+					};
+				};
+				if !(isNil "_vOffset") then {
+					if (typeName _vOffset != "SCALAR") then {
+						_vOffset = 0;
+					};
+				} else {
+					_vOffset = 0;
+				};
+				NZF_curShopVSpawnOffset = _vOffset;
 
 			 	// Spawn Building 
 			    shObj = "Land_Offices_01_V1_F" createVehicleLocal [0,0,0];
@@ -73,11 +86,12 @@ NZF_openShop = {
 	    			5 fadeSound 1;
 	    			NZF_curShopCategory = nil;
 	    			NZF_curShopVSpawn = nil;
+	    			NZF_curShopVSpawnOffset = nil;
+	    			NZF_shopItemHolder = nil;
 					if !(isNil 'NZF_curShopVeh') then {
 						deleteVehicle NZF_curShopVeh;
 						NZF_curShopVeh = nil;
 					};
-	    			NZF_shopItemHolder = nil;
 		    	};};"];
 
 		    	{ // Load Categories

@@ -22,5 +22,4 @@ NZF_planeLanded = {
     20 cutText ["","Black In", 2];
     sleep 5;
     player allowDamage true;
-
 };

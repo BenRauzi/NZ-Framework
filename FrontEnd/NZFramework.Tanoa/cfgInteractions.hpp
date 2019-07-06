@@ -110,4 +110,12 @@ class cfgInteractions
 		icon = "002_Tag.paa";
 		text = "Set Name";
 	};
+
+	class openStore
+	{
+		condition = "[typeName Harris_currentCursorObject == 'OBJECT', !(isNil {Harris_currentCursorObject getVariable 'NZF_Shop'}), ((Harris_currentCursorObject getVariable 'NZF_Shop') select 0) in NZF_Shops, player distance Harris_currentCursorObject < 2.5]";
+		action = "if (isNil {(Harris_currentCursorObject getVariable 'NZF_Shop') select 1}) then {[(Harris_currentCursorObject getVariable 'NZF_Shop') select 0,nil,Harris_currentCursorObject] spawn NZF_openShop;} else {[(Harris_currentCursorObject getVariable 'NZF_Shop') select 0, (Harris_currentCursorObject getVariable 'NZF_Shop') select 1,Harris_currentCursorObject] spawn NZF_openShop;};";
+		icon = "001_Shop.paa";
+		text = "Open Store";
+	};
 };
