@@ -156,4 +156,6 @@ Harris_clientInit = {
 	player addEventHandler ["InventoryOpened",{_this call NZF_inventoryOpened}];
 	player addEventHandler["GetInMan",{_this call NZF_getInMan}];
 	player addEventHandler["SeatSwitchedMan",{_this call NZF_seatSwitchedMan}];
+
+	[] call Harris_configInit;
 };

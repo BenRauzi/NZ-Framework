@@ -9,7 +9,7 @@ Harris_serverInit = {
 
 	addMissionEventHandler ["HandleDisconnect",{ [_this select 0] remoteExecCall ["Harris_saveStats", 2];}];
 
-
+	[] call Harris_configInit;
 
 	// Setup Cash Registers (For Shops)
 	_shops = [];

@@ -4,7 +4,7 @@
 */
 
 if (!isMultiplayer || isServer) then {
-	Init_Function_List = ["serverInit", "clientInit"];
+	Init_Function_List = ["serverInit", "clientInit", "configInit"];
 	Init_Functions = ["Functions", "Init", "Harris", Init_Function_List, "Client"];//Main Folder, Sub Folder, Function Tag, Function List, Scope
 
 	Save_Function_List = ["initStats", "loadStats", "saveStats", "saveStatsLocal", "statsReturned"];
