@@ -7,7 +7,7 @@ Harris_serverInit = {
 	["NZFramework", "SQL_CUSTOM", "NZFramework.ini"] call MySQL_fnc_ExtDBinit;
 	missionNamespace setVariable ["spawnInPlane", [], true];
 
-	addMissionEventHandler ["HandleDisconnect",{ [_this select 0] remoteExecCall ["Harris_saveStats", 2];}];
+	addMissionEventHandler ["HandleDisconnect",{ deleteVehicle (_this select 0); [_this select 0] remoteExecCall ["Harris_saveStats", 2];}];
 
 	[] call Harris_configInit;
 
