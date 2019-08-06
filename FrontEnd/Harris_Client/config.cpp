@@ -1040,7 +1040,7 @@ class NZF_setName
 			w = 0.05 * safezoneW;
 			h = 0.035 * safezoneH;
 			text = "Set Name";
-			action = "[] call Harris_setName; closeDialog 0";
+			action = "[] call NZF_setName; closeDialog 0";
 		};
 		class Current_Name: RscText
 		{
