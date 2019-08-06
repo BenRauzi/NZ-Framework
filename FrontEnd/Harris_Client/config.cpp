@@ -1228,12 +1228,12 @@ class NZF_getCitation
 			colorFocused[] = {0,0,0,0};
   			colorShadow[] = {0,0,0,0};
    			colorBorder[] = {0,0,0,0};
-			action = "[] call Harris_payTicket;";
+			action = "[] call NZF_payTicket;";
 		};
 		class refuse_B: RscButton
 		{
 			idc = 1600;
-			action = "[] call Harris_refuseTicket; closeDialog 0";
+			action = "[] call NZF_refuseTicket; closeDialog 0";
 
 			x = 0.386562 * safezoneW + safezoneX;
 			y = 0.753 * safezoneH + safezoneY;
@@ -1407,7 +1407,7 @@ class NZF_giveCitation
 			y = 0.753 * safezoneH + safezoneY;
 			w = 0.075 * safezoneW;
 			h = 0.03 * safezoneH;
-			action = "[] call Harris_sendTicket; closeDialog 0;";
+			action = "[] call NZF_sendTicket; closeDialog 0;";
 			colorText[] = {-1,-1,-1,1};
 			colorBackground[] = {0,0,0,0};
 			colorActive[] = {0,0,0,0};
