@@ -5,34 +5,7 @@
 
 Harris_clientInit = {
 	[] call Harris_configInit;
-
-
-	NZF_startBank = 5000;
-	NZF_startCar = "C_Hatchback_01_sport_F";
-	NZF_maxIdentities = 3;
 	
-	NZF_createCharUniforms = ["U_C_man_casual_1_F","U_C_man_casual_2_F","U_C_man_casual_3_F"];
-	NZF_createCharVests = ["V_Safety_yellow_F","V_Safety_orange_F","V_Safety_blue_F","V_Press_F"];
-	NZF_createCharBackpacks = ["B_AssaultPack_blk","B_AssaultPack_cbr","B_AssaultPack_khk","B_AssaultPack_sgg"];
-	NZF_createCharGlasses = ["G_Aviator","G_Spectacles","G_Spectacles_Tinted","G_Shades_Black"];
-	NZF_createCharHeadgear = ["H_Cap_grn_BI","H_Cap_blk","H_Cap_blu","H_Cap_grn"];
-
-	NZF_ATCFreq = "80.7";
-
-	NZF_spawnLocations = [
-		["Rautake","Rautake_SP"],
-		["Lifou","Lifou_SP"],
-		["Moddergat","Moddergat_SP"],
-		["Tuvunaka","Tuvanaka_SP"]
-	];
-
-	NZF_licenseList = [
-		["Driver's License","NZF_license_driver"],
-		["Truck License","NZF_license_truck"],
-		["Boat License","NZF_license_boat"],
-		["Firearms License","NZF_license_firearms"]
-	];
-
 	NZF_Shops = [];
 	{
 		NZF_Shops pushBack (_x select 1);
