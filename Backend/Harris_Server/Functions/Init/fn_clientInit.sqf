@@ -5,6 +5,9 @@
 
 Harris_clientInit = {
 
+	[] call Harris_configInit;
+
+
 	NZF_startBank = 5000;
 	NZF_startCar = "C_Hatchback_01_sport_F";
 	NZF_maxIdentities = 3;
@@ -156,6 +159,4 @@ Harris_clientInit = {
 	player addEventHandler ["InventoryOpened",{_this call NZF_inventoryOpened}];
 	player addEventHandler["GetInMan",{_this call NZF_getInMan}];
 	player addEventHandler["SeatSwitchedMan",{_this call NZF_seatSwitchedMan}];
-
-	[] call Harris_configInit;
 };
