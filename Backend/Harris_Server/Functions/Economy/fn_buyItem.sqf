@@ -27,7 +27,7 @@ NZF_buyItem = {
 				if !(isNil "_vSpawn" || _vSpawn == "unknown") then {
 					// Now spawn the actual vehicle
 					if (count (nearestObjects [(getMarkerPos _vSpawn),["Car","Motorcycle","Ship","Air"],5]) > 0) exitWith {
-						["Vehicle Spawn Error", "There is currently a vehicle blocking the spawn point, you have been fully refunded.", "Failure"] call NZF_Notifications;
+						["Vehicle Spawn Error", "There is currently a vehicle blocking the spawn point.", "Failure"] call NZF_Notifications;
 						_exit = true;
 					};
 					_veh = _cName createVehicle [0,0,0];
@@ -44,7 +44,7 @@ NZF_buyItem = {
 					// Add vehicle ownership and db crap here...
 					
 				} else {
-					["Vehicle Spawn Error", "There seems to be no spawn point for this store, you have been fully refunded.", "Failure"] call NZF_Notifications;
+					["Vehicle Spawn Error", "There seems to be no spawn point for this store.", "Failure"] call NZF_Notifications;
 					_exit = true;
 				};
 			};
