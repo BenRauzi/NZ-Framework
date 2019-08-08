@@ -87,6 +87,7 @@ NZF_openShop = {
 	    			NZF_curShopCategory = nil;
 	    			NZF_curShopVSpawn = nil;
 	    			NZF_curShopVSpawnOffset = nil;
+					NZF_curShopCR = nil;
 	    			NZF_shopItemHolder = nil;
 					if !(isNil 'NZF_curShopVeh') then {
 						deleteVehicle NZF_curShopVeh;

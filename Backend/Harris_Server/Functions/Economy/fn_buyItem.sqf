@@ -97,6 +97,11 @@ NZF_buyItem = {
 		};
 		if (_exit) exitWith {[_price] call NZF_addCash;};
 		["Item Purchased", format["You have successfully purchased a %1, for a total of $%2.",_dName,_price], "Success"] call NZF_Notifications;
+		if !(isNil "NZF_curShopCR") then { // Update Cash Register
+			_curText = (NZF_curShopCR getVariable "Foski_CRegText") splitString "$";
+			_newText = [_curText select 0, "$", _price, ".00"] joinString "";
+			[NZF_curShopCR,"setText",_newText] spawn Foski_CR_fnc_manageRegister;
+		};
 	} else { // Can't afford item
 		_priceLack = 0;
 		if (_price - ([] call NZF_getCash) <= 0) then {
