@@ -43,7 +43,7 @@ NZF_addMessage = {
 	};
 
 	_message= format["<t size='1' color='%3' align='left' font='PuristaBold'>%1: </t><t size='1' font='PuristaBold' align='left' color='#bab6b7'>%2</t> <br/>", _name, _message, _colour];
-	NZF_twitterMessages pushBack	_message;
+	NZF_twitterMessages pushBack _message;
 
 	if (count NZF_twitterMessages > 6) then {
 		NZF_twitterMessages deleteAt 0;

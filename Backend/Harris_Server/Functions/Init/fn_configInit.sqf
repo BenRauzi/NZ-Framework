@@ -14,7 +14,7 @@ Harris_configInit = {
 	NZF_createCharGlasses = ["G_Aviator","G_Spectacles","G_Spectacles_Tinted","G_Shades_Black"];
 	NZF_createCharHeadgear = ["H_Cap_grn_BI","H_Cap_blk","H_Cap_blu","H_Cap_grn"];
 
-	NZF_ATCFreq = "80.7";
+	NZF_ATCFreq = "80.7"; //upon purchasing a helicopter/plane the LR Radio is set to this freq.
 
 	NZF_spawnLocations = [
 		["Rautake","Rautake_SP"],
